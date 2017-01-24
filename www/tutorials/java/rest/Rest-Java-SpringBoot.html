@@ -1,0 +1,41 @@
+<head><link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css'><script src='http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js'></script><script>hljs.initHighlightingOnLoad();</script></head>
+<h1 id="hello-rest">Hello Rest</h1>
+<p>Simple rest application that says hello message</p>
+<h1 id="tech-stack">Tech Stack</h1>
+<ul>
+<li>Spring Boot</li>
+<li>Java</li>
+<li>Maven</li>
+</ul>
+<h1 id="run">Run</h1>
+<p>Clone the project <a href="https://github.com/padmacho/hellorest.git">https://github.com/padmacho/hellorest.git</a></p>
+<p>Move to cloned folder</p>
+<p>Run the below commnad to start the app</p>
+<pre><code>mvn spring-boot:run
+</code></pre><p>The above command will download necessary artifacts and starts the embedded tomcat container on 8080 port</p>
+<h1 id="accessing-api">Accessing API</h1>
+<p>Use curl command to access the api</p>
+<pre><code>    curl http://localhost:8080/hello
+</code></pre><h2 id="output">Output</h2>
+<pre><code>    {&quot;text&quot;:&quot;Hello Welcome to REST World!!!&quot;}
+</code></pre><h1 id="explanation">Explanation</h1>
+<pre><code class="lang-java">package org.eduami.hellorest;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class MessageController {
+
+    @RequestMapping(&quot;/hello&quot;)
+    public Message sayHello() {
+        return new Message(&quot;Hello Welcome to REST World!!!&quot;);
+    }
+
+}
+</code></pre>
+<h1 id="prerequisites">Prerequisites</h1>
+<ul>
+<li>JDK</li>
+<li>Maven</li>
+</ul>
