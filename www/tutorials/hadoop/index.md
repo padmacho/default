@@ -11,6 +11,7 @@ Hadoop Development Training course teaches experienced / knowledge peoples on pu
 * Host operating system can be Windows 10 /Mac/ Ubuntu 16.10 (Preferable)
 * Java 1.8
 * Eclipse IDE  Neon.2 Release (4.6.2)
+* Vagrant 1.9.2
 
 ## Course Outline
 

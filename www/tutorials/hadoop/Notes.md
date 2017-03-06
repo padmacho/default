@@ -1,0 +1,3 @@
+# Notes
+## Installing required software 
+
