@@ -37,7 +37,8 @@ Hadoop Development Training course teaches experienced / knowledge peoples on pu
 ## MapReduce Development
 ### Developing a MapReduce Application
 * Configuration API
-* 
+* Setting Up the Development Environment
+
 ### MapReduce Workflow
 ### MapReduce Type,Formats and Features
 
