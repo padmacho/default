@@ -39,17 +39,44 @@ Hadoop Development Training course teaches experienced / knowledge peoples on pu
 * Configuration API
 * Setting Up the Development Environment
 * Unit Test with MRUnit
+* Running Locally and on Cluster
+* Tuning a Job
 
 ### MapReduce Workflow
+* Decomposing a problem
+* JobControl
+* Oozie
+
 ### MapReduce Type,Formats and Features
+* Types
+* Input Formats
+* Output Formats
 
 ## Hadoop Administration
 ### Setting up a Hadoop Cluster
+* Specification
+* Sizing 
+* Network Topology
+
 ### Security
+* Kerberos and Hadoop
+* Tokens 
+
 ### Benchmarking
+* Benchmarking and User Jobs
+
 ### HDFS
+* Persistence Data Structures
+* Safe Mode
+* Auto Logging
+
 ### Monitoring
+* Logging
+* Metrics and JMX
+
 ### Maintenance
+* Routine Administration Procedures
+* Commissioning and Decommissioning Nodes 
 
 ## Hadoop Ecosystem
 ### NoSQL
