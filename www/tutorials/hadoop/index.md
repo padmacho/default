@@ -33,7 +33,7 @@ Hadoop Development Training course teaches experienced / knowledge peoples on pu
 * Standalone Mode
 * Pseudodistributed Mode
 * Fully Distributed Mode (Cluster)
-  
+
 ## MapReduce Development
 ### Developing a MapReduce Application
 * Configuration API
@@ -51,32 +51,6 @@ Hadoop Development Training course teaches experienced / knowledge peoples on pu
 * Types
 * Input Formats
 * Output Formats
-
-## Hadoop Administration
-### Setting up a Hadoop Cluster
-* Specification
-* Sizing 
-* Network Topology
-
-### Security
-* Kerberos and Hadoop
-* Tokens 
-
-### Benchmarking
-* Benchmarking and User Jobs
-
-### HDFS
-* Persistence Data Structures
-* Safe Mode
-* Auto Logging
-
-### Monitoring
-* Logging
-* Metrics and JMX
-
-### Maintenance
-* Routine Administration Procedures
-* Commissioning and Decommissioning Nodes 
 
 ## Hadoop Ecosystem
 ### NoSQL
