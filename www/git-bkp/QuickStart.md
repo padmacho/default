@@ -12,8 +12,7 @@ In the quick start guide we are going to do following steps
 - In the home screen click to create a repository
 - Provide the repo name **git-demo** and click create repository
 
- ![Git Hub Create repo](git-hub-create-repo.png)
-
+ ![alt text](git-hub-create-repo.png)
 - Repo is created
 
 ## Clone the repository to local machine
