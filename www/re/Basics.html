@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#basics">Basics</a></li>
+<li><a href="#grep">grep</a></li>
+<li><a href="#regex-standards">Regex Standards</a><ul>
+<li><a href="#pattern">Pattern</a></li>
+<li><a href="#regex">Regex</a></li>
+<li><a href="#subject">Subject</a></li>
+<li><a href="#function">Function</a></li>
+<li><a href="#engine">Engine</a></li>
+<li><a href="#result">Result</a></li>
+</ul></li>
+<li><a href="#first-regular-expressions">First regular expressions</a><ul>
+<li><a href="#rules-for-html-color-code">Rules for html color code</a></li>
+<li><a href="#lets-use-grep">Lets use grep</a></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="basics">Basics</h1>
+<ul>
+<li>Pattern</li>
+<li>Regex</li>
+<li>Subject</li>
+</ul>
+<h1 id="grep">grep</h1>
+<p>grep is a command-line utility for searching plain-text data sets for lines that match a regular expression. Its name comes from the ed command g/re/p (globally search a regular expression and print)</p>
+<p>g/<regular expression>/p</p>
+<h1 id="regex-standards">Regex Standards</h1>
+<ul>
+<li>BRE (POSIX) Basic Regular expression</li>
+<li>ERE (POSIX) Extended Regular expression</li>
+<li>PCRE Perl Compatible Regular expression<br />
+POSIX - Portable Operating System Interface for uniX</li>
+</ul>
+<h2 id="pattern">Pattern</h2>
+<p>Determine the Pattern that you want to match</p>
+<h2 id="regex">Regex</h2>
+<p>Create a rule that matches your Pattern</p>
+<h2 id="subject">Subject</h2>
+<p>Input to expression normally text string or group of text strings</p>
+<h2 id="function">Function</h2>
+<p>Takes regex and input and is given a input to regex engine</p>
+<h2 id="engine">Engine</h2>
+<p>executes regular expressions</p>
+<h2 id="result">Result</h2>
+<p>Result of evaluation<br />
+There are three types</p>
+<ul>
+<li>Boolean - Does it match?</li>
+<li>Integer - How may matches have been found?</li>
+<li>Array - What are the matches ?</li>
+</ul>
+<h1 id="first-regular-expressions">First regular expressions</h1>
+<p>Validate html color code when it is givn as input</p>
+<h2 id="rules-for-html-color-code">Rules for html color code</h2>
+<p>Now what pattern does an HTML hex color code follow? It generally starts with a hash and is then followed by six characters. Each of these characters has to be within the range A to F and 0 to 9, and the three sets of two characters together build up the color in red, green, and blue. In this case, every single combination of characters between #000000 and #FFFFFF is valid</p>
+<ul>
+<li>Valid color codes</li>
+<li><h1 id="section">000000</h1></li>
+<li><h1 id="fffff">FFFFF</h1></li>
+<li><h1 id="abc">ABC</h1></li>
+<li>Invalid</li>
+<li><h1 id="gab">GAB</h1></li>
+</ul>
+<h2 id="lets-use-grep">Lets use grep</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">grep</span> -o</code></pre></div>
+<p>Print only the matched (non-empty) parts of a matching line, with each such part on a separate output line<br />
+Lets try to match ABCDEF chars in a given string</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">dragon@airavath</span> ~                             
+$ <span class="bu">echo</span> <span class="st">&quot;ABCDEF&quot;</span> <span class="kw">|</span> <span class="fu">grep</span> -o ABCDEF              
+<span class="ex">ABCDEF</span>                                        
+
+<span class="ex">dragon@airavath</span> ~                             
+$ <span class="bu">echo</span> <span class="st">&quot;ABCDEF123ABCDEF&quot;</span> <span class="kw">|</span> <span class="fu">grep</span> -o ABCDEF     
+<span class="ex">ABCDEF</span>                                        
+<span class="ex">ABCDEF</span>                                        
+
+<span class="ex">dragon@airavath</span> ~                             
+$ <span class="bu">echo</span> <span class="st">&quot;ABCDEF&quot;</span> <span class="kw">|</span> <span class="fu">grep</span> -o ABCDEF              
+<span class="ex">ABCDEF</span>                                        
+
+<span class="ex">dragon@airavath</span> ~                             
+$ <span class="bu">echo</span> <span class="st">&quot;ABC&quot;</span> <span class="kw">|</span> <span class="fu">grep</span> -o ABCDEF                 </code></pre></div>
+<p>The pattern ABCDEF is matched from the string</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"></code></pre></div>
+</body>
+</html>

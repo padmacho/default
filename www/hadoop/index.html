@@ -6,41 +6,19 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="/style.css" type="text/css" />
 </head>
 <body>
-<div id="TOC">
+<h1 id="big-data-hadoop">Big Data &amp; Hadoop</h1>
+<h2 id="about">About</h2>
+<p>Hadoop Development Training course teaches experienced / knowledge peoples on purpose of Hadoop Technology, how to setup Hadoop Cluster, how to store BigData using Hadoop (HDFS) and how to process/analyze the BigData using Map-Reduce Programming or by using other Hadoop ecosystems.</p>
+<h2 id="prerequisites">Prerequisites</h2>
 <ul>
-<li><a href="#big-data-hadoop">Big Data &amp; Hadoop</a><ul>
-<li><a href="#about">About</a></li>
-<li><a href="#hardware-and-software-requirements">Hardware and Software Requirements</a></li>
-<li><a href="#fundamentals-of-hadoop">Fundamentals of Hadoop</a><ul>
-<li><a href="#introduction-to-big-data">Introduction to Big Data</a></li>
-<li><a href="#introduction-to-hadoop">Introduction to Hadoop</a></li>
-<li><a href="#installation">Installation</a></li>
-</ul></li>
-<li><a href="#mapreduce-development">MapReduce Development</a><ul>
-<li><a href="#developing-a-mapreduce-application">Developing a MapReduce Application</a></li>
-<li><a href="#mapreduce-workflow">MapReduce Workflow</a></li>
-<li><a href="#mapreduce-typeformats-and-features">MapReduce Type,Formats and Features</a></li>
-</ul></li>
-<li><a href="#hadoop-ecosystem">Hadoop Ecosystem</a><ul>
-<li><a href="#nosql">NoSQL</a></li>
-<li><a href="#hbase">HBase</a></li>
-<li><a href="#pig">Pig</a></li>
-<li><a href="#hive">Hive</a></li>
-<li><a href="#flume">Flume</a></li>
-<li><a href="#sqoop">Sqoop</a></li>
-<li><a href="#spark">Spark</a></li>
-<li><a href="#oozie">Oozie</a></li>
-<li><a href="#zookeeper">Zookeeper</a></li>
-</ul></li>
-</ul></li>
+<li>Basic Linux Commands</li>
+<li>Core Java (OOPS Concepts, Collections , Exceptions ) — For Map-Reduce Programming</li>
+<li>SQL Query knowledge – For Hive Queries</li>
 </ul>
-</div>
-<h1 id="big-data-hadoop"><a href="#big-data-hadoop">Big Data &amp; Hadoop</a></h1>
-<h2 id="about"><a href="#about">About</a></h2>
-<p>Hadoop Development Training course teaches experienced / knowledge peoples on purpose of Hadoop Technology, how to setup Hadoop Cluster, how to store BigData using Hadoop (HDFS) and how to process/analyze the BigData using Map-Reduce Programming or by using other Hadoop ecosystems. ## Prerequisites * Basic Linux Commands * Core Java (OOPS Concepts, Collections , Exceptions ) — For Map-Reduce Programming * SQL Query knowledge – For Hive Queries</p>
-<h2 id="hardware-and-software-requirements"><a href="#hardware-and-software-requirements">Hardware and Software Requirements</a></h2>
+<h2 id="hardware-and-software-requirements">Hardware and Software Requirements</h2>
 <ul>
 <li>Virtual Box 5.1.14</li>
 <li>Host operating system can be Windows 10 /Mac/ Ubuntu 16.10 (Preferable)</li>
@@ -48,15 +26,15 @@
 <li>Eclipse IDE Neon.2 Release (4.6.2)</li>
 <li>Vagrant 1.9.2</li>
 </ul>
-<h2 id="fundamentals-of-hadoop"><a href="#fundamentals-of-hadoop">Fundamentals of Hadoop</a></h2>
-<h3 id="introduction-to-big-data"><a href="#introduction-to-big-data">Introduction to Big Data</a></h3>
+<h2 id="fundamentals-of-hadoop">Fundamentals of Hadoop</h2>
+<h3 id="introduction-to-big-data">Introduction to Big Data</h3>
 <ul>
 <li>What is Big data</li>
 <li>Big Data opportunities</li>
 <li>Big Data Challenges</li>
 <li>Characteristics of Big data</li>
 </ul>
-<h3 id="introduction-to-hadoop"><a href="#introduction-to-hadoop">Introduction to Hadoop</a></h3>
+<h3 id="introduction-to-hadoop">Introduction to Hadoop</h3>
 <ul>
 <li>High Availability</li>
 <li>Scaling</li>
@@ -66,14 +44,14 @@
 <li>YARN</li>
 <li>I/O</li>
 </ul>
-<h3 id="installation"><a href="#installation">Installation</a></h3>
+<h3 id="installation">Installation</h3>
 <ul>
 <li>Standalone Mode</li>
 <li>Pseudodistributed Mode</li>
 <li>Fully Distributed Mode (Cluster)</li>
 </ul>
-<h2 id="mapreduce-development"><a href="#mapreduce-development">MapReduce Development</a></h2>
-<h3 id="developing-a-mapreduce-application"><a href="#developing-a-mapreduce-application">Developing a MapReduce Application</a></h3>
+<h2 id="mapreduce-development">MapReduce Development</h2>
+<h3 id="developing-a-mapreduce-application">Developing a MapReduce Application</h3>
 <ul>
 <li>Configuration API</li>
 <li>Setting Up the Development Environment</li>
@@ -81,20 +59,20 @@
 <li>Running Locally and on Cluster</li>
 <li>Tuning a Job</li>
 </ul>
-<h3 id="mapreduce-workflow"><a href="#mapreduce-workflow">MapReduce Workflow</a></h3>
+<h3 id="mapreduce-workflow">MapReduce Workflow</h3>
 <ul>
 <li>Decomposing a problem</li>
 <li>JobControl</li>
 <li>Oozie</li>
 </ul>
-<h3 id="mapreduce-typeformats-and-features"><a href="#mapreduce-typeformats-and-features">MapReduce Type,Formats and Features</a></h3>
+<h3 id="mapreduce-typeformats-and-features">MapReduce Type,Formats and Features</h3>
 <ul>
 <li>Types</li>
 <li>Input Formats</li>
 <li>Output Formats</li>
 </ul>
-<h2 id="hadoop-ecosystem"><a href="#hadoop-ecosystem">Hadoop Ecosystem</a></h2>
-<h3 id="nosql"><a href="#nosql">NoSQL</a></h3>
+<h2 id="hadoop-ecosystem">Hadoop Ecosystem</h2>
+<h3 id="nosql">NoSQL</h3>
 <ul>
 <li>ACID in RDBMS and BASE in NoSQL.</li>
 <li>CAP Theorem and Types of Consistency.</li>
@@ -102,7 +80,7 @@
 <li>Columnar Databases in Detail (HBASE and CASSANDRA).</li>
 <li>TTL, Bloom Filters and Compensation.</li>
 </ul>
-<h3 id="hbase"><a href="#hbase">HBase</a></h3>
+<h3 id="hbase">HBase</h3>
 <ul>
 <li>HBase Installation</li>
 <li>HBase concepts</li>
@@ -121,7 +99,7 @@
 <li>Bulk Loading and Coprocessors (Endpoints and Observers with programs).</li>
 <li>Real world use case consisting of HDFS,MR and HBASE.</li>
 </ul>
-<h3 id="pig"><a href="#pig">Pig</a></h3>
+<h3 id="pig">Pig</h3>
 <ul>
 <li>Installation</li>
 <li>Execution Types</li>
@@ -150,7 +128,7 @@
 <li>Piggy Bank.</li>
 <li>Hands on Exercises</li>
 </ul>
-<h3 id="hive"><a href="#hive">Hive</a></h3>
+<h3 id="hive">Hive</h3>
 <ul>
 <li>Installation</li>
 <li>Introduction and Architecture.</li>
@@ -177,7 +155,7 @@
 <li>Access HBASE tables using Hive.</li>
 <li>Hands on Exercises</li>
 </ul>
-<h3 id="flume"><a href="#flume">Flume</a></h3>
+<h3 id="flume">Flume</h3>
 <ul>
 <li>Installation</li>
 <li>Introduction to Flume</li>
@@ -189,15 +167,16 @@
 <li>Flume Commands</li>
 <li>Use case of Flume: Flume the data from twitter in to HDFS and HBASE. Do some analysis using HIVE and PIG</li>
 </ul>
-<h3 id="sqoop"><a href="#sqoop">Sqoop</a></h3>
+<h3 id="sqoop">Sqoop</h3>
 <ul>
 <li>Installation</li>
-<li>Import Data.(Full table, Only Subset, Target Directory, protecting Password, file format other than CSV,Compressing,Control Parallelism, All tables Import) Incremental Import(Import only New data, Last Imported data, storing Password in Metastore, Sharing Metastore between Sqoop Clients)</li>
+<li>Import Data.(Full table, Only Subset, Target Directory, protecting Password, file format other than CSV,Compressing,Control Parallelism, All tables Import)<br />
+Incremental Import(Import only New data, Last Imported data, storing Password in Metastore, Sharing Metastore between Sqoop Clients)</li>
 <li>Free Form Query Import</li>
 <li>Export data to RDBMS,HIVE and HBASE</li>
 <li>Hands on Exercises.</li>
 </ul>
-<h3 id="spark"><a href="#spark">Spark</a></h3>
+<h3 id="spark">Spark</h3>
 <ul>
 <li>Overview</li>
 <li>Linking with Spark</li>
@@ -220,7 +199,7 @@
 <li>Deploying to a Cluster</li>
 <li>Unit Testing</li>
 </ul>
-<h3 id="oozie"><a href="#oozie">Oozie</a></h3>
+<h3 id="oozie">Oozie</h3>
 <ul>
 <li>Workflow (Action, Start, Action, End, Kill, Join and Fork), Schedulers, Coordinators and Bundles.</li>
 <li>Workflow to show how to schedule Sqoop Job, Hive, MR and PIG.</li>
@@ -230,7 +209,7 @@
 <li>Phoenix</li>
 <li>Proof of concept (POC).</li>
 </ul>
-<h3 id="zookeeper"><a href="#zookeeper">Zookeeper</a></h3>
+<h3 id="zookeeper">Zookeeper</h3>
 <ul>
 <li>Installing</li>
 <li>Running</li>

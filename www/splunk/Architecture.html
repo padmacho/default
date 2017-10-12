@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#splunk-architecture">Splunk Architecture</a></li>
+<li><a href="#terms">Terms</a></li>
+<li><a href="#architecture">Architecture</a><ul>
+<li><a href="#splunk">Splunk</a></li>
+<li><a href="#splunk-server">Splunk Server</a></li>
+</ul></li>
+<li><a href="#index">index</a></li>
+<li><a href="#events">events</a></li>
+<li><a href="#search">Search</a></li>
+<li><a href="#pivot">Pivot</a></li>
+<li><a href="#dashboard">Dashboard</a></li>
+<li><a href="#forwarder">Forwarder</a><ul>
+<li><a href="#index-1"><a href="index.html">index</a></a></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="splunk-architecture">Splunk Architecture</h1>
+<h1 id="terms">Terms</h1>
+<p>To Visualize a log file</p>
+<ul>
+<li>Ingest log</li>
+<li>Index log</li>
+<li>Visualize Data<br />
+Ingest log is feed the log files to Splunk<br />
+Index the log file on timestamp<br />
+Visualize it using charts ..etc</li>
+</ul>
+<h1 id="architecture">Architecture</h1>
+<h2 id="splunk">Splunk</h2>
+<p>It is Ingest engine of splunk</p>
+<h2 id="splunk-server">Splunk Server</h2>
+<p>Splunk web is using to Visualize the Data<br />
+Splunk cli can also be used</p>
+<h1 id="index">index</h1>
+<p>The index is the repository for Splunk Enterprise data. Splunk Enterprise transforms incoming data into <strong>events</strong>, which it stores in indexes.</p>
+<h1 id="events">events</h1>
+<p>Event is a single entity</p>
+<h1 id="search">Search</h1>
+<p>Search for the events</p>
+<h1 id="pivot">Pivot</h1>
+<p>It is a visualization it can be chart , table ..etc. The data for the Pivot comes from the search</p>
+<h1 id="dashboard">Dashboard</h1>
+<p>It is the Collection of pivots</p>
+<h1 id="forwarder">Forwarder</h1>
+<p>It is a script which transfers the data from one device to splunk server</p>
+<p>Splunk Universal Forwarder collects data from a data source or another forwarder and sends it to a forwarder or a Splunk deployment</p>
+<h3 id="index-1"><a href="index.html">index</a></h3>
+</body>
+</html>

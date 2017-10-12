@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#creating-a-local-repository">Creating a Local repository</a><ul>
+<li><a href="#add-update-files">Add update files</a></li>
+</ul></li>
+<li><a href="#history-and-diff">History and diff</a><ul>
+<li><a href="#history">History</a></li>
+<li><a href="#diff">Diff</a></li>
+<li><a href="#using-sha1">Using SHA1</a></li>
+<li><a href="#using-head">Using HEAD</a></li>
+</ul></li>
+<li><a href="#staging-changes-as-multiple-commits">Staging changes as multiple commits</a></li>
+<li><a href="#deleting-and-renaming-files">Deleting and renaming files</a><ul>
+<li><a href="#delete-a-file">Delete a file</a></li>
+<li><a href="#rename-a-file">Rename a file</a></li>
+</ul></li>
+<li><a href="#undoing-changes-to-the-working-copy">Undoing changes to the working copy</a></li>
+<li><a href="#undoingredoing-changes-in-the-repository">Undoing/redoing changes in the repository</a></li>
+<li><a href="#cleaning-the-working-copy">Cleaning the working copy</a></li>
+<li><a href="#ignoring-files-with-.gitignore">Ignoring files with .gitignore</a></li>
+</ul>
+</div>
+<h1 id="creating-a-local-repository">Creating a Local repository</h1>
+<p>Create an empty directory</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">mkdir</span> my-local-repo</code></pre></div>
+<p>Convert the local empty directory to git local repo<br />
+Change to created directory</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">~/my-local-repo</span>$ <span class="fu">git</span> init
+<span class="ex">Initialized</span> empty Git repository in /home/ubuntu/my-local-repo/.git/</code></pre></div>
+<p>The above command will create .git folder that has meta data</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">~/my-local-repo</span>$ <span class="fu">ls</span> -a
+<span class="bu">.</span>  <span class="ex">..</span>  .git</code></pre></div>
+<p>Add file named Hello.txt</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">~/my-local-repo</span>$ <span class="bu">echo</span> <span class="st">&quot;Hello Wrold!!&quot;</span> <span class="op">&gt;</span> Hello.txt
+<span class="bu">echo</span> <span class="st">&quot;Hello Wroldls&quot;</span> <span class="op">&gt;</span> Hello.txt</code></pre></div>
+<p>Git status shows the file <strong>Hello.txt</strong> is untracked and doesn't have in repository</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">~/my-local-repo</span>$ <span class="fu">git</span> status
+<span class="ex">On</span> branch master
+
+<span class="ex">Initial</span> commit
+
+<span class="ex">Untracked</span> files:
+  <span class="kw">(</span><span class="ex">use</span> <span class="st">&quot;git add &lt;file&gt;...&quot;</span> to include in what will be committed<span class="kw">)</span>
+
+        <span class="ex">Hello.txt</span>
+
+<span class="ex">nothing</span> added to commit but untracked files present (use <span class="st">&quot;git add&quot;</span> to track)</code></pre></div>
+<p>Add file to repository and see it status</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">~/my-local-repo</span>$ <span class="fu">git</span> add Hello.txt
+<span class="ex">~/my-local-repo</span>$ <span class="fu">git</span> status
+<span class="ex">On</span> branch master
+
+<span class="ex">Initial</span> commit
+
+<span class="ex">Changes</span> to be committed:
+  <span class="kw">(</span><span class="ex">use</span> <span class="st">&quot;git rm --cached &lt;file&gt;...&quot;</span> to unstage<span class="kw">)</span>
+
+        <span class="ex">new</span> file:   Hello.txt</code></pre></div>
+<p><strong>Note:</strong> Here the file is staged to repository and yet to be added. Use git commit to add to repository</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">~/my-local-repo</span>$ <span class="fu">git</span> commit
+[<span class="ex">master</span> (root-commit) <span class="ex">8020da2</span>] my initial file
+ <span class="ex">1</span> file changed, 1 insertion(+)
+ <span class="ex">create</span> mode 100644 Hello.txt</code></pre></div>
+<p>The above command opens default editor and you can provide message like &quot;my initial file&quot; for the commit</p>
+<p>You can use <strong>-m</strong> flag to add comments</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">~/my-local-repo</span>$ <span class="fu">git</span> commit Hello.txt -m <span class="st">&quot;init&quot;</span>
+[<span class="ex">master</span> 9639b79] init
+ <span class="ex">1</span> file changed, 1 insertion(+), <span class="ex">1</span> deletion(-)</code></pre></div>
+<p>You can view the commit history using command <strong>git log</strong></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">commit</span> 17e97d3c9b897b6f241b0153aa868a2b1620f01f
+<span class="ex">Author</span>: mighty.raju <span class="op">&lt;</span>mighty.raju@gmail.com<span class="op">&gt;</span>    
+<span class="ex">Date</span>:   Wed Sep 20 04:17:21 2017 +0000         
+
+    <span class="ex">update</span> messages                            
+
+<span class="ex">commit</span> 40dc9d5e5e841f677cecad71de98d6130797f74c
+<span class="ex">Author</span>: mighty.raju <span class="op">&lt;</span>mighty.raju@gmail.com<span class="op">&gt;</span>    
+<span class="ex">Date</span>:   Wed Sep 20 04:16:18 2017 +0000         
+
+    <span class="ex">Initial</span>                                    </code></pre></div>
+<h2 id="add-update-files">Add update files</h2>
+<p>Adds all the updated files</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">~/my-local-repo</span>$ <span class="fu">git</span> add -u
+<span class="ex">~/my-local-repo</span>$ <span class="fu">git</span> commit -m <span class="st">&quot;New updates&quot;</span>
+[<span class="ex">master</span> 47c0a84] New updates
+ <span class="ex">1</span> file changed, 1 insertion(+)</code></pre></div>
+<h1 id="history-and-diff">History and diff</h1>
+<h2 id="history">History</h2>
+<p>Commit history of the file or repository can be found using git log. It provides history in reversed chronological order</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">:</span>~/my-local-repo$ git log  
+<span class="ex">commit</span> 47c0a841509a930258475c5358846fd2afd9c55e
+<span class="ex">Author</span>: mighty.raju <span class="op">&lt;</span>mighty.raju@gmail.com<span class="op">&gt;</span>     
+<span class="ex">Date</span>:   Wed Sep 20 04:20:21 2017 +0000          
+
+    <span class="ex">New</span> updates                                 
+
+<span class="ex">commit</span> 17e97d3c9b897b6f241b0153aa868a2b1620f01f
+<span class="ex">Author</span>: mighty.raju <span class="op">&lt;</span>mighty.raju@gmail.com<span class="op">&gt;</span>     
+<span class="ex">Date</span>:   Wed Sep 20 04:17:21 2017 +0000          
+
+    <span class="ex">update</span> messages                             
+
+<span class="ex">commit</span> 40dc9d5e5e841f677cecad71de98d6130797f74c
+<span class="ex">Author</span>: mighty.raju <span class="op">&lt;</span>mighty.raju@gmail.com<span class="op">&gt;</span>     
+<span class="ex">Date</span>:   Wed Sep 20 04:16:18 2017 +0000          
+
+    <span class="ex">Initial</span>                                     </code></pre></div>
+<h2 id="diff">Diff</h2>
+<h2 id="using-sha1">Using SHA1</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">~/my-local-repo</span>$ <span class="fu">git</span> diff 47c0..17e97        
+<span class="fu">diff</span> --git a/Hello.txt b/Hello.txt                                 
+<span class="ex">index</span> be0aefb..add4189 100644                                      
+<span class="ex">---</span> a/Hello.txt                                                    
+<span class="ex">+++</span> b/Hello.txt                                                    
+<span class="ex">@@</span> -1,2 +1 @@                                                      
+ <span class="ex">How</span> are you                                                       
+<span class="ex">-I</span> am fine                                                         </code></pre></div>
+<h2 id="using-head">Using HEAD</h2>
+<p>The latest commit is known as Head. I can also go back from the head by using a tilde syntax, so tilde1 is one commit back from the Head so I can go from Head tilde1 to Head which provides with the same one</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">~/my-local-repo</span>$ <span class="fu">git</span> diff HEAD ... HEAD~1
+<span class="fu">diff</span> --git a/Hello.txt b/Hello.txt
+<span class="ex">index</span> 97f8c93..a29bdeb 100644
+<span class="ex">---</span> a/Hello.txt
+<span class="ex">+++</span> b/Hello.txt
+<span class="ex">@@</span> -1,2 +1 @@
+ <span class="ex">line1</span>
+<span class="ex">-Line</span> 2</code></pre></div>
+<p>The second option is optional</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">~/my-local-repo</span>$ <span class="fu">git</span> diff HEAD~1</code></pre></div>
+<h1 id="staging-changes-as-multiple-commits">Staging changes as multiple commits</h1>
+<p>Stage a file named 3.txt</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"> $ <span class="fu">git</span> add 3.txt</code></pre></div>
+<p>Stage multiple files. To stage files 4.txt 5.txt 6.txt</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">git</span> add -A</code></pre></div>
+<p>Stage only the files that are in staging area. (i.e) The files which are already in staging aread and updated in local copy</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">git</span> add -u</code></pre></div>
+<h1 id="deleting-and-renaming-files">Deleting and renaming files</h1>
+<h2 id="delete-a-file">Delete a file</h2>
+<p>Delete file 6.txt</p>
+<ul>
+<li>Delete using operating system command for example : rm</li>
+<li>Stage the file</li>
+<li>Commit to repository (Remove from repository)</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">rm</span> 6.txt
+$ <span class="fu">git</span> add -u
+$ <span class="fu">git</span> commit -m <span class="st">&quot;file 6 is removed&quot;</span></code></pre></div>
+<h2 id="rename-a-file">Rename a file</h2>
+<p>Rename file named 5.txt</p>
+<ul>
+<li>Rename using operating system command for example : mv</li>
+<li>Stage the file</li>
+<li>Commit the file to repository</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">mv</span> 5.txt 51.txt
+$ <span class="fu">git</span> add -u
+$ <span class="fu">git</span> status
+<span class="ex">On</span> branch master                                  
+<span class="ex">Changes</span> to be committed:                          
+  <span class="kw">(</span><span class="ex">use</span> <span class="st">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage<span class="kw">)</span>     
+
+        <span class="ex">renamed</span>:    5.txt -<span class="op">&gt;</span> 51.txt               
+$ <span class="fu">git</span> commit -m <span class="st">&quot;file 5 is renamed to 51&quot;</span></code></pre></div>
+<p><strong>Note:</strong> Git is intelligent to identify 5.txt file is changed</p>
+<h1 id="undoing-changes-to-the-working-copy">Undoing changes to the working copy</h1>
+<p>I made change to file 1.txt and I want to discard them. Simply chekout the file from repository</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">git</span> checkout 1.txt</code></pre></div>
+<p><strong>Note</strong>: The contents of working copy will replaced with HEAD contents</p>
+<h1 id="undoingredoing-changes-in-the-repository">Undoing/redoing changes in the repository</h1>
+<p>Reset the working copy and repository to HEAD~1</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">git</span> reset --hard HEAD~1</code></pre></div>
+<h1 id="cleaning-the-working-copy">Cleaning the working copy</h1>
+<p>Delete the unstaged files from wroking copy. For example I have file 2.txt and 3.txt that are not staged they can be easily removed</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">touch</span> 2.txt 3.txt
+$ <span class="fu">git</span> status
+<span class="ex">On</span> branch master
+<span class="ex">Untracked</span> files:
+  <span class="kw">(</span><span class="ex">use</span> <span class="st">&quot;git add &lt;file&gt;...&quot;</span> to include in what will be committed<span class="kw">)</span>
+
+        <span class="ex">2.txt</span>
+        <span class="ex">3.txt</span>
+
+<span class="ex">nothing</span> added to commit but untracked files present (use <span class="st">&quot;git add&quot;</span> to track)
+$ <span class="fu">git</span> clean -f
+<span class="ex">Removing</span> 2.txt
+<span class="ex">Removing</span> 3.txt
+$ <span class="fu">ls</span>
+<span class="ex">1.txt</span></code></pre></div>
+<h1 id="ignoring-files-with-.gitignore">Ignoring files with .gitignore</h1>
+<p>For example to ignore a folder named logs. Simply create a file .gitignore and specify the logs folder</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">mkdir</span> logs
+$ <span class="fu">touch</span> logs/log.txt
+$ <span class="fu">git</span> status
+<span class="ex">On</span> branch master
+<span class="ex">Untracked</span> files:
+  <span class="kw">(</span><span class="ex">use</span> <span class="st">&quot;git add &lt;file&gt;...&quot;</span> to include in what will be committed<span class="kw">)</span>
+
+        <span class="ex">logs/</span>
+
+<span class="ex">nothing</span> added to commit but untracked files present (use <span class="st">&quot;git add&quot;</span> to track)
+$ <span class="bu">echo</span> <span class="st">&quot;/logs&quot;</span> <span class="op">&gt;&gt;</span> .gitignore
+$ <span class="fu">git</span> status
+<span class="ex">On</span> branch master
+<span class="ex">Untracked</span> files:
+  <span class="kw">(</span><span class="ex">use</span> <span class="st">&quot;git add &lt;file&gt;...&quot;</span> to include in what will be committed<span class="kw">)</span>
+
+        <span class="ex">.gitignore</span>
+
+<span class="ex">nothing</span> added to commit but untracked files present (use <span class="st">&quot;git add&quot;</span> to track)
+$ <span class="fu">cat</span> .gitignore
+<span class="ex">/logs</span></code></pre></div>
+<p><strong>Note:</strong> The logs folder is ignored . /logs is relative to repository path not to OS path</p>
+</body>
+</html>
