@@ -59,4 +59,4 @@ Total 3 (delta 0), reused 0 (delta 0)
 To https://github.com/padmacho/git-demo.git                                    
    cb5b46c..7f84bd4  master -> master                                          
 ```
-## [Git Home](index.html)
+# [Git Home](index.html)

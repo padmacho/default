@@ -26,14 +26,12 @@
     - Pushing to a Remote
     - Creating and Verifying Tags
     - Pushing Tags to a Remote
-- Branching, Merging, and Rebasing with Git
-    - Visualizing branches
-    - Creating local branches
-    - Difference between branches and tags
-    - Renaming and deleting branches
+- [Branching-view,list,switch,rename,delete](branching.html)
+- [Merging branches](merging.md)
+- Difference between branches and tags
     - Recovering deleted commits
     - Stashing changes
-    - Merging branches
+    -
     - Rebasing changes
     - Cherry-picking changes
     - Creating a remote branch
