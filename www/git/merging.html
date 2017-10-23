@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#merging">Merging</a></li>
+<li><a href="#merge-a-local-branch">Merge a local branch</a></li>
+<li><a href="#merge-a-remote-branch">Merge a remote branch</a></li>
+<li><a href="#git-home"><a href="index.html">Git Home</a></a></li>
+</ul>
+</div>
+<h1 id="merging">Merging</h1>
+<p>Merging branches</p>
+<h1 id="merge-a-local-branch">Merge a local branch</h1>
+<p>Merge a local branch named <strong>bug-fix-1</strong> to <strong>master</strong> branch</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vagrant@git-m1</span>:~/git-demo(master)$ <span class="fu">git</span> merge bug-fix-1
+<span class="ex">Updating</span> 7f84bd4..d574154
+<span class="ex">Fast-forward</span>
+ <span class="ex">Hello.txt</span> <span class="kw">|</span> <span class="ex">2</span> ++
+ <span class="ex">1</span> file changed, 2 insertions(+)</code></pre></div>
+<h1 id="merge-a-remote-branch">Merge a remote branch</h1>
+<p>Merge changes in <strong>master</strong> branch on github to local <strong>master</strong> branch</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vagrant@git-m1</span>:~/git-demo(master)$ <span class="fu">git</span> pull origin master
+<span class="ex">remote</span>: Counting objects: 3, done.
+<span class="ex">remote</span>: Compressing objects: 100% (2/2), <span class="kw">done</span><span class="ex">.</span>
+<span class="ex">remote</span>: Total 3 (delta 0), <span class="ex">reused</span> 0 (delta 0), <span class="ex">pack-reused</span> 0
+<span class="ex">Unpacking</span> objects: 100% (3/3), <span class="kw">done</span><span class="ex">.</span>
+<span class="ex">From</span> https://github.com/padmacho/git-demo
+ <span class="ex">*</span> branch            master     -<span class="op">&gt;</span> FETCH_HEAD
+   <span class="ex">7f84bd4..9c73542</span>  master     -<span class="op">&gt;</span> origin/master
+<span class="ex">Merge</span> made by the <span class="st">&#39;recursive&#39;</span> strategy.
+ <span class="ex">README.md</span> <span class="kw">|</span> <span class="ex">3</span> ++-
+ <span class="ex">1</span> file changed, 2 insertions(+), <span class="ex">1</span> deletion(-)</code></pre></div>
+<h1 id="git-home"><a href="index.html">Git Home</a></h1>
+</body>
+</html>

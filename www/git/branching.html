@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#branching">Branching</a></li>
+<li><a href="#listing-branches">Listing Branches</a><ul>
+<li><a href="#list-the-local-branch">List the local branch</a></li>
+<li><a href="#list-the-remote-branch">List the remote branch</a></li>
+</ul></li>
+<li><a href="#creating-a-branch">Creating a Branch</a></li>
+<li><a href="#know-the-branch-on-which-you-are-working">Know the branch on which you are working</a></li>
+<li><a href="#add-and-commit-a-file-to-branch">Add and commit a file to branch</a></li>
+<li><a href="#push-a-branch-to-remote-repository">Push a branch to remote repository</a></li>
+<li><a href="#switch-branch">Switch Branch</a></li>
+<li><a href="#renaming-a-branch">Renaming a branch</a></li>
+<li><a href="#deleting-a-branch">Deleting a branch</a></li>
+<li><a href="#git-home"><a href="index.html">Git Home</a></a></li>
+</ul>
+</div>
+<h1 id="branching">Branching</h1>
+<p>A branch in Git is simply a lightweight movable pointer to one of these commits. The default branch name in Git is <strong>master</strong></p>
+<p>As you add additional commits on a branch, the branch will move along</p>
+<h1 id="listing-branches">Listing Branches</h1>
+<h2 id="list-the-local-branch">List the local branch</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vagrant@git-m1</span>:~/git-demo(master)$ <span class="fu">git</span> branch
+<span class="ex">*</span> master</code></pre></div>
+<p>The above command lists the branch and shows that we are working on master</p>
+<h2 id="list-the-remote-branch">List the remote branch</h2>
+<p>List the remote branch</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vagrant@git-m1</span>:~/git-demo(master)$ <span class="fu">git</span> branch -r
+  <span class="ex">origin/HEAD</span> -<span class="op">&gt;</span> origin/master
+  <span class="ex">origin/master</span></code></pre></div>
+<p>The above command lists remote branches and shows HEAD is pointing to remote master</p>
+<h1 id="creating-a-branch">Creating a Branch</h1>
+<p>Create a branch named bug-fix</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vagrant@git-m1</span>:~/git-demo(master)$ <span class="fu">git</span> checkout -b bug-fix
+<span class="ex">Switched</span> to a new branch <span class="st">&#39;bug-fix&#39;</span></code></pre></div>
+<p>The above command creates are new branch named <strong>bug-fix</strong> and update the working copy with new branch. Note this branch is created from <strong>master</strong></p>
+<h1 id="know-the-branch-on-which-you-are-working">Know the branch on which you are working</h1>
+<p>git status gives the branch on with you are working</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vagrant@git-m1</span>:~/git-demo(bug-fix)$ <span class="fu">git</span> status
+<span class="ex">On</span> branch bug-fix
+<span class="ex">nothing</span> to commit, working directory clean</code></pre></div>
+<h1 id="add-and-commit-a-file-to-branch">Add and commit a file to branch</h1>
+<p>Lets add a file <strong>fix.txt</strong> to the branch <strong>bug-fix</strong>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vagrant@git-m1</span>:~/git-demo(bug-fix)$ <span class="bu">echo</span> <span class="st">&quot;Hello&quot;</span> <span class="op">&gt;&gt;</span> fix.txt            
+<span class="ex">vagrant@git-m1</span>:~/git-demo(bug-fix)$ <span class="fu">git</span> add fix.txt                    
+<span class="ex">vagrant@git-m1</span>:~/git-demo(bug-fix)$ <span class="fu">git</span> commit -m <span class="st">&quot;added fix file&quot;</span>     
+[<span class="ex">bug-fix</span> a8d0a15] added fix file                                       
+ <span class="ex">create</span> mode 100644 fix.txt                                            </code></pre></div>
+<h1 id="push-a-branch-to-remote-repository">Push a branch to remote repository</h1>
+<p>Push the local branch <strong>bug-fix</strong> remote repository <strong>git-demo</strong> which is present on the git hub server</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vagrant@git-m1</span>:~/git-demo(bug-fix)$  <span class="fu">git</span> push --set-upstream origin bug-fix
+<span class="ex">Username</span> for <span class="st">&#39;https://github.com&#39;</span>: padmacho
+<span class="ex">Password</span> for <span class="st">&#39;https://padmacho@github.com&#39;</span>:
+<span class="ex">Counting</span> objects: 2, done.
+<span class="ex">Compressing</span> objects: 100% (2/2), <span class="kw">done</span><span class="ex">.</span>
+<span class="ex">Writing</span> objects: 100% (2/2), <span class="ex">266</span> bytes <span class="kw">|</span> <span class="ex">0</span> bytes/s, done.
+<span class="ex">Total</span> 2 (delta 0), <span class="ex">reused</span> 0 (delta 0)
+<span class="ex">To</span> https://github.com/padmacho/git-demo.git
+ <span class="ex">*</span> [new branch]      bug-fix -<span class="op">&gt;</span> bug-fix
+<span class="ex">Branch</span> bug-fix set up to track remote branch bug-fix from origin.</code></pre></div>
+<p><strong>origin</strong> points to remote repository . <strong>--set-upstream</strong> helps to push to remote branch</p>
+<h1 id="switch-branch">Switch Branch</h1>
+<p>Switch to branch <strong>bug-fix-1</strong></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vagrant@git-m1</span>:~/git-demo(enhancement-1)$ <span class="fu">git</span> checkout bug-fix-1
+<span class="ex">Switched</span> to branch <span class="st">&#39;bug-fix-1&#39;</span></code></pre></div>
+<p>The above command will switch to branch <strong>bug-fix-1</strong> from the current working branch <strong>enhancement-1</strong></p>
+<h1 id="renaming-a-branch">Renaming a branch</h1>
+<p>Rename branch <strong>bug-fix</strong> to <strong>bug1</strong></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vagrant@git-m1</span>:~/git-demo(bug-fix)$ <span class="fu">git</span> branch -m bug-fix bug1
+<span class="ex">vagrant@git-m1</span>:~/git-demo(bug1)$</code></pre></div>
+<h1 id="deleting-a-branch">Deleting a branch</h1>
+<p>Delete the branch <strong>bug1</strong></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vagrant@git-m1</span>:~/git-demo(master)$ <span class="fu">git</span> branch -d bug1
+<span class="ex">warning</span>: deleting branch <span class="st">&#39;bug1&#39;</span> that has been merged to
+         <span class="st">&#39;refs/remotes/origin/bug-fix&#39;</span>, <span class="ex">but</span> not yet merged to HEAD.
+<span class="ex">Deleted</span> branch bug1 (was a8d0a15)<span class="ex">.</span></code></pre></div>
+<p><strong>Note</strong>: Git complains that you are deleting a branch that was not merged,You cannot delete a branch on which you are currently working on.</p>
+<p><strong>-D</strong> to do a force delete</p>
+<h1 id="git-home"><a href="index.html">Git Home</a></h1>
+</body>
+</html>
