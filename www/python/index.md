@@ -2,29 +2,35 @@
 Python is a general-purpose programming language that is becoming more and more popular for doing data science. Companies worldwide are using Python to harvest insights from their data and get a competitive edge. This course will serve you well as a solid foundation for really mastering Python.
 # Course contents
 - [Introduction](Introduction.html)
+    - Why should we learn python?
+    - What is so great about Python?
+    - What are the areas python is used?
     - A Brief History
-    - Areas python is used
 - Getting Starting With Python 3
     - Installation
         - [Windows](InstallWindows.html)
-        - Linux
+        - [Linux](InstallLinux.html)
         - macOS X
     - [The Read-Eval-Print-Loop (REPL)](REPL.html)
-    - Significant Whitespace in Python
-    - Importing From the Python Standard Library
-    - Scalar Types
+    - [Expressions](Expression.html)
+        - Operators
+    - [Code indentation](CodeIndentation.html)
+    - [Importing Modules](import.html)
+    - [Primitive Scalar Types](Primitive-Scalar-Types.html)
         -  int
         -  float
         -  None
-        - bool
-    - Relational Operators
-    - Conditional Statements
-    - While Loops
+        -  bool
+    - [Relational Operators](Relational-Operators.html)
+    - [Conditional Statements](Conditional-Statements.html)
+    - [While Loops](While-Loops.html)
     - Summary
     - Exercises
+- [help](help.html)
 - Strings and Collections
     - Introduction
-    - Strings
+    - [Strings](Strings.html)
+    - [Strings in-depth](Strings-in-depth.html)
     - Bytes
     - Lists
     - Dictionaries
@@ -56,7 +62,6 @@ Python is a general-purpose programming language that is becoming more and more 
 - Collections in-depth
     - Introduction
     - Tuple
-    - String
     - Range
     - List
     - Shallow Copies
@@ -158,7 +163,7 @@ Python is a general-purpose programming language that is becoming more and more 
     - Summary
     - Exercises
 
-# Time Table - Python for Data Scientists
+# Learning Path - Python for Data Scientists
 Session| Topics Covered | Hours
 --- | --- |---
 1|Introduction and Getting Starting With Python 3| 3
@@ -171,9 +176,7 @@ Session| Topics Covered | Hours
 8|Algorithm Selection, Training model and testing |3
 **Total Hours** ||24
 
-
-# Time Table - Python for Web application developers
-
+# Learning Path - Python for Web application developers
 Session| Topics Covered | Hours
 --- | --- |---
 1|Introduction and Getting Starting With Python 3| 3

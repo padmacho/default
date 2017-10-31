@@ -48,18 +48,18 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <body>
 <div id="TOC">
 <ul>
-<li><a href="#str-string">str (String)</a><ul>
+<li><a href="#str-string">str (String)</a></li>
 <li><a href="#adjacent-literal-strings">Adjacent literal strings</a></li>
+<li><a href="#concatenation">Concatenation</a></li>
+<li><a href="#repetition">Repetition</a></li>
 <li><a href="#multiline-strings">Multiline strings</a></li>
 <li><a href="#escape-sequences">Escape sequences \</a></li>
 <li><a href="#raw-strings">Raw Strings</a></li>
 <li><a href="#convert-other-types-to-string">Convert other types to string</a></li>
 <li><a href="#sequence-types">Sequence types</a></li>
-</ul></li>
 <li><a href="#methods-of-string-object">Methods of String object</a></li>
-<li><a href="#utf-8-characters">UTF-8 characters</a><ul>
-<li><a href="#index"><a href="index.html">index</a></a></li>
-</ul></li>
+<li><a href="#utf-8-characters">UTF-8 characters</a></li>
+<li><a href="#python-home"><a href="index.html">Python Home</a></a></li>
 </ul>
 </div>
 <h1 id="str-string">str (String)</h1>
@@ -67,12 +67,19 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <p><strong>Default source encoding for python is UTF-8</strong></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">s<span class="op">=</span><span class="st">&#39;This is a string&#39;</span>
 s<span class="op">=</span><span class="st">&quot;This is also a string&quot;</span></code></pre></div>
-<h2 id="adjacent-literal-strings">Adjacent literal strings</h2>
+<h1 id="adjacent-literal-strings">Adjacent literal strings</h1>
 <p>These concatenated by the Python compiler into a single string</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;Hello&quot;</span>  <span class="st">&quot;World!&quot;</span>
 <span class="co">&#39;HelloWorld!&#39;</span>
 <span class="op">&gt;&gt;&gt;</span></code></pre></div>
-<h2 id="multiline-strings">Multiline strings</h2>
+<h1 id="concatenation">Concatenation</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;Hello&quot;</span> <span class="op">+</span> <span class="st">&quot;World&quot;</span>
+<span class="co">&#39;HelloWorld&#39;</span></code></pre></div>
+<h1 id="repetition">Repetition</h1>
+<p>Repeats the word for five</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;Hello&quot;</span> <span class="op">*</span> <span class="dv">5</span>
+<span class="co">&#39;HelloHelloHelloHelloHello&#39;</span></code></pre></div>
+<h1 id="multiline-strings">Multiline strings</h1>
 <p>Multiline strings are delimited by three quote characters rather than one</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;&quot;&quot;This is</span>
 <span class="st">... a multi line</span>
@@ -82,21 +89,35 @@ s<span class="op">=</span><span class="st">&quot;This is also a string&quot;</sp
 <span class="op">&gt;&gt;&gt;</span> m
 <span class="co">&#39;This is \na multi line\nstring&#39;</span></code></pre></div>
 <p>If you're working on Windows, you might be thinking that new lines should be represented by the carriage return at new line couplet \r\n. There's no need to do that with Python since Python 3 has a feature called universal newlines support, which translates from the simple \n to the native newline sequence for your platform on input and output. You can read more about universal newlines support in PEP278.</p>
-<h2 id="escape-sequences">Escape sequences \</h2>
+<h1 id="escape-sequences">Escape sequences \</h1>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;Hello </span><span class="ch">\&quot;</span><span class="st">world!</span><span class="ch">\&quot;</span><span class="st"> &quot;</span>
 <span class="co">&#39;Hello &quot;world!&quot; &#39;</span>
 <span class="op">&gt;&gt;&gt;</span> message<span class="op">=</span><span class="st">&quot;Hello </span><span class="ch">\\</span><span class="st"> world &quot;</span>
 <span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(message)
-Hello <span class="op">\</span> world</code></pre></div>
-<h2 id="raw-strings">Raw Strings</h2>
-<p>particularly when dealing with strings such as Windows file system paths or regular expression patterns, which use backslashes extensively, the requirement to double up on backslashes can be ugly and error prone. Python comes to the rescue with its raw strings. Raw strings don't support any escapes sequences and are very much what you see is what you get.</p>
-<p>To create a raw string, prefix the opening quote with a lowercase <strong>r</strong><br />
-<code>python &gt;&gt;&gt; path=r&quot;c:\users\mario\docs&quot; &gt;&gt;&gt; path 'c:\\users\\mario\\docs'</code></p>
-<h2 id="convert-other-types-to-string">Convert other types to string</h2>
-<p><code>python  &gt;&gt;&gt; str(143) # integer to string '143' &gt;&gt;&gt; str(1.5) # float to string '1.5'</code></p>
-<h2 id="sequence-types">Sequence types</h2>
-<p>We can access individual characters using square brackets with an integer zero-based index.<br />
-<code>python &gt;&gt;&gt; s=&quot;mario&quot; &gt;&gt;&gt; s[0] 'm' &gt;&gt;&gt; print(s[2]) r &gt;&gt;&gt; type(s[2]) &lt;class 'str'&gt;</code></p>
+Hello <span class="op">\\</span> world</code></pre></div>
+<h1 id="raw-strings">Raw Strings</h1>
+<p>Raw strings don't support any escapes sequences and are very much what you see is what you get.</p>
+<p>To create a raw string, prefix the opening quote with a lowercase <strong>r</strong></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> path<span class="op">=</span><span class="vs">r&quot;c:\users\mario\docs&quot;</span>
+<span class="op">&gt;&gt;&gt;</span> path
+<span class="co">&#39;c:\\users\\mario\\docs&#39;</span></code></pre></div>
+<h1 id="convert-other-types-to-string">Convert other types to string</h1>
+<p>Convert integer , float to String</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">str</span>(<span class="dv">1</span>)   
+<span class="co">&#39;1&#39;</span>          
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">str</span>(<span class="fl">1.2</span>)
+<span class="co">&#39;1.2&#39;</span>        
+<span class="op">&gt;&gt;&gt;</span>          </code></pre></div>
+<h1 id="sequence-types">Sequence types</h1>
+<p>We can access individual characters using square brackets with an integer zero-based index.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> s<span class="op">=</span><span class="st">&quot;mario&quot;</span>
+<span class="op">&gt;&gt;&gt;</span> s[<span class="dv">0</span>]
+<span class="co">&#39;m&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(s[<span class="dv">2</span>])
+r
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(s[<span class="dv">2</span>])
+<span class="op">&lt;</span><span class="kw">class</span> <span class="st">&#39;str&#39;</span><span class="op">&gt;</span></code></pre></div>
+<p>Note: No separate char type called <strong>characters</strong> all are simpy <strong>one element strings</strong></p>
 <h1 id="methods-of-string-object">Methods of String object</h1>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> c<span class="op">=</span><span class="st">&quot;delhi&quot;</span>     
 <span class="op">&gt;&gt;&gt;</span> c.capitalize() <span class="co"># strings are immutable</span>
@@ -110,6 +131,6 @@ Hello <span class="op">\</span> world</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> message<span class="op">=</span><span class="st">&quot;పైథాన్ కు స్వాగతం&quot;</span>
 <span class="op">&gt;&gt;&gt;</span> message
 <span class="co">&#39;పైథాన్ కు స్వాగతం&#39;</span></code></pre></div>
-<h3 id="index"><a href="index.html">index</a></h3>
+<h1 id="python-home"><a href="index.html">Python Home</a></h1>
 </body>
 </html>

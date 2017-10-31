@@ -1,0 +1,6 @@
+Load bearing properties of Lithia based glass ceramics for minimally invasive restorations
+
+Powerful ways to store and manipulate data. Data science tools for your own analysis
+
+Easy to build packages in python and distribute.
+BMi = weight/height **2

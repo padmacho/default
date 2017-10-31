@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#primitive-scalar-types">Primitive Scalar Types</a></li>
+<li><a href="#int">int</a><ul>
+<li><a href="#convert-other-types-to-integer">Convert other types to integer</a></li>
+</ul></li>
+<li><a href="#float">float</a><ul>
+<li><a href="#convert-other-types-to-float">Convert other types to float</a></li>
+</ul></li>
+<li><a href="#nonetype">NoneType</a></li>
+<li><a href="#bool">bool</a><ul>
+<li><a href="#convert-other-types-to-bool">Convert other types to bool</a></li>
+</ul></li>
+<li><a href="#bytes-used-by-data-types">Bytes used by data types</a></li>
+<li><a href="#python-home"><a href="index.html">Python Home</a></a></li>
+</ul>
+</div>
+<h1 id="primitive-scalar-types">Primitive Scalar Types</h1>
+<p>Python comes with a number of built-in data types. These include primitive scalar types, like <strong>int</strong>,<strong>float</strong>,<strong>bool</strong> and <strong>None</strong> as well as collection types, like <strong>dictionaries</strong>.</p>
+<h1 id="int">int</h1>
+<p>Integer literals in python can be specified in decimal, binary, octal and hexadecimal</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># decimal</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="dv">10</span>                      
+<span class="dv">10</span>       
+<span class="co"># binary                   </span>
+<span class="op">&gt;&gt;&gt;</span> 0b10                    
+<span class="dv">2</span>                           
+<span class="co"># octal</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bn">0o10</span>                    
+<span class="dv">8</span>      
+<span class="co"># hexadecimal                     </span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bn">0x10</span>                    
+<span class="dv">16</span>                          </code></pre></div>
+<h2 id="convert-other-types-to-integer">Convert other types to integer</h2>
+<p><strong>int</strong> constructor can be used to convert other data types like string, float to int</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Convert float to integer</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">int</span>(<span class="fl">2.5</span>)
+<span class="dv">2</span>
+<span class="co"># Convert String to integer</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">int</span>(<span class="st">&quot;143&quot;</span>)
+<span class="dv">143</span></code></pre></div>
+<h1 id="float">float</h1>
+<p>Python floats are implemented as IEE-754 double precision floating-point numbers with 53 bits of binary precision. This is equivalent to between 15 and 16 significant digits in decimal.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> pi<span class="op">=</span><span class="fl">3.1415926535</span>            
+<span class="op">&gt;&gt;&gt;</span> pi                         
+<span class="fl">3.1415926535</span>
+<span class="co"># Scientific notation can also be used for large numbers</span>
+<span class="op">&gt;&gt;&gt;</span> speed_of_light<span class="op">=</span><span class="fl">3e8</span>         
+<span class="op">&gt;&gt;&gt;</span> speed_of_light             
+<span class="fl">300000000.0</span>                    
+<span class="co"># Smaller numbers</span>
+<span class="op">&gt;&gt;&gt;</span> planck_constant<span class="op">=</span><span class="fl">6.62e-34</span>   
+<span class="op">&gt;&gt;&gt;</span> planck_constant            
+<span class="fl">6.62e-34</span>                       
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(planck_constant)      
+<span class="op">&lt;</span><span class="kw">class</span> <span class="st">&#39;float&#39;</span><span class="op">&gt;</span>                </code></pre></div>
+<h2 id="convert-other-types-to-float">Convert other types to float</h2>
+<p><strong>float</strong> constructor can be used to convert other data types like string, integer to float</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">float</span>(<span class="dv">4</span>)
+<span class="fl">4.0</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">float</span>(<span class="st">&quot;4.5&quot;</span>)
+<span class="fl">4.5</span>
+<span class="co"># construct not a number</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">float</span>(<span class="st">&quot;nan&quot;</span>)
+nan
+<span class="co"># positive infinity</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">float</span>(<span class="st">&quot;inf&quot;</span>)
+inf
+<span class="co"># Negative infinity</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">float</span>(<span class="st">&quot;-inf&quot;</span>)
+<span class="op">-</span>inf
+<span class="co"># int and float operation is promoted to float</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="fl">4.3</span><span class="op">+</span><span class="dv">1</span>
+<span class="fl">5.3</span></code></pre></div>
+<h1 id="nonetype">NoneType</h1>
+<p>Python has a special null value called None it represent the absence of a value</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># None value is not printed to REPL</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="va">None</span>
+<span class="op">&gt;&gt;&gt;</span> x<span class="op">=</span><span class="va">None</span>
+<span class="op">&gt;&gt;&gt;</span> x <span class="kw">is</span> <span class="va">None</span>
+<span class="va">True</span></code></pre></div>
+<h1 id="bool">bool</h1>
+<p>The bool type represents logical states .There are two bool values, True and False, both with initial capitals.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="va">True</span>        
+<span class="va">True</span>            
+<span class="op">&gt;&gt;&gt;</span> <span class="va">False</span>       
+<span class="va">False</span>           
+<span class="op">&gt;&gt;&gt;</span> x <span class="op">=</span> <span class="va">True</span>    
+<span class="op">&gt;&gt;&gt;</span> x           
+<span class="va">True</span>            
+<span class="op">&gt;&gt;&gt;</span>     </code></pre></div>
+<h2 id="convert-other-types-to-bool">Convert other types to bool</h2>
+<p>bool constructor can be used to convert other types to boolean</p>
+<ul>
+<li>0 is considered as False rest all are True</li>
+<li>empty collection is False rest all are True</li>
+<li><p>empty string is false rest all are True</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">bool</span>(<span class="dv">0</span>)           
+<span class="va">False</span>                 
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">bool</span>(<span class="fl">0.0</span>)         
+<span class="va">False</span>                 
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">bool</span>(<span class="dv">1</span>)           
+<span class="va">True</span>                  
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">bool</span>(<span class="fl">1.2</span>)         
+<span class="va">True</span>                  
+<span class="co"># Empty lists are always false</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">bool</span>([])          
+<span class="va">False</span>                 
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">bool</span>([<span class="dv">1</span>,<span class="dv">2</span>])       
+<span class="va">True</span>                  
+<span class="co"># Empty string is false</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">bool</span>(<span class="st">&quot;&quot;</span>)          
+<span class="va">False</span>                 
+<span class="co"># Note below is not empty string</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">bool</span>(<span class="st">&quot; &quot;</span>)         
+<span class="va">True</span>                  
+<span class="co"># Note false is not empty string</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">bool</span>(<span class="st">&quot;False&quot;</span>)     
+<span class="va">True</span>                  </code></pre></div></li>
+</ul>
+<h1 id="bytes-used-by-data-types">Bytes used by data types</h1>
+<p>Memory size of Python primitive data types depends largely on the Operating System architecture. Below size computed on my Windows 10 OS</p>
+<table>
+<thead>
+<tr class="header">
+<th>Data Type</th>
+<th>Bytes</th>
+<th>Examples</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>int</td>
+<td>14 bytes</td>
+<td>102</td>
+<td>arbitrary precision integer</td>
+</tr>
+<tr class="even">
+<td>float</td>
+<td>16 bytes</td>
+<td>4.2</td>
+<td>64-bit !oating point numbers</td>
+</tr>
+<tr class="odd">
+<td>NoneType</td>
+<td>8 bytes</td>
+<td>None</td>
+<td>the null object</td>
+</tr>
+<tr class="even">
+<td>bool</td>
+<td>14 bytes</td>
+<td>Ture or False</td>
+<td>boolean logical values</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys
+<span class="op">&gt;&gt;&gt;</span> sys.getsizeof(<span class="dv">2</span>)
+<span class="dv">14</span>
+<span class="op">&gt;&gt;&gt;</span> sys.getsizeof(<span class="fl">2.0</span>)
+<span class="dv">16</span>
+<span class="op">&gt;&gt;&gt;</span> sys.getsizeof(<span class="va">True</span>)
+<span class="dv">14</span>
+<span class="op">&gt;&gt;&gt;</span> sys.getsizeof(<span class="va">None</span>)
+<span class="dv">8</span></code></pre></div>
+<h1 id="python-home"><a href="index.html">Python Home</a></h1>
+</body>
+</html>

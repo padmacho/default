@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#string-in-depth">String in-depth</a></li>
+<li><a href="#universal-newlines-support">Universal newlines support</a></li>
+<li><a href="#length-of-a-string">Length of a String</a></li>
+<li><a href="#concatenation-using">Concatenation using +</a></li>
+<li><a href="#concatenation-using-join">Concatenation using join</a></li>
+<li><a href="#split-strings">Split Strings</a></li>
+<li><a href="#partition">Partition</a></li>
+<li><a href="#replacement-using-format-function">Replacement using format function</a></li>
+<li><a href="#python-home"><a href="index.html">Python Home</a></a></li>
+</ul>
+</div>
+<h1 id="string-in-depth">String in-depth</h1>
+<p>Lets try to learn some useful function in the str class</p>
+<h1 id="universal-newlines-support">Universal newlines support</h1>
+<p>In windows new lines should be represented by the carriage return at new line couplet \r\n. In linux it is simply \n</p>
+<table>
+<thead>
+<tr class="header">
+<th>Operating System</th>
+<th>New line character</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Windows</td>
+<td>\r\n</td>
+</tr>
+<tr class="even">
+<td>Linux</td>
+<td>\n</td>
+</tr>
+</tbody>
+</table>
+<p>In python new line character is <strong>\n</strong></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> msg<span class="op">=</span><span class="st">&quot;Hello</span><span class="ch">\n</span><span class="st">World&quot;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(msg)
+Hello
+World</code></pre></div>
+<h1 id="length-of-a-string">Length of a String</h1>
+<p>We can use python built in function <strong>len()</strong> to find Length of a String</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">len</span>(<span class="st">&quot;HelloHowAreyou&quot;</span>)
+<span class="dv">14</span></code></pre></div>
+<h1 id="concatenation-using">Concatenation using +</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;Hello&quot;</span> <span class="op">+</span> <span class="st">&quot;World&quot;</span> <span class="op">+</span> <span class="st">&quot;Python&quot;</span>
+<span class="co">&#39;HelloWorldPython&#39;</span></code></pre></div>
+<h1 id="concatenation-using-join">Concatenation using join</h1>
+<p>Join is a method on str which takes a collection of strings as an argument and produces a new string by inserting a separator between each of them.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;,&quot;</span>.join([<span class="st">&quot;Hello&quot;</span>,<span class="st">&quot;World&quot;</span>,<span class="st">&quot;Python&quot;</span>])
+<span class="co">&#39;Hello,World,Python&#39;</span></code></pre></div>
+<p>Join using empty</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;&quot;</span>.join([<span class="st">&quot;Hello&quot;</span>,<span class="st">&quot;World&quot;</span>,<span class="st">&quot;Python&quot;</span>])
+<span class="co">&#39;HelloWorldPython&#39;</span></code></pre></div>
+<h1 id="split-strings">Split Strings</h1>
+<p>Strings can be splitted using split function</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;Hello,World,Python&quot;</span>.split(<span class="st">&quot;,&quot;</span>)
+[<span class="st">&#39;Hello&#39;</span>, <span class="st">&#39;World&#39;</span>, <span class="st">&#39;Python&#39;</span>]</code></pre></div>
+<h1 id="partition">Partition</h1>
+<p>It divides a string into three sections, the part before the separator, the separator itself, and the part after the separator.<br />
+The partition() method divides a string into three around a separator: prefix, separator, suffix</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> source,seperator,destination<span class="op">=</span><span class="st">&quot;LondonToNewyork&quot;</span>.partition(<span class="st">&quot;To&quot;</span>)   
+<span class="op">&gt;&gt;&gt;</span> source                                                           
+<span class="co">&#39;London&#39;</span>                                                             
+<span class="op">&gt;&gt;&gt;</span> seperator                                                        
+<span class="co">&#39;To&#39;</span>                                                                 
+<span class="op">&gt;&gt;&gt;</span> destination                                                      
+<span class="co">&#39;Newyork&#39;</span>                                      </code></pre></div>
+<p>Using underscore</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> source,_,destination<span class="op">=</span><span class="st">&quot;LondonToNewyork&quot;</span>.partition(<span class="st">&quot;To&quot;</span>)               
+<span class="op">&gt;&gt;&gt;</span> source                                                               
+<span class="co">&#39;London&#39;</span>                                                                 
+<span class="op">&gt;&gt;&gt;</span> destination                                                          
+<span class="co">&#39;Newyork&#39;</span>                                                                
+<span class="op">&gt;&gt;&gt;</span> _                                                                    
+<span class="co">&#39;To&#39;</span>                                                                     </code></pre></div>
+<p>Note: **_** underscore variable is for unused or dummy values</p>
+<h1 id="replacement-using-format-function">Replacement using format function</h1>
+<p>Token Replacement in python can be done using format function</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;The age of </span><span class="sc">{0}</span><span class="st"> is </span><span class="sc">{1}</span><span class="st"> years&quot;</span>.<span class="bu">format</span>(<span class="st">&quot;sun&quot;</span>,<span class="fl">4.6e9</span>)
+<span class="co">&#39;The age of sun is 4600000000.0 years&#39;</span></code></pre></div>
+<p>You can repeat the index</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;The age of </span><span class="sc">{0}</span><span class="st"> is </span><span class="sc">{1}</span><span class="st"> years.</span><span class="sc">{0}</span><span class="st"> is very old&quot;</span>.<span class="bu">format</span>(<span class="st">&quot;sun&quot;</span>,<span class="fl">4.6e9</span>)
+<span class="co">&#39;The age of sun is 4600000000.0 years.sun is very old&#39;</span></code></pre></div>
+<p>Keyword arguments</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;The age of </span><span class="sc">{name}</span><span class="st"> is </span><span class="sc">{age}</span><span class="st"> years&quot;</span>.<span class="bu">format</span>(name<span class="op">=</span><span class="st">&quot;sun&quot;</span>,age<span class="op">=</span><span class="fl">4.6e9</span>)
+<span class="co">&#39;The age of sun is 4600000000.0 years&#39;</span></code></pre></div>
+<p>You can pass tuple or list</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;The age of </span><span class="sc">{position[0]}</span><span class="st"> is </span><span class="sc">{position[1]}</span><span class="st"> years&quot;</span>.<span class="bu">format</span>(position<span class="op">=</span>[<span class="st">&quot;sun&quot;</span>,<span class="fl">4.6e9</span>])
+<span class="co">&#39;The age of sun is 4600000000.0 years&#39;</span></code></pre></div>
+<p>Pass object</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> math
+<span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;Math constants pi=</span><span class="sc">{m.pi}</span><span class="st">, Euler&#39;s number e=</span><span class="sc">{m.e}</span><span class="st">&quot;</span>.<span class="bu">format</span>(m<span class="op">=</span>math)
+<span class="co">&quot;Math constants pi=3.141592653589793, Euler&#39;s number e=2.718281828459045&quot;</span></code></pre></div>
+<h1 id="python-home"><a href="index.html">Python Home</a></h1>
+</body>
+</html>

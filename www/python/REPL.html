@@ -6,6 +6,43 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+  </style>
   <link rel="stylesheet" href="/style.css" type="text/css" />
 </head>
 <body>
@@ -16,7 +53,8 @@
 <li><a href="#windows">Windows</a></li>
 <li><a href="#linux">Linux</a></li>
 </ul></li>
-<li><a href="#do-simple-addition">Do simple addition</a></li>
+<li><a href="#performe-simple-opreation">Performe simple opreation</a></li>
+<li><a href="#undrerscore-in-repel">Undrerscore in REPEL</a></li>
 <li><a href="#stop-repl">Stop REPL</a><ul>
 <li><a href="#windows-1">Windows</a></li>
 <li><a href="#linux-1">Linux</a></li>
@@ -33,15 +71,46 @@ In REPL what ever we type in python will read, evaluate it , print the result an
 <p>Go to windows power shell or command prompt and type <strong>python</strong><br />
 <img src="cmd-prompt-python.png" alt="Command Prompt" /></p>
 <h2 id="linux">Linux</h2>
-<h1 id="do-simple-addition">Do simple addition</h1>
+<p>In the bash shell type <strong>python3</strong> to start repel</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Python</span> 3.5.2                                                                
+<span class="ex">vagrant@python-m1</span>:~$ python3                                                
+<span class="ex">Python</span> 3.5.2 (default, Nov 17 2016, 17:05:23)                               
+[<span class="ex">GCC</span> 5.4.0 20160609] on linux                                               
+<span class="ex">Type</span> <span class="st">&quot;help&quot;</span>, <span class="st">&quot;copyright&quot;</span>, <span class="st">&quot;credits&quot;</span> or <span class="st">&quot;license&quot;</span> for more information.      
+<span class="op">&gt;&gt;&gt;</span>                                                                     </code></pre></div>
+<h1 id="performe-simple-opreation">Performe simple opreation</h1>
 <p>Type in the expression 1+2 and it is evalulated and result is printed.<br />
 <img src="repel-simple-add.png" alt="Simple Addition" /></p>
+<h1 id="undrerscore-in-repel">Undrerscore in REPEL</h1>
+<p>Within the REPL, you can use the special underscore variable to refer to the most recently printed value.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vagrant@python-m1</span>:~$ python3                                                        
+<span class="ex">Python</span> 3.5.2 (default, Nov 17 2016, 17:05:23)                                       
+[<span class="ex">GCC</span> 5.4.0 20160609] on linux                                                       
+<span class="ex">Type</span> <span class="st">&quot;help&quot;</span>, <span class="st">&quot;copyright&quot;</span>, <span class="st">&quot;credits&quot;</span> or <span class="st">&quot;license&quot;</span> for more information.              
+<span class="op">&gt;&gt;&gt;</span> <span class="va">x=</span>2                                                                             
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">x</span>                                                                               
+<span class="ex">2</span>                                                                                   
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">_</span> * 3                                                                           
+<span class="ex">6</span>                                                                                   
+<span class="op">&gt;&gt;&gt;</span>                                                                                 </code></pre></div>
+<p>Notice **_** contains previously printed value <strong>2</strong></p>
+<p><strong>Note:</strong> The underscore doesn't have any special behavior in Python scripts or program</p>
 <h1 id="stop-repl">Stop REPL</h1>
-<p>Stopping REPL</p>
+<p>Sending <strong>End of file</strong> control character will exit the REPEL. Unfortunately, the means of sending this character varies across platforms</p>
 <h2 id="windows-1">Windows</h2>
 <p>Ctrl+Z and Enter<br />
 <img src="python-repel-stop-windows.png" alt="Stop REPL" /></p>
 <h2 id="linux-1">Linux</h2>
+<p>Ctrl+D will exit the REPL environment</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vagrant@python-m1</span>:~$ python3                                            
+<span class="ex">Python</span> 3.5.2 (default, Nov 17 2016, 17:05:23)                           
+[<span class="ex">GCC</span> 5.4.0 20160609] on linux                                           
+<span class="ex">Type</span> <span class="st">&quot;help&quot;</span>, <span class="st">&quot;copyright&quot;</span>, <span class="st">&quot;credits&quot;</span> or <span class="st">&quot;license&quot;</span> for more information.  
+<span class="op">&gt;&gt;&gt;</span> <span class="ex">1+2</span>                                                                 
+<span class="ex">3</span>                                                                       
+<span class="op">&gt;&gt;&gt;</span>                                                                     
+<span class="ex">vagrant@python-m1</span>:~$                                                    
+                                                                        </code></pre></div>
 <h1 id="python-home"><a href="index.html">Python Home</a></h1>
 </body>
 </html>

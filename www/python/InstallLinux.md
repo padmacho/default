@@ -11,5 +11,4 @@ Python 2.7.12
 vagrant@python-m1:~$ python3 --version
 Python 3.5.2
 ```
-
 #[Python Home](index.html)
