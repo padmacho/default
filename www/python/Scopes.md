@@ -1,5 +1,5 @@
 # Variable scope and lifetime
-Not all variables are accessible from all parts of our program, and not all variables exist for the same amount of time. Where a variable is accessible and how long it exists depend on how it is defined. We call the part of a program where a variable is accessible its scope, and the duration for which the variable exists its **lifetime**.
+Not all variables are accessible from all parts of our program, and not all variables exist for the same amount of time. Where a variable is accessible and how long it exists depend on how it is defined. We call the part of a program where a variable is accessible its **scope**, and the duration for which the variable exists its **lifetime**.
 
 # Scopes
 There are four main type scopes in python.
@@ -11,9 +11,8 @@ There are four main type scopes in python.
 **Note** : It's important to note that scopes in Python do not correspond to the source code blocks as demarcated by indentation. For-loops, with-blocks, and the like do not introduce new nested scopes.
 
 
-## Local
+# Local
 Those names defined inside the current function.
-### Example 1
 ```python
 def fun():
     i = 10  # local scope
@@ -28,7 +27,6 @@ i= 10
 NameError: name 'i' is not defined
 
 ```
-### Example 2
 Blocks will not create a new scope
 ```python
 def fun():
@@ -43,9 +41,9 @@ i= 10
 
 ```
 
-## Enclosing
+# Enclosing
 Those names defined inside any and all enclosing functions
-### Example 1
+
 ```python
 def outer():
     i = 10
@@ -60,7 +58,7 @@ outer()
 inner i= 10
 Outer i= 10
 ```
-### Example 2
+
 ```python
 def outer():
     i = 10
@@ -76,7 +74,7 @@ outer()
 inner i= 30
 Outer i= 10
 ```
-### Example 3
+
 ```python
 def outer():
     i = 10
@@ -93,7 +91,7 @@ outer()
 inner i= 30
 Outer i= 30
 ```
-### Example 4
+
 ```python
 def outer():
     def inner():
@@ -107,11 +105,11 @@ outer()
 print("Outer i=", i) # this leads to error because variable in in inner function cannot be accessed out side
 NameError: name 'i' is not defined
 ```
-## Global
+# Global
 Those names defined at the top level of a module. Each module brings with it a new global scope.
 A variable which is defined in the main body of a file is called a global variable. It will be visible throughout the file, and also inside any file which imports that file. Global variables can have unintended consequences because of their wide-ranging effects – that is why we should almost **never use them**.
 
-### Example 1
+
 ```python
 i = 10  # global scope
 def fun1():
@@ -125,7 +123,7 @@ fun2()
 fun1 i= 10
 fun2 i= 10
 ```
-### Example 2
+
 ```python
 i = 10  # global scope
 def fun1():
@@ -142,7 +140,7 @@ fun1 i= 10
 fun2 i= 20
 fun1 i= 10
 ```
-### Example 3
+
 ```python
 i = 10  # global scope
 def fun1():
@@ -248,4 +246,4 @@ NameError: name 'c' is not defined
 
 ```
 
-### [index](index.html)
+# [Python Home](index.html)

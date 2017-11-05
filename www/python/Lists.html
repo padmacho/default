@@ -49,26 +49,122 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <div id="TOC">
 <ul>
 <li><a href="#lists">Lists</a></li>
-<li><a href="#methods-on-lists">Methods on lists</a></li>
-<li><a href="#constructor-of-lists">Constructor of lists</a><ul>
-<li><a href="#index"><a href="index.html">index</a></a></li>
+<li><a href="#create-list">Create list</a><ul>
+<li><a href="#list-function">list function</a></li>
+<li><a href="#create-list-from-strings">Create list from Strings</a></li>
 </ul></li>
+<li><a href="#getting-values-with-index">Getting values with Index</a></li>
+<li><a href="#slicing-lists">Slicing lists</a></li>
+<li><a href="#methods-on-lists">Methods on lists</a><ul>
+<li><a href="#append">append</a></li>
+<li><a href="#remove">remove</a></li>
+</ul></li>
+<li><a href="#length-of-a-list">length of a list</a></li>
+<li><a href="#python-home"><a href="index.html">Python Home</a></a></li>
 </ul>
 </div>
 <h1 id="lists">Lists</h1>
-<p>Lists are mutable in so far as the elements within them can be replaced or removed, and new elements can be inserted or appended. Lists are delimited by square brackets, and the items within the list separated by commas.</p>
-<p>Elements are zero based index</p>
+<p>A list is a value that contains multiple values in an ordered sequence. Lists are <strong>mutable</strong> in so far as the elements within them can be replaced or removed, and new elements can be inserted or appended. Lists are delimited by square brackets, and the items within the list separated by commas.</p>
+<p>Elements are <strong>zero</strong> based index</p>
+<table>
+<thead>
+<tr class="header">
+<th>List</th>
+<th>P</th>
+<th>Y</th>
+<th>T</th>
+<th>H</th>
+<th>O</th>
+<th>N</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Index</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>Negative Index</td>
+<td>-6</td>
+<td>-5</td>
+<td>-4</td>
+<td>-3</td>
+<td>-2</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+<h1 id="create-list">Create list</h1>
+<p>List with string elements</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> [<span class="st">&quot;P&quot;</span>,<span class="st">&quot;Y&quot;</span>,<span class="st">&quot;T&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;O&quot;</span>,<span class="st">&quot;N&quot;</span>]
+[<span class="st">&#39;P&#39;</span>, <span class="st">&#39;Y&#39;</span>, <span class="st">&#39;T&#39;</span>, <span class="st">&#39;H&#39;</span>, <span class="st">&#39;O&#39;</span>, <span class="st">&#39;N&#39;</span>]</code></pre></div>
+<p>Integer List</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>] <span class="co"># integer list</span>
-[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]
-<span class="op">&gt;&gt;&gt;</span> [<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;orange&quot;</span>,<span class="st">&quot;banana&quot;</span>] <span class="co"># String list</span>
-[<span class="st">&#39;apple&#39;</span>, <span class="st">&#39;orange&#39;</span>, <span class="st">&#39;banana&#39;</span>]
-<span class="op">&gt;&gt;&gt;</span> x<span class="op">=</span>[<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;orange&quot;</span>,<span class="st">&quot;banana&quot;</span>]
-<span class="op">&gt;&gt;&gt;</span> x[<span class="dv">1</span>]
-<span class="co">&#39;orange&#39;</span>
-<span class="op">&gt;&gt;&gt;</span> x[<span class="dv">1</span>]<span class="op">=</span><span class="dv">9</span> <span class="co"># lists are mutable</span>
-<span class="op">&gt;&gt;&gt;</span> x
-[<span class="st">&#39;apple&#39;</span>, <span class="dv">9</span>, <span class="st">&#39;banana&#39;</span>] <span class="co"># lists are homogenous</span></code></pre></div>
+[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</code></pre></div>
+<p>String list</p>
+<pre class="pyhon"><code>&gt;&gt;&gt; [&quot;apple&quot;,&quot;orange&quot;,&quot;banana&quot;] # String list
+[&#39;apple&#39;, &#39;orange&#39;, &#39;banana&#39;]</code></pre>
+<p>List can have elements with multiple data types</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> [<span class="st">&quot;Apple&quot;</span>,<span class="dv">1</span>,<span class="fl">23.5</span>,<span class="va">True</span>]
+[<span class="st">&#39;Apple&#39;</span>, <span class="dv">1</span>, <span class="fl">23.5</span>, <span class="va">True</span>]</code></pre></div>
+<p>List can have sub list with in them</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> co_ordinates<span class="op">=</span>[[<span class="dv">1</span>,<span class="dv">10</span>],[<span class="dv">2</span>,<span class="dv">11</span>]]
+<span class="op">&gt;&gt;&gt;</span> co_ordinates
+[[<span class="dv">1</span>, <span class="dv">10</span>], [<span class="dv">2</span>, <span class="dv">11</span>]]</code></pre></div>
+<p>Note: <strong>[1,10]</strong> and <strong>[2,11]</strong> are sub list</p>
+<h2 id="list-function">list function</h2>
+<p>list() function can be used to create a list</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> l<span class="op">=</span><span class="bu">list</span>()
+<span class="op">&gt;&gt;&gt;</span> l.append(<span class="dv">1</span>)
+<span class="op">&gt;&gt;&gt;</span> l.append(<span class="dv">2</span>)
+<span class="op">&gt;&gt;&gt;</span> l
+[<span class="dv">1</span>, <span class="dv">2</span>]
+<span class="op">&gt;&gt;&gt;</span> l.append([<span class="dv">3</span>,<span class="dv">4</span>]) <span class="co"># Notice element is added as list object not int  </span>
+<span class="op">&gt;&gt;&gt;</span> l                
+[<span class="dv">1</span>, <span class="dv">2</span>, [<span class="dv">3</span>, <span class="dv">4</span>]]       
+<span class="op">&gt;&gt;&gt;</span> l.extend([<span class="dv">5</span>,<span class="dv">6</span>])<span class="co"># each element got added as a separate element towards the end of the list.  </span>
+<span class="op">&gt;&gt;&gt;</span> l                
+[<span class="dv">1</span>, <span class="dv">2</span>, [<span class="dv">3</span>, <span class="dv">4</span>], <span class="dv">5</span>, <span class="dv">6</span>]
+<span class="op">&gt;&gt;&gt;</span> l.insert(<span class="dv">0</span>,<span class="dv">0</span>) <span class="co"># Insert element at particular index</span>
+<span class="op">&gt;&gt;&gt;</span> l
+[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, [<span class="dv">3</span>, <span class="dv">4</span>], <span class="dv">5</span>, <span class="dv">6</span>]                  </code></pre></div>
+<h2 id="create-list-from-strings">Create list from Strings</h2>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">list</span>(<span class="st">&quot;Welcome to Python&quot;</span>)
+[<span class="st">&#39;W&#39;</span>, <span class="st">&#39;e&#39;</span>, <span class="st">&#39;l&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;o&#39;</span>, <span class="st">&#39;m&#39;</span>, <span class="st">&#39;e&#39;</span>, <span class="st">&#39; &#39;</span>, <span class="st">&#39;t&#39;</span>, <span class="st">&#39;o&#39;</span>, <span class="st">&#39; &#39;</span>, <span class="st">&#39;P&#39;</span>, <span class="st">&#39;y&#39;</span>, <span class="st">&#39;t&#39;</span>, <span class="st">&#39;h&#39;</span>, <span class="st">&#39;o&#39;</span>, <span class="st">&#39;n&#39;</span>]</code></pre></div>
+<h1 id="getting-values-with-index">Getting values with Index</h1>
+<p>Elements in the list can be retrieved by using Index</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> l<span class="op">=</span>[<span class="st">&quot;P&quot;</span>,<span class="st">&quot;Y&quot;</span>,<span class="st">&quot;T&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;O&quot;</span>,<span class="st">&quot;N&quot;</span>]
+<span class="op">&gt;&gt;&gt;</span> l[<span class="dv">0</span>] <span class="co"># Get first element</span>
+<span class="co">&#39;P&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> l[<span class="dv">5</span>] <span class="co"># Get last element</span>
+<span class="co">&#39;N&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> l[<span class="op">-</span><span class="dv">1</span>] <span class="co"># Get last element with index as -1</span>
+<span class="co">&#39;N&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> l[<span class="op">-</span><span class="dv">6</span>] <span class="co"># Get first element using negative index</span>
+<span class="co">&#39;P&#39;</span></code></pre></div>
+<h1 id="slicing-lists">Slicing lists</h1>
+<p>Get sub list from a given list .<br />
+General Syntax</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">l[startIndex,endIndex]</code></pre></div>
+<p>Note: <strong>endIndex</strong> element will not be retrieved</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> l<span class="op">=</span>[<span class="st">&quot;P&quot;</span>,<span class="st">&quot;Y&quot;</span>,<span class="st">&quot;T&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;O&quot;</span>,<span class="st">&quot;N&quot;</span>]
+<span class="op">&gt;&gt;&gt;</span> l[<span class="dv">0</span>:<span class="dv">1</span>] <span class="co"># Get element from index 0 till index 1. Note element with endIndex is ignored</span>
+[<span class="st">&#39;P&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> l[:] <span class="co"># Get all the elements</span>
+[<span class="st">&#39;P&#39;</span>, <span class="st">&#39;Y&#39;</span>, <span class="st">&#39;T&#39;</span>, <span class="st">&#39;H&#39;</span>, <span class="st">&#39;O&#39;</span>, <span class="st">&#39;N&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> l[<span class="dv">1</span>:] <span class="co"># Get elements from index 1 to till end</span>
+[<span class="st">&#39;Y&#39;</span>, <span class="st">&#39;T&#39;</span>, <span class="st">&#39;H&#39;</span>, <span class="st">&#39;O&#39;</span>, <span class="st">&#39;N&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> l[:<span class="dv">6</span>] <span class="co"># Get elements from starting to index 6</span>
+[<span class="st">&#39;P&#39;</span>, <span class="st">&#39;Y&#39;</span>, <span class="st">&#39;T&#39;</span>, <span class="st">&#39;H&#39;</span>, <span class="st">&#39;O&#39;</span>, <span class="st">&#39;N&#39;</span>]</code></pre></div>
 <h1 id="methods-on-lists">Methods on lists</h1>
+<p>Most commonly used methods on the lists</p>
+<h2 id="append">append</h2>
+<p>Appends elements to the list</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> x<span class="op">=</span>[]            
 <span class="op">&gt;&gt;&gt;</span> x.append(<span class="dv">1</span>)     
 <span class="op">&gt;&gt;&gt;</span> x               
@@ -77,10 +173,32 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <span class="op">&gt;&gt;&gt;</span> x               
 [<span class="dv">1</span>, <span class="st">&#39;two&#39;</span>]          
 <span class="op">&gt;&gt;&gt;</span>                 </code></pre></div>
-<h1 id="constructor-of-lists">Constructor of lists</h1>
-<p>It can be used to create lists from other collections such as strings</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">list</span>(<span class="st">&quot;Welcome to Python&quot;</span>)
-[<span class="st">&#39;W&#39;</span>, <span class="st">&#39;e&#39;</span>, <span class="st">&#39;l&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;o&#39;</span>, <span class="st">&#39;m&#39;</span>, <span class="st">&#39;e&#39;</span>, <span class="st">&#39; &#39;</span>, <span class="st">&#39;t&#39;</span>, <span class="st">&#39;o&#39;</span>, <span class="st">&#39; &#39;</span>, <span class="st">&#39;P&#39;</span>, <span class="st">&#39;y&#39;</span>, <span class="st">&#39;t&#39;</span>, <span class="st">&#39;h&#39;</span>, <span class="st">&#39;o&#39;</span>, <span class="st">&#39;n&#39;</span>]</code></pre></div>
-<h3 id="index"><a href="index.html">index</a></h3>
+<h2 id="remove">remove</h2>
+<p>Removes element from the list</p>
+<ul>
+<li>remove() method removes only the first occurrence of element in list</li>
+<li>del operator removes element with specific index in the list<br />
+Remove first occurrence of element in the list</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> l<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">1</span>]
+<span class="op">&gt;&gt;&gt;</span> l.remove(<span class="dv">1</span>)
+<span class="op">&gt;&gt;&gt;</span> l
+[<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">1</span>]</code></pre></div>
+<p>Remove element at specific index</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> l<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">1</span>]
+<span class="op">&gt;&gt;&gt;</span> <span class="kw">del</span> l[<span class="dv">4</span>]
+<span class="op">&gt;&gt;&gt;</span> l
+[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</code></pre></div>
+<h1 id="length-of-a-list">length of a list</h1>
+<ul>
+<li>len() function can be used to find number of elements in the list.</li>
+<li>__len__() method in the list class gives the length</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> l<span class="op">=</span>[<span class="st">&quot;P&quot;</span>,<span class="st">&quot;Y&quot;</span>,<span class="st">&quot;T&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;O&quot;</span>,<span class="st">&quot;N&quot;</span>]
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">len</span>(l)
+<span class="dv">6</span>
+<span class="op">&gt;&gt;&gt;</span> l.<span class="fu">__len__</span>() <span class="co"># call the method</span>
+<span class="dv">6</span></code></pre></div>
+<h1 id="python-home"><a href="index.html">Python Home</a></h1>
 </body>
 </html>

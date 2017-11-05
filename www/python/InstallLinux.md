@@ -11,4 +11,22 @@ Python 2.7.12
 vagrant@python-m1:~$ python3 --version
 Python 3.5.2
 ```
-#[Python Home](index.html)
+# Install from source code
+Python can be installed from source
+- Download source code
+- Unzip the zipped archive
+- Configure the build with the install location, where to find any libraries it needs, etc.
+- Compile the source code
+- Test the python
+- Install the python
+```bash
+$ wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0a2.tgz
+$ tar -zxvf Python-3.7.0a2.tgz
+$ cd Python-3.7.0a2
+$ ./configure
+$ make
+$ make test
+$ make install
+```
+
+# [Python Home](index.html#InstallLinux)

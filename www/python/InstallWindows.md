@@ -1,5 +1,7 @@
 # Installation on Windows 10
 For Windows, you need to visit the official Python website at python.org and then, navigate via the Downloads tab to the Downloads for Windows and click the button to begin downloading the latest Python 3 version
+# Video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Nu5IlIqrnsk?rel=0" frameborder="0" allowfullscreen></iframe>
 # Download the executable installer
 https://www.python.org/downloads/release/python-363/
 

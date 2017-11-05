@@ -48,37 +48,22 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <body>
 <div id="TOC">
 <ul>
-<li><a href="#installation-on-linux">Installation on Linux</a></li>
-<li><a href="#know-python-version">Know python version</a></li>
-<li><a href="#install-from-source-code">Install from source code</a></li>
-<li><a href="#python-home"><a href="index.html#InstallLinux">Python Home</a></a></li>
+<li><a href="#frequently-asked-questions">Frequently asked Questions</a><ul>
+<li><a href="#how-to-find-ubuntu-version">How to find Ubuntu version</a></li>
+</ul></li>
+<li><a href="#home"><a href="../index.html">Home</a></a></li>
 </ul>
 </div>
-<h1 id="installation-on-linux">Installation on Linux</h1>
-<p>Recent versions of Ubuntu Linux include Python 3 out of the box, so no installation is required.By default both Python 2 and Python 3 are already installed on Linux</p>
-<h1 id="know-python-version">Know python version</h1>
-<p>In Linux <strong>python</strong> is for Python2.x version and <strong>python3</strong> is for Python3.x version</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vagrant@python-m1</span>:~$ python --version
-<span class="ex">Python</span> 2.7.12</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vagrant@python-m1</span>:~$ python3 --version
-<span class="ex">Python</span> 3.5.2</code></pre></div>
-<h1 id="install-from-source-code">Install from source code</h1>
-<p>Python can be installed from source</p>
-<ul>
-<li>Download source code</li>
-<li>Unzip the zipped archive</li>
-<li>Configure the build with the install location, where to find any libraries it needs, etc.</li>
-<li>Compile the source code</li>
-<li>Test the python</li>
-<li><p>Install the python</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">wget</span> https://www.python.org/ftp/python/3.7.0/Python-3.7.0a2.tgz
-$ <span class="fu">tar</span> -zxvf Python-3.7.0a2.tgz
-$ <span class="bu">cd</span> Python-3.7.0a2
-$ <span class="ex">./configure</span>
-$ <span class="fu">make</span>
-$ <span class="fu">make</span> test
-$ <span class="fu">make</span> install</code></pre></div></li>
-</ul>
-<h1 id="python-home"><a href="index.html#InstallLinux">Python Home</a></h1>
+<h1 id="frequently-asked-questions">Frequently asked Questions</h1>
+<p>Frequently asked linux questions</p>
+<h2 id="how-to-find-ubuntu-version">How to find Ubuntu version</h2>
+<p><strong>lsb_release -a</strong> can be used to find Ubuntu version</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vagrant@python-m1</span>:~$ lsb_release -a
+<span class="ex">No</span> LSB modules are available.
+<span class="ex">Distributor</span> ID: Ubuntu
+<span class="ex">Description</span>:    Ubuntu 16.04.1 LTS
+<span class="ex">Release</span>:        16.04
+<span class="ex">Codename</span>:       xenial</code></pre></div>
+<h1 id="home"><a href="../index.html">Home</a></h1>
 </body>
 </html>

@@ -9,10 +9,16 @@ Python is a general-purpose programming language that is becoming more and more 
     - Hello Python
     - Python Interface (REPL)
     - Basic calculations
-    - Scalar or Primitive Data types
+    - Primitive Data types
     - Variables and types
-    - Guess the type
-    - Type conversion
+    - Relational Operators
+    - Conditional-Statements
     - Scope
     - Help System
-# [Python Home](index.html)
+    - Collections and Strings
+- Python in Webapplication
+    - REST  Services
+- Python in Data science
+    - Numpy
+
+# [Python Home](index.html#DemoSession)

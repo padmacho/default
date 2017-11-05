@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#rest">REST</a></li>
+<li><a href="#flask">Flask</a></li>
+<li><a href="#install-flask">Install Flask</a></li>
+<li><a href="#hello-world-rest-service">Hello World REST Service</a></li>
+<li><a href="#execute-the-service">Execute the service</a></li>
+<li><a href="#test-the-service-using-curl-or-web-browser">Test the service using CURL or Web browser</a></li>
+<li><a href="#python-home"><a href="index.html">Python Home</a></a></li>
+</ul>
+</div>
+<h1 id="rest">REST</h1>
+<p>REST (REpresentational State Transfer) has emerged as the standard architectural design for web services and web APIs.</p>
+<h1 id="flask">Flask</h1>
+<p>Flask is a simple, yet very powerful Python web framework.</p>
+<h1 id="install-flask">Install Flask</h1>
+<p>Standard python distribution doesn't contain flask. Install flask using <strong>pip</strong></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">PS</span> D:<span class="dt">\&gt;</span> pip install flask
+<span class="ex">Collecting</span> flask
+  <span class="ex">Downloading</span> Flask-0.12.2-py2.py3-none-any.whl (83kB)
+    <span class="ex">100%</span> <span class="kw">|</span>████████████████████████████████<span class="kw">|</span> <span class="ex">92kB</span> 166kB/s</code></pre></div>
+<h1 id="hello-world-rest-service">Hello World REST Service</h1>
+<p>The below service returns &quot;Hello World&quot; Text when user access it.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">from</span> flask <span class="im">import</span> Flask
+
+app <span class="op">=</span> Flask(<span class="va">__name__</span>)
+
+<span class="at">@app.route</span>(<span class="st">&#39;/&#39;</span>)
+<span class="kw">def</span> index():
+    <span class="cf">return</span> <span class="st">&quot;Hello, World!&quot;</span>
+
+<span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:
+    app.run(debug<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<h1 id="execute-the-service">Execute the service</h1>
+<p>The script gets executed and embedded webserver bound to port 5000</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">$ python rest_api_demo.py
+ <span class="op">*</span> Restarting <span class="cf">with</span> stat
+ <span class="op">*</span> Debugger <span class="kw">is</span> active<span class="op">!</span>
+ <span class="op">*</span> Debugger PIN: <span class="dv">415</span><span class="op">-</span><span class="dv">348</span><span class="op">-</span><span class="dv">367</span>
+ <span class="op">*</span> Running on http:<span class="op">//</span><span class="fl">127.0</span>.<span class="fl">0.1</span>:<span class="dv">5000</span><span class="op">/</span> (Press CTRL<span class="op">+</span>C to quit)
+<span class="fl">127.0</span>.<span class="fl">0.1</span> <span class="op">-</span> <span class="op">-</span> [<span class="dv">02</span><span class="op">/</span>Nov<span class="op">/</span><span class="dv">2017</span> <span class="dv">09</span>:<span class="dv">37</span>:<span class="dv">27</span>] <span class="st">&quot;GET / HTTP/1.1&quot;</span> <span class="dv">200</span> <span class="op">-</span></code></pre></div>
+<h1 id="test-the-service-using-curl-or-web-browser">Test the service using CURL or Web browser</h1>
+<p>curl - cURL is a command line tool to browse web pages or consume http services</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">dragon@airavath</span>:/$ curl  http://localhost:5000/
+<span class="ex">Hello</span>, World!</code></pre></div>
+<p>Using Chrome browser<br />
+<img src="rest-api-screenshot.png" alt="Rest API" /></p>
+<h1 id="python-home"><a href="index.html">Python Home</a></h1>
+</body>
+</html>

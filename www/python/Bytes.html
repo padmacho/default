@@ -49,20 +49,24 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <div id="TOC">
 <ul>
 <li><a href="#bytes">Bytes</a></li>
-<li><a href="#note">Note</a><ul>
-<li><a href="#index"><a href="index.html">index</a></a></li>
-</ul></li>
+<li><a href="#create-a-byte-object">Create a byte object</a></li>
+<li><a href="#byte-function">byte function</a></li>
+<li><a href="#note">Note</a></li>
+<li><a href="#python-home"><a href="index.html">Python Home</a></a></li>
 </ul>
 </div>
 <h1 id="bytes">Bytes</h1>
-<p>Bytes are very similar to strings except that rather than being sequences of Unicode codepoints, they are sequences of well, <strong>bytes</strong>. As such, they are used for raw binary data and fixed with single byte character encodings such as ASCII.</p>
+<p>Bytes in python are sequence of single <strong>byte</strong>. They are used for raw binary data and fixed with single byte character encodings such as ASCII.</p>
+<h1 id="create-a-byte-object">Create a byte object</h1>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> x<span class="op">=</span>b<span class="st">&#39;some bytes&#39;</span>
 <span class="op">&gt;&gt;&gt;</span> x
 b<span class="st">&#39;some bytes&#39;</span>
 <span class="op">&gt;&gt;&gt;</span> x.split()
 [b<span class="st">&#39;some&#39;</span>, b<span class="st">&#39;bytes&#39;</span>]</code></pre></div>
+<h1 id="byte-function">byte function</h1>
+<p><code>pyton  &gt;&gt;&gt; x = bytes('Hello Python', 'utf8')  &gt;&gt;&gt; print(x)  b'Hello Python'</code></p>
 <h1 id="note">Note</h1>
 <p>It's crucial to understand since files and network resources such as HTTP responses are transmitted as byte streams whereas we prefer to work with the convenience of Unicode strings</p>
-<h3 id="index"><a href="index.html">index</a></h3>
+<h1 id="python-home"><a href="index.html">Python Home</a></h1>
 </body>
 </html>

@@ -12,7 +12,7 @@ Python is a general-purpose programming language that is becoming more and more 
         - [Linux](InstallLinux.html)
         - macOS X
     - [The Read-Eval-Print-Loop (REPL)](REPL.html)
-    - [Expressions](Expression.html)
+    - [Expressions](Expressions.html)
         - Operators
     - [Code indentation](CodeIndentation.html)
     - [Importing Modules](import.html)
@@ -21,6 +21,7 @@ Python is a general-purpose programming language that is becoming more and more 
         -  float
         -  None
         -  bool
+    - [Scopes](Scopes.html)
     - [Relational Operators](Relational-Operators.html)
     - [Conditional Statements](Conditional-Statements.html)
     - [While Loops](While-Loops.html)
@@ -31,8 +32,8 @@ Python is a general-purpose programming language that is becoming more and more 
     - Introduction
     - [Strings](Strings.html)
     - [Strings in-depth](Strings-in-depth.html)
-    - Bytes
-    - Lists
+    - [Bytes](Bytes.html)
+    - [Lists](Lists.html)
     - Dictionaries
     - For-Loops
     - Summary
@@ -152,7 +153,7 @@ Python is a general-purpose programming language that is becoming more and more 
     - Summary
     - Exercises
 - Frame Works
-    - REST API with Flask
+    - [REST API with Flask](REST-API-with-Flask.html)
     - Web application with Django
     - Summary
     - Exercises
@@ -162,7 +163,8 @@ Python is a general-purpose programming language that is becoming more and more 
     - Static Code Analysis
     - Summary
     - Exercises
-
+- Tools
+    - [pip](pip.html)
 # Learning Path - Python for Data Scientists
 Session| Topics Covered | Hours
 --- | --- |---

@@ -10,3 +10,4 @@
 ## Interview Questions
 - [Java Script & Angular JS](js/faq.html)
 - [Git](git/faq.html)
+- [Linux](linux/faq.html)
