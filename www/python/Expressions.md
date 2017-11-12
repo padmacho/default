@@ -5,6 +5,9 @@ reduce) down to a single value
 >>> 4+4
 8
 ```
+# Video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xE3f4Zl-D6U?rel=0" frameborder="0" allowfullscreen></iframe>
+
 # Operators
 Operator | Operation | Example | Result | Remarks
 ---|---|---|---|---
@@ -36,4 +39,4 @@ You can use parentheses to override the usual precedence
 SyntaxError: invalid syntax
 ```
 You can always test to see whether an instruction works by typing it into the interactive shell. Don’t worry about breaking the computer: The worst thing that could happen is that Python responds with an error message. Professional software developers get error messages while writing code all the time.:)
-# [Python Home] (index.html)
+# [Python Home](index.html#Expressions)

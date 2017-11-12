@@ -1,5 +1,7 @@
 # Installation on Linux
 Recent versions of Ubuntu Linux include Python 3 out of the box, so no installation is required.By default both Python 2 and Python 3 are already installed on Linux
+# Video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5NTwyqq2TpI?rel=0" frameborder="0" allowfullscreen></iframe>
 
 # Know python version
 In Linux **python** is for Python2.x version and **python3** is for Python3.x version
@@ -28,5 +30,11 @@ $ make
 $ make test
 $ make install
 ```
+Note: If you are not having admin access , run install command with sudo
+
+```bash
+$ sudo make install
+```
+
 
 # [Python Home](index.html#InstallLinux)

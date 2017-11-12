@@ -1,6 +1,8 @@
 # REPL (Read-Eval-Print-Loop)
 It is an interactive development ene. It is a useful tool for experimentation and quick-testing.
 In REPL what ever we type in python will read, evaluate it , print the result and loop back to the beginning
+# Video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mcCjEPXyKnw?rel=0" frameborder="0" allowfullscreen></iframe>
 # Start REPL
 Starting REPL
 ## Windows
@@ -54,6 +56,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 3                                                                       
 >>>                                                                     
 vagrant@python-m1:~$                                                    
-                                                                        
+
 ```
-# [Python Home](index.html)
+# [Python Home](index.html#REPL)

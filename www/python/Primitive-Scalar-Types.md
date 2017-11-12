@@ -1,6 +1,7 @@
 # Primitive Scalar Types
 Python comes with a number of built-in data types. These include primitive scalar types, like **int**,**float**,**bool** and **None** as well as collection types, like **dictionaries**.
-
+# Video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mwZ4dwssATE?rel=0" frameborder="0" allowfullscreen></iframe>
 # int
 Integer literals in python can be specified in decimal, binary, octal and hexadecimal
 ```python
@@ -135,4 +136,4 @@ bool| 14 bytes | Ture or False| boolean logical values
 >>> sys.getsizeof(None)
 8
 ```
-# [Python Home](index.html)
+# [Python Home](index.html#Primitive-Scalar-Types)

@@ -1,5 +1,8 @@
 # While loops
 Python has two types of loops, for loops and while loops. While loops in Python are introduced by the **while** keyword, which is followed by a Boolean expression. As with a condition for if statements, the expression is implicitly converted to a Boolean value as if it had been passed to the bool constructor. The while statement is terminated by a colon because it introduces a new block.
+# Video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BrG9RUvMj7s?rel=0" frameborder="0" allowfullscreen></iframe>
+
 ```python
 while expr:
     print("loop while expr is True")
@@ -56,4 +59,4 @@ Break the loop when i is 2
 3                 
 2
 ```               
-# [Python Home](index.html)
+# [Python Home](index.html#While-Loops)

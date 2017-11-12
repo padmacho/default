@@ -49,10 +49,13 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <div id="TOC">
 <ul>
 <li><a href="#conditional-statements">Conditional statements</a></li>
+<li><a href="#video">Video</a></li>
 <li><a href="#if">if</a></li>
 <li><a href="#if-and-else">if and else</a></li>
 <li><a href="#elif-elseif">elif (else/if)</a></li>
-<li><a href="#python-home"><a href="index.html#Conditional-Statements.html">Python Home</a></a></li>
+<li><a href="#effect-of-bool">effect of bool</a></li>
+<li><a href="#conditional-expression">Conditional expression</a></li>
+<li><a href="#python-home"><a href="index.html#Conditional-Statements">Python Home</a></a></li>
 </ul>
 </div>
 <h1 id="conditional-statements">Conditional statements</h1>
@@ -60,6 +63,8 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> expr:
   <span class="bu">print</span>(<span class="st">&quot;Exp is True&quot;</span>)</code></pre></div>
 <p>expr is converted to bool as if by the bool() Constructor</p>
+<h1 id="video">Video</h1>
+<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/B_sw2hCdgOY?rel=0?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
 <h1 id="if">if</h1>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">if</span> <span class="va">True</span>:                        
 ...     <span class="bu">print</span>(<span class="st">&quot;It is true!&quot;</span>)        
@@ -105,6 +110,36 @@ i may be <span class="dv">10</span>                                </code></pre>
 ...     <span class="bu">print</span>(<span class="st">&quot;i may be 10&quot;</span>)   
 ...                            
 i may be <span class="dv">10</span></code></pre></div>
-<h1 id="python-home"><a href="index.html#Conditional-Statements.html">Python Home</a></h1>
+<h1 id="effect-of-bool">effect of bool</h1>
+<p>The <strong>expression</strong> need not to be boolean python explicity converts the expression to boolean</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> expr:
+  <span class="bu">print</span>(<span class="st">&quot;Exp is True&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> <span class="bu">bool</span>(expr):
+  <span class="bu">print</span>(<span class="st">&quot;Exp is True&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">if</span> <span class="va">True</span>:                                 
+...     <span class="bu">print</span>(<span class="st">&quot;I am true&quot;</span>)                   
+...                                          
+I am true                                    
+<span class="op">&gt;&gt;&gt;</span> <span class="cf">if</span> <span class="st">&quot;1&quot;</span>:                                  
+...     <span class="bu">print</span>(<span class="st">&quot;I am also true&quot;</span>)              
+...                                          
+I am also true                               
+<span class="op">&gt;&gt;&gt;</span> <span class="cf">if</span> <span class="st">&quot;&quot;</span>:                                   
+...     <span class="bu">print</span>(<span class="st">&quot;I am not true&quot;</span>)               
+...                                          
+<span class="op">&gt;&gt;&gt;</span> <span class="cf">if</span> <span class="st">&quot;False&quot;</span>:                              
+...     <span class="bu">print</span>(<span class="st">&quot;This is not an empty String&quot;</span>)
+...                                          
+This <span class="kw">is</span> <span class="kw">not</span> an empty String                  
+<span class="op">&gt;&gt;&gt;</span>                                          </code></pre></div>
+<h1 id="conditional-expression">Conditional expression</h1>
+<p>It is similar to ternary operator <strong>?</strong> in other languages</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">a <span class="cf">if</span> expression <span class="cf">else</span> b</code></pre></div>
+<p>if <strong>expression</strong> is true a is returned else b is returned</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> <span class="dv">10</span>                   
+<span class="op">&gt;&gt;&gt;</span> b <span class="op">=</span> <span class="dv">11</span>                   
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(a <span class="cf">if</span> a <span class="op">&gt;</span> b <span class="cf">else</span> b)
+<span class="dv">11</span>                           </code></pre></div>
+<h1 id="python-home"><a href="index.html#Conditional-Statements">Python Home</a></h1>
 </body>
 </html>

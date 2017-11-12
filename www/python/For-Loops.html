@@ -48,43 +48,39 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <body>
 <div id="TOC">
 <ul>
-<li><a href="#installation-on-linux">Installation on Linux</a></li>
+<li><a href="#for-loop">for-loop</a></li>
+<li><a href="#syntax">Syntax</a></li>
 <li><a href="#video">Video</a></li>
-<li><a href="#know-python-version">Know python version</a></li>
-<li><a href="#install-from-source-code">Install from source code</a></li>
-<li><a href="#python-home"><a href="index.html#InstallLinux">Python Home</a></a></li>
+<li><a href="#iterate-through-list">Iterate through list</a></li>
+<li><a href="#iterate-through-dictionary">Iterate through dictionary</a></li>
+<li><a href="#python-home"><a href="index.html#For-Loops">Python Home</a></a></li>
 </ul>
 </div>
-<h1 id="installation-on-linux">Installation on Linux</h1>
-<p>Recent versions of Ubuntu Linux include Python 3 out of the box, so no installation is required.By default both Python 2 and Python 3 are already installed on Linux</p>
+<h1 id="for-loop">for-loop</h1>
+<p>Visit each item in an iterable series<br />
+For-loops in Python correspond to what are called for-each loops in many other programming languages</p>
+<h1 id="syntax">Syntax</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">for</span> item <span class="kw">in</span> iterable:
+    ...body...</code></pre></div>
 <h1 id="video">Video</h1>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5NTwyqq2TpI?rel=0" frameborder="0" allowfullscreen>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/A0guWpiXdqU?rel=0" frameborder="0" allowfullscreen>
 </iframe>
-<h1 id="know-python-version">Know python version</h1>
-<p>In Linux <strong>python</strong> is for Python2.x version and <strong>python3</strong> is for Python3.x version</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vagrant@python-m1</span>:~$ python --version
-<span class="ex">Python</span> 2.7.12</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">vagrant@python-m1</span>:~$ python3 --version
-<span class="ex">Python</span> 3.5.2</code></pre></div>
-<h1 id="install-from-source-code">Install from source code</h1>
-<p>Python can be installed from source</p>
-<ul>
-<li>Download source code</li>
-<li>Unzip the zipped archive</li>
-<li>Configure the build with the install location, where to find any libraries it needs, etc.</li>
-<li>Compile the source code</li>
-<li>Test the python</li>
-<li><p>Install the python</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">wget</span> https://www.python.org/ftp/python/3.7.0/Python-3.7.0a2.tgz
-$ <span class="fu">tar</span> -zxvf Python-3.7.0a2.tgz
-$ <span class="bu">cd</span> Python-3.7.0a2
-$ <span class="ex">./configure</span>
-$ <span class="fu">make</span>
-$ <span class="fu">make</span> test
-$ <span class="fu">make</span> install</code></pre></div>
-<p>Note: If you are not having admin access , run install command with sudo</p></li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">sudo</span> make install</code></pre></div>
-<h1 id="python-home"><a href="index.html#InstallLinux">Python Home</a></h1>
+<h1 id="iterate-through-list">Iterate through list</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> fruits<span class="op">=</span>[<span class="st">&quot;Apple&quot;</span>,<span class="st">&quot;Mango&quot;</span>,<span class="st">&quot;Banana&quot;</span>]
+<span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> fruit <span class="kw">in</span> fruits:
+...     <span class="bu">print</span>(fruit)
+...
+Apple
+Mango
+Banana</code></pre></div>
+<h1 id="iterate-through-dictionary">Iterate through dictionary</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> students<span class="op">=</span>{<span class="st">&quot;tom&quot;</span>:<span class="dv">70</span>,<span class="st">&quot;ram&quot;</span>:<span class="dv">60</span>,<span class="st">&quot;dora&quot;</span>:<span class="dv">30</span>} <span class="co"># Student marks     </span>
+<span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> name <span class="kw">in</span> students:                       
+...     <span class="bu">print</span>(name,students[name])              
+...                                             
+ram <span class="dv">60</span>                                          
+tom <span class="dv">70</span>                                          
+dora <span class="dv">30</span>                                         </code></pre></div>
+<h1 id="python-home"><a href="index.html#For-Loops">Python Home</a></h1>
 </body>
 </html>

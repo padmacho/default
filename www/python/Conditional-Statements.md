@@ -5,6 +5,9 @@ if expr:
   print("Exp is True")
 ```
 expr is converted to bool  as if by the bool() Constructor
+# Video
+<div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/B_sw2hCdgOY?rel=0?ecver=2" width="640" height="360" frameborder="0" gesture="media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+
 # if
 ```python
 >>> if True:                        
@@ -58,5 +61,46 @@ Whenever you find yourself with an else block containing a nested if statement ,
 ...     print("i may be 10")   
 ...                            
 i may be 10
-```                    
-# [Python Home](index.html#Conditional-Statements.html)
+```
+# effect of bool
+The **expression** need not to be boolean python explicity converts the expression to boolean
+```python
+if expr:
+  print("Exp is True")
+```
+```python
+if bool(expr):
+  print("Exp is True")
+```
+```python
+>>> if True:                                 
+...     print("I am true")                   
+...                                          
+I am true                                    
+>>> if "1":                                  
+...     print("I am also true")              
+...                                          
+I am also true                               
+>>> if "":                                   
+...     print("I am not true")               
+...                                          
+>>> if "False":                              
+...     print("This is not an empty String")
+...                                          
+This is not an empty String                  
+>>>                                          
+```
+# Conditional expression
+It is similar to ternary operator **?** in other languages
+```python
+a if expression else b
+```
+if **expression** is true a is returned else b is returned
+```python
+>>> a = 10                   
+>>> b = 11                   
+>>> print(a if a > b else b)
+11                           
+```
+
+# [Python Home](index.html#Conditional-Statements)

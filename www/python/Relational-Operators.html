@@ -48,12 +48,16 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <body>
 <div id="TOC">
 <ul>
-<li><a href="#relation-operators">Relation Operators</a></li>
+<li><a href="#relational-operators">Relational Operators</a></li>
+<li><a href="#video">Video</a></li>
 <li><a href="#examples">Examples</a></li>
-<li><a href="#python-home"><a href="index.html">Python Home</a></a></li>
+<li><a href="#object-comparison">Object Comparison</a></li>
+<li><a href="#reference-comparison">Reference Comparison</a></li>
+<li><a href="#membership-operators">Membership operators</a></li>
+<li><a href="#python-home"><a href="index.html#Relational-Operators">Python Home</a></a></li>
 </ul>
 </div>
-<h1 id="relation-operators">Relation Operators</h1>
+<h1 id="relational-operators">Relational Operators</h1>
 <p>Bool values are commonly produced by Python's relational operators, which can be used for comparing objects.</p>
 <table>
 <thead>
@@ -89,6 +93,9 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 </tr>
 </tbody>
 </table>
+<h1 id="video">Video</h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uGDvgT4UX9s?rel=0" frameborder="0" allowfullscreen>
+</iframe>
 <h1 id="examples">Examples</h1>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> i<span class="op">=</span><span class="dv">10</span>  
 <span class="op">&gt;&gt;&gt;</span> i<span class="op">==</span><span class="dv">10</span>
@@ -104,6 +111,31 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <span class="op">&gt;&gt;&gt;</span> i<span class="op">&gt;=</span><span class="dv">10</span>
 <span class="va">True</span>      
 <span class="op">&gt;&gt;&gt;</span></code></pre></div>
-<h1 id="python-home"><a href="index.html">Python Home</a></h1>
+<h1 id="object-comparison">Object Comparison</h1>
+<p><strong>==</strong> two object values are equal</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> x<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>]
+<span class="op">&gt;&gt;&gt;</span> y<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>]
+<span class="op">&gt;&gt;&gt;</span> x<span class="op">==</span>y   
+<span class="va">True</span>       
+<span class="op">&gt;&gt;&gt;</span> x <span class="kw">is</span> y
+<span class="va">False</span>      </code></pre></div>
+<h1 id="reference-comparison">Reference Comparison</h1>
+<p><strong>is</strong> operator can be used to find whether two variables point same reference or not<br />
+<img src="Variable-Memory.jpg" alt="Memory Model" /></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> x<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>]
+<span class="op">&gt;&gt;&gt;</span> y<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>]
+<span class="op">&gt;&gt;&gt;</span> z<span class="op">=</span>x
+<span class="op">&gt;&gt;&gt;</span> x <span class="kw">is</span> y
+<span class="va">False</span>
+<span class="op">&gt;&gt;&gt;</span> x <span class="kw">is</span> z
+<span class="va">True</span></code></pre></div>
+<p>Notice: x and z are pointing to same Reference</p>
+<h1 id="membership-operators">Membership operators</h1>
+<p><strong>in</strong> is Evaluates to true if it finds a variable in the specified sequence and false otherwise</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="dv">2</span> <span class="kw">in</span> [<span class="dv">1</span>,<span class="dv">2</span>]
+<span class="va">True</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="dv">3</span> <span class="kw">in</span> [<span class="dv">1</span>,<span class="dv">2</span>]
+<span class="va">False</span></code></pre></div>
+<h1 id="python-home"><a href="index.html#Relational-Operators">Python Home</a></h1>
 </body>
 </html>

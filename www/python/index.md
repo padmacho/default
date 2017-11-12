@@ -25,6 +25,7 @@ Python is a general-purpose programming language that is becoming more and more 
     - [Relational Operators](Relational-Operators.html)
     - [Conditional Statements](Conditional-Statements.html)
     - [While Loops](While-Loops.html)
+    - [For-Loops](For-Loops.html)
     - Summary
     - Exercises
 - [help](help.html)
@@ -34,8 +35,7 @@ Python is a general-purpose programming language that is becoming more and more 
     - [Strings in-depth](Strings-in-depth.html)
     - [Bytes](Bytes.html)
     - [Lists](Lists.html)
-    - Dictionaries
-    - For-Loops
+    - [Dictionaries](Dictionaries.html)
     - Summary
     - Exercises
 - Modularity
