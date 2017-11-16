@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#tuple">Tuple</a></li>
+<li><a href="#create-tuple">Create tuple</a></li>
+<li><a href="#tuple-vs-list">Tuple vs List</a></li>
+<li><a href="#accessing-elements">Accessing elements</a></li>
+<li><a href="#slicing-or-sub-tuple">Slicing or sub tuple</a></li>
+</ul>
+</div>
+<h1 id="tuple">Tuple</h1>
+<p>A tuple is similar to a list. The difference between the two is that we <strong>cannot change</strong> the elements of a tuple once it is created whereas in a list, elements can be changed.</p>
+<h1 id="create-tuple">Create tuple</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> tu<span class="op">=</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)
+<span class="op">&gt;&gt;&gt;</span> tu
+(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</code></pre></div>
+<h1 id="tuple-vs-list">Tuple vs List</h1>
+<table style="width:11%;">
+<colgroup>
+<col width="5%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tuple</th>
+<th>List</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>immutable -Once created contents cannot be changed</td>
+<td>mutable -contents can be changed</td>
+</tr>
+<tr class="even">
+<td>Generally use tuple for heterogeneous (different) datatypes</td>
+<td>list for homogeneous (similar) datatypes.</td>
+</tr>
+<tr class="odd">
+<td>Example: date_of_birth=(10,&quot;aug&quot;,2000)</td>
+<td>Example: heights=[150,160,170]</td>
+</tr>
+<tr class="even">
+<td>Iteration is slightly faster than list</td>
+<td>relatively slower than tuple</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> li<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>]
+<span class="op">&gt;&gt;&gt;</span> li.append(<span class="dv">5</span>)
+<span class="op">&gt;&gt;&gt;</span> li                                                     
+[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> tu<span class="op">=</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)                                           
+<span class="op">&gt;&gt;&gt;</span> tu.append(<span class="dv">5</span>) <span class="co"># Once created they cannot be changed                                          </span>
+Traceback (most recent call last):                         
+  File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>                      
+<span class="pp">AttributeError</span>: <span class="st">&#39;tuple&#39;</span> <span class="bu">object</span> has no attribute <span class="st">&#39;append&#39;</span>   
+<span class="op">&gt;&gt;&gt;</span>                                                         </code></pre></div>
+<h1 id="accessing-elements">Accessing elements</h1>
+<p>Elements can be accessed with index</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> tu<span class="op">=</span>(<span class="dv">10</span>,<span class="st">&quot;aug&quot;</span>,<span class="dv">2000</span>)
+<span class="op">&gt;&gt;&gt;</span> tu[<span class="dv">0</span>]              
+<span class="dv">10</span>                     </code></pre></div>
+<p>Negative Index is also supported</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> tu[<span class="op">-</span><span class="dv">1</span>]
+<span class="dv">2000</span></code></pre></div>
+<h1 id="slicing-or-sub-tuple">Slicing or sub tuple</h1>
+<p>We can access a range of items in a tuple by using the slicing operator - colon &quot;:&quot;.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"></code></pre></div>
+</body>
+</html>

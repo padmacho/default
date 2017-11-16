@@ -29,13 +29,28 @@ Python is a general-purpose programming language that is becoming more and more 
     - Summary
     - Exercises
 - [help](help.html)
-- Strings and Collections
+- Strings and Bytes
     - Introduction
     - [Strings](Strings.html)
     - [Strings in-depth](Strings-in-depth.html)
     - [Bytes](Bytes.html)
+    - Summary
+    - Exercises
+- Collections
+    - Introduction
     - [Lists](Lists.html)
     - [Dictionaries](Dictionaries.html)
+    - [Tuple](Tuples.html)
+    - Range
+    - List
+    - Shallow Copies
+    - List Repetition
+    - More on List
+    - Growing Lists
+    - Reversing and Sorting Lists
+    - Dictionary
+    - Set
+   - Collection Protocols
     - Summary
     - Exercises
 - Modularity
@@ -62,17 +77,7 @@ Python is a general-purpose programming language that is becoming more and more 
     - Exercises
 - Collections in-depth
     - Introduction
-    - Tuple
-    - Range
-    - List
-    - Shallow Copies
-    - List Repetition
-    - More on List
-    - Growing Lists
-    - Reversing and Sorting Lists
-    - Dictionary
-    - Set
-    - Collection Protocols
+    -
     - Summary
     - Exercises
 - Handling exceptions

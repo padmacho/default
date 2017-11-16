@@ -48,22 +48,23 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <body>
 <div id="TOC">
 <ul>
-<li><a href="#str-string">str (String)</a></li>
+<li><a href="#string---str">String - Str</a></li>
 <li><a href="#adjacent-literal-strings">Adjacent literal strings</a></li>
 <li><a href="#concatenation">Concatenation</a></li>
 <li><a href="#repetition">Repetition</a></li>
 <li><a href="#multiline-strings">Multiline strings</a></li>
-<li><a href="#escape-sequences">Escape sequences \</a></li>
+<li><a href="#escape-character">Escape character</a></li>
 <li><a href="#raw-strings">Raw Strings</a></li>
 <li><a href="#convert-other-types-to-string">Convert other types to string</a></li>
-<li><a href="#sequence-types">Sequence types</a></li>
+<li><a href="#read-individual-characters-in-the-string">Read individual characters in the string</a></li>
 <li><a href="#methods-of-string-object">Methods of String object</a></li>
 <li><a href="#utf-8-characters">UTF-8 characters</a></li>
-<li><a href="#python-home"><a href="index.html">Python Home</a></a></li>
+<li><a href="#python-home"><a href="index.html#Strings">Python Home</a></a></li>
 </ul>
 </div>
-<h1 id="str-string">str (String)</h1>
-<p>Strings in Python have the data type str spelled S-T-R.Strings are sequences of Unicode codepoints, and for the most part you can think of codepoints as being like characters, although they aren't strictly equivalent. The sequence of characters in a Python string is <strong>immutable</strong> meaning that once you've constructed a string you can't modify its contents. Literal strings in Python are delimited by quotes. You can use single quotes or double quotes.</p>
+<h1 id="string---str">String - Str</h1>
+<p>In Python, string is a sequence of Unicode characters. The sequence of characters in a Python string is <strong>immutable</strong> meaning that once you've constructed a string you can't modify its contents.<br />
+String literals in Python are delimited by quotes. You can use single quotes or double quotes.</p>
 <p><strong>Default source encoding for python is UTF-8</strong></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">s<span class="op">=</span><span class="st">&#39;This is a string&#39;</span>
 s<span class="op">=</span><span class="st">&quot;This is also a string&quot;</span></code></pre></div>
@@ -89,15 +90,47 @@ s<span class="op">=</span><span class="st">&quot;This is also a string&quot;</sp
 <span class="op">&gt;&gt;&gt;</span> m
 <span class="co">&#39;This is \na multi line\nstring&#39;</span></code></pre></div>
 <p>If you're working on Windows, you might be thinking that new lines should be represented by the carriage return at new line couplet \r\n. There's no need to do that with Python since Python 3 has a feature called universal newlines support, which translates from the simple \n to the native newline sequence for your platform on input and output. You can read more about universal newlines support in PEP278.</p>
-<h1 id="escape-sequences">Escape sequences \</h1>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;Hello </span><span class="ch">\&quot;</span><span class="st">world!</span><span class="ch">\&quot;</span><span class="st"> &quot;</span>
-<span class="co">&#39;Hello &quot;world!&quot; &#39;</span>
-<span class="op">&gt;&gt;&gt;</span> message<span class="op">=</span><span class="st">&quot;Hello </span><span class="ch">\\</span><span class="st"> world &quot;</span>
-<span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(message)
-Hello <span class="op">\\</span> world</code></pre></div>
+<h1 id="escape-character">Escape character</h1>
+<p>An escape character <strong>\</strong> can be used to escape special characters like singe quote and double qoute in the string.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Escape character</th>
+<th>Display as</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>\'</td>
+<td>Single quote</td>
+</tr>
+<tr class="even">
+<td>&quot;</td>
+<td>Double quote</td>
+</tr>
+<tr class="odd">
+<td>\t</td>
+<td>Tab</td>
+</tr>
+<tr class="even">
+<td>\n</td>
+<td>New line or Line break</td>
+</tr>
+<tr class="odd">
+<td>\</td>
+<td>Back slash</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="st">&quot;Bob&#39;s pen&quot;</span>)
+Bob<span class="st">&#39;s pen</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="st">&quot;My class mates are </span><span class="ch">\n</span><span class="st">Alex</span><span class="ch">\n</span><span class="st">Mike</span><span class="ch">\n</span><span class="st">Nelly&quot;</span>)     
+My <span class="kw">class</span> mates are                                      
+Alex                                                    
+Mike                                                    
+Nelly                                                   </code></pre></div>
 <h1 id="raw-strings">Raw Strings</h1>
-<p>Raw strings don't support any escapes sequences and are very much what you see is what you get.</p>
-<p>To create a raw string, prefix the opening quote with a lowercase <strong>r</strong></p>
+<p>Raw strings don't support any <strong>escapes</strong> characters. To create a raw string, prefix the opening quote with a lowercase <strong>r</strong></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> path<span class="op">=</span><span class="vs">r&quot;c:\users\mario\docs&quot;</span>
 <span class="op">&gt;&gt;&gt;</span> path
 <span class="co">&#39;c:\\users\\mario\\docs&#39;</span></code></pre></div>
@@ -108,8 +141,8 @@ Hello <span class="op">\\</span> world</code></pre></div>
 <span class="op">&gt;&gt;&gt;</span> <span class="bu">str</span>(<span class="fl">1.2</span>)
 <span class="co">&#39;1.2&#39;</span>        
 <span class="op">&gt;&gt;&gt;</span>          </code></pre></div>
-<h1 id="sequence-types">Sequence types</h1>
-<p>We can access individual characters using square brackets with an integer zero-based index.</p>
+<h1 id="read-individual-characters-in-the-string">Read individual characters in the string</h1>
+<p>We can access individual characters using square brackets with an integer <strong>zero-based</strong> index.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> s<span class="op">=</span><span class="st">&quot;mario&quot;</span>
 <span class="op">&gt;&gt;&gt;</span> s[<span class="dv">0</span>]
 <span class="co">&#39;m&#39;</span>
@@ -131,6 +164,6 @@ r
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> message<span class="op">=</span><span class="st">&quot;పైథాన్ కు స్వాగతం&quot;</span>
 <span class="op">&gt;&gt;&gt;</span> message
 <span class="co">&#39;పైథాన్ కు స్వాగతం&#39;</span></code></pre></div>
-<h1 id="python-home"><a href="index.html">Python Home</a></h1>
+<h1 id="python-home"><a href="index.html#Strings">Python Home</a></h1>
 </body>
 </html>
