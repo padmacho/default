@@ -41,6 +41,24 @@ Negative Index is also supported
 ```
 # Slicing or sub tuple
 We can access a range of items in a tuple by using the slicing operator - colon ":".
+General syntax
 ```python
-
+tu[start : end : step]
 ```
+- **start** - Starting Index
+- **end** - End index, **but** end index element is not returned
+- **step** - Step size, default value is **1**
+```python
+>>> tu=(1,2,3,4) # Create a tuple
+>>> tu[:] # Get all elements in the tuple, Note start and end are optional
+(1, 2, 3, 4)
+>>> tu[:-1] # Get all the elements from start  
+(1, 2, 3)
+>>> tu[0:] #Get all the elements till end
+(1, 2, 3, 4)
+>>> tu[0:1] # Get first element in the tuple
+(1,)
+>>> tu[0:-1:2] # You can specify step size as well 
+(1, 3)          
+```
+# [Python Home](index.html#Tuples)

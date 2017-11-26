@@ -40,9 +40,8 @@ Python is a general-purpose programming language that is becoming more and more 
     - Introduction
     - [Lists](Lists.html)
     - [Dictionaries](Dictionaries.html)
-    - [Tuple](Tuples.html)
-    - Range
-    - List
+    - [Tuples](Tuples.html)
+    - [Range](Range.html)
     - Shallow Copies
     - List Repetition
     - More on List
@@ -77,9 +76,12 @@ Python is a general-purpose programming language that is becoming more and more 
     - Exercises
 - Collections in-depth
     - Introduction
-    -
     - Summary
     - Exercises
+- File format Handling
+    - Text
+        - [JSON](JSON.html)
+    - Binary
 - Handling exceptions
     - Introduction
     - Exceptions and Control Flow
@@ -122,6 +124,10 @@ Python is a general-purpose programming language that is becoming more and more 
     - Summary
     - Exercises
 - Python for Data Scientists
+    - [Pandas](Pandas.html)
+        - [Series and DataFrame](Series-and-DataFrame.html)
+        - [Inputs to DataFrame](Inputs-to-DataFrame.html)
+        - [Operations on DataFrame](Operations-on-DataFrame.html)
     - Numpy
         - Statistics
         - 2D Arithmetic

@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#range">Range</a></li>
+<li><a href="#example">Example</a></li>
+<li><a href="#range-with-for-loop">Range with for loop</a></li>
+<li><a href="#python-home"><a href="index.html#Range">Python Home</a></a></li>
+</ul>
+</div>
+<h1 id="range">Range</h1>
+<p>It generates a list of numbers, which is generally used to iterate over with for loops.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">range</span>(stop) <span class="co"># Simple form</span>
+<span class="bu">range</span>([start], stop[, step]) <span class="co"># Actual form</span></code></pre></div>
+<ul>
+<li>start: Starting number of the sequence. <strong>Note</strong> start is optional</li>
+<li>stop: Generate numbers up to, <strong>but not</strong> including this number.</li>
+<li>step: Difference between each number in the sequence.</li>
+</ul>
+<h1 id="example">Example</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">range</span>(<span class="dv">5</span>)  <span class="co"># Create a sequence of elements with stop 5       </span>
+<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">5</span>)         
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">range</span>(<span class="op">-</span><span class="dv">5</span>) <span class="co"># elements at stop -5       </span>
+<span class="bu">range</span>(<span class="dv">0</span>, <span class="op">-</span><span class="dv">5</span>)        
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(<span class="bu">range</span>(<span class="dv">5</span>)) <span class="co"># range is a separate type</span>
+<span class="op">&lt;</span><span class="kw">class</span> <span class="st">&#39;range&#39;</span><span class="op">&gt;</span>     
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">5</span>))  <span class="co"># Convert range to list</span>
+[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">2</span>)) <span class="co"># Provide step to produce even numbers</span>
+[<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>]
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">2</span>)) <span class="co"># Provide step to produce odd numbers</span>
+[<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>]     </code></pre></div>
+<h1 id="range-with-for-loop">Range with for loop</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Print 0 to 9 using for loop</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):
+...     <span class="bu">print</span>(i,end<span class="op">=</span><span class="st">&quot; &quot;</span>)
+...
+<span class="dv">0</span> <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> <span class="dv">5</span> <span class="dv">6</span> <span class="dv">7</span> <span class="dv">8</span> <span class="dv">9</span></code></pre></div>
+<h1 id="python-home"><a href="index.html#Range">Python Home</a></h1>
+</body>
+</html>

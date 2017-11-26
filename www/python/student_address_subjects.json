@@ -1,0 +1,14 @@
+{
+  "id": 1001,
+  "name": "Dora",
+  "marks": 90,
+  "address": {
+    "street": "383 Madison Ave, New York",
+    "pincode": 10017
+  },
+  "subjects": [
+    "english",
+    "maths",
+    "science"
+  ]
+}

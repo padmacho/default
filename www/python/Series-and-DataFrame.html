@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#series-and-dataframes">Series and DataFrames</a></li>
+<li><a href="#create-a-numpy-array">Create a numpy array</a></li>
+<li><a href="#read-elements-from-numpy-array">Read elements from numpy array</a></li>
+<li><a href="#create-pandas-series-object">Create Pandas series object</a></li>
+<li><a href="#properties-of-series-objects">Properties of series objects</a></li>
+<li><a href="#create-two-dimensional-arrays">Create two dimensional arrays</a></li>
+<li><a href="#create-a-python-data-frames">Create a python data frames</a></li>
+<li><a href="#python-home"><a href="index.html#Series-and-DataFrame">Python Home</a></a></li>
+</ul>
+</div>
+<h1 id="series-and-dataframes">Series and DataFrames</h1>
+<h1 id="create-a-numpy-array">Create a numpy array</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+my_array<span class="op">=</span>np.random.rand(<span class="dv">3</span>)
+<span class="bu">print</span>(my_array)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">[</span> 0.87730866  0.17164441  0.93822828]</code></pre></div>
+<p><img src="ndarray-spyder-variable-explorer.PNG" alt="output" /><br />
+Notice: my_array is of type <strong>numpy.ndarray</strong> and with three elements of Type of type <strong>float64</strong> and size 3</p>
+<h1 id="read-elements-from-numpy-array">Read elements from numpy array</h1>
+<p>Element of numpy array can be accessed using <strong>index</strong></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> numpy <span class="im">as</span> np
+<span class="op">&gt;&gt;&gt;</span> my_array<span class="op">=</span>np.random.rand(<span class="dv">3</span>)
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(my_array)
+[ <span class="fl">0.59382282</span>  <span class="fl">0.83846623</span>  <span class="fl">0.42227726</span>]
+<span class="op">&gt;&gt;&gt;</span> my_array[<span class="dv">0</span>]
+<span class="fl">0.59382282106091899</span></code></pre></div>
+<h1 id="create-pandas-series-object">Create Pandas series object</h1>
+<p>Pandas series object can be created from numpy ndarray</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> pandas <span class="im">as</span> pd
+
+<span class="co"># Create a numpy array</span>
+my_array <span class="op">=</span> np.random.rand(<span class="dv">3</span>)
+
+<span class="co"># Convert numpy array to series object</span>
+my_series <span class="op">=</span> pd.Series(my_array)
+
+<span class="co"># Read an element with index</span>
+<span class="bu">print</span>(my_series[<span class="dv">0</span>])
+
+<span class="co"># Create own indexes</span>
+my_series <span class="op">=</span> pd.Series(my_array, index<span class="op">=</span>[<span class="st">&quot;First&quot;</span>, <span class="st">&quot;Second&quot;</span>, <span class="st">&quot;Third&quot;</span>])
+
+<span class="co"># access element with our own index</span>
+<span class="bu">print</span>(my_series[<span class="st">&quot;First&quot;</span>])</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">0.105328226909</span>
+<span class="ex">0.105328226909</span></code></pre></div>
+<p><img src="series-spyder-variable-explorer.PNG" alt="variable explorer" /></p>
+<h1 id="properties-of-series-objects">Properties of series objects</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> my_series.index
+Index([<span class="st">&#39;First&#39;</span>, <span class="st">&#39;Second&#39;</span>, <span class="st">&#39;Third&#39;</span>], dtype<span class="op">=</span><span class="st">&#39;object&#39;</span>)</code></pre></div>
+<p><strong>index</strong> is a string representation of index object with data type as object</p>
+<h1 id="create-two-dimensional-arrays">Create two dimensional arrays</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+
+<span class="co"># Create a random array with three rows and two column</span>
+array_2d <span class="op">=</span> np.random.rand(<span class="dv">3</span>, <span class="dv">2</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">array_2d <span class="co"># Print array</span>
+Out[<span class="dv">7</span>]:
+array([[ <span class="fl">0.44422621</span>,  <span class="fl">0.75277854</span>],
+       [ <span class="fl">0.61006535</span>,  <span class="fl">0.38934917</span>],
+       [ <span class="fl">0.7911938</span> ,  <span class="fl">0.53101575</span>]])
+
+array_2d[<span class="dv">0</span>,<span class="dv">0</span>] <span class="co"># access element at zero row and zero column</span>
+Out[<span class="dv">8</span>]: <span class="fl">0.44422620884326713</span>
+
+array_2d[<span class="dv">2</span>,<span class="dv">1</span>]
+Out[<span class="dv">9</span>]: <span class="fl">0.53101575313563343</span>
+
+array_2d[<span class="dv">2</span>,<span class="dv">2</span>] <span class="co"># Access the element which is not available</span>
+Traceback (most recent call last):
+
+  File <span class="st">&quot;&lt;ipython-input-10-85e38c704f0e&gt;&quot;</span>, line <span class="dv">1</span>, <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
+    array_2d[<span class="dv">2</span>,<span class="dv">2</span>]
+
+<span class="pp">IndexError</span>: index <span class="dv">2</span> <span class="kw">is</span> out of bounds <span class="cf">for</span> axis <span class="dv">1</span> <span class="cf">with</span> size <span class="dv">2</span></code></pre></div>
+<p>Note: Access element like a[row,column] row and column start with zero index</p>
+<h1 id="create-a-python-data-frames">Create a python data frames</h1>
+<p>Dataframe can be created from numpy array</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
+<span class="im">import</span> pandas <span class="im">as</span> pd
+
+array_2d <span class="op">=</span> np.random.rand(<span class="dv">2</span>, <span class="dv">3</span>)
+df <span class="op">=</span> pd.DataFrame(array_2d)</code></pre></div>
+<p><img src="2d-array-pandas-df.PNG" alt="data frame" /></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">df[<span class="dv">0</span>] <span class="co"># Read element from first column</span>
+Out[<span class="dv">23</span>]:
+<span class="dv">0</span>    <span class="fl">0.686320</span>
+<span class="dv">1</span>    <span class="fl">0.656126</span>
+Name: <span class="dv">0</span>, dtype: float64
+df.columns <span class="co"># Access column labels</span>
+Out[<span class="dv">27</span>]: RangeIndex(start<span class="op">=</span><span class="dv">0</span>, stop<span class="op">=</span><span class="dv">3</span>, step<span class="op">=</span><span class="dv">1</span>)
+df.columns<span class="op">=</span>[<span class="st">&quot;First&quot;</span>,<span class="st">&quot;Second&quot;</span>,<span class="st">&quot;Third&quot;</span>] <span class="co"># Set coloumn labels</span></code></pre></div>
+<p><img src="panda-data-frame-coloumn-label.PNG" alt="panda-data-frame-coloumn-label" /></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">df.columns
+Out[<span class="dv">29</span>]: Index([<span class="st">&#39;First&#39;</span>, <span class="st">&#39;Second&#39;</span>, <span class="st">&#39;Third&#39;</span>], dtype<span class="op">=</span><span class="st">&#39;object&#39;</span>)
+df[<span class="st">&quot;Second&quot;</span>] <span class="co"># Access all the elements  in second column</span>
+Out[<span class="dv">31</span>]:
+<span class="dv">0</span>    <span class="fl">0.111865</span>
+<span class="dv">1</span>    <span class="fl">0.734824</span>
+Name: Second, dtype: float64</code></pre></div>
+<h1 id="python-home"><a href="index.html#Series-and-DataFrame">Python Home</a></h1>
+</body>
+</html>
