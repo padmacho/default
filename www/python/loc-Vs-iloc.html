@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#loc-and-iloc-attributes">loc and iloc attributes</a></li>
+<li><a href="#sample-data-frame">Sample data Frame</a></li>
+<li><a href="#loc">loc</a></li>
+<li><a href="#iloc">iloc</a></li>
+<li><a href="#source-code">Source code</a></li>
+</ul>
+</div>
+<h1 id="loc-and-iloc-attributes">loc and iloc attributes</h1>
+<ul>
+<li>(Select by label) loc works on <strong>labels</strong> in the index.</li>
+<li>df.loc[row indexer,column indexer]</li>
+<li>example: df.loc[102,'name']</li>
+<li>(Select by position) iloc works on the <strong>positions</strong> in the index (so it only takes integers)</li>
+<li>df.iloc[row indexer, column indexer]</li>
+<li>example: df.iloc[0,0]</li>
+</ul>
+<h1 id="sample-data-frame">Sample data Frame</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># List of student tuples with id,name and marks</span>
+students <span class="op">=</span> [(<span class="dv">102</span>, <span class="st">&#39;Dora&#39;</span>, <span class="dv">90</span>), (<span class="dv">103</span>, <span class="st">&#39;Hulk&#39;</span>, <span class="dv">80</span>), (<span class="dv">104</span>, <span class="st">&#39;Hanuma&#39;</span>, <span class="dv">99</span>), (<span class="dv">105</span>, <span class="st">&#39;Hulk&#39;</span>, <span class="dv">40</span>)]
+<span class="co"># Create a data frame from records</span>
+df <span class="op">=</span> pd.DataFrame.from_records(students)
+
+<span class="co"># Set column names</span>
+df.columns <span class="op">=</span> [<span class="st">&#39;id&#39;</span>, <span class="st">&#39;name&#39;</span>, <span class="st">&#39;marks&#39;</span>]
+<span class="co"># Set id column as index</span>
+df.set_index(<span class="st">&#39;id&#39;</span>, inplace<span class="op">=</span><span class="va">True</span>)</code></pre></div>
+<p><img src="loc-vs-iloc-data-frame.PNG" alt="loc-vs-iloc-data-frame" /></p>
+<h1 id="loc">loc</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Get student name with id 102</span>
+df.loc[<span class="dv">102</span>, <span class="st">&#39;name&#39;</span>]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">&#39;Dora&#39;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Get all columns for the row id 102</span>
+df.loc[<span class="dv">102</span>, :]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">name     Dora
+marks      <span class="dv">90</span>
+Name: <span class="dv">102</span>, dtype: <span class="bu">object</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Get all rows that has name as &#39;Hulk&#39;</span>
+df.loc[df[<span class="st">&#39;name&#39;</span>] <span class="op">==</span> <span class="st">&#39;Hulk&#39;</span>, :]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">     name  marks
+<span class="bu">id</span>              
+<span class="dv">103</span>  Hulk     <span class="dv">80</span>
+<span class="dv">105</span>  Hulk     <span class="dv">40</span></code></pre></div>
+<h1 id="iloc">iloc</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Get element in first row and first column</span>
+df.iloc[<span class="dv">0</span>, <span class="dv">0</span>]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">&#39;Dora&#39;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Get all elements in second column</span>
+df.iloc[:, <span class="dv">1</span>]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">id</span>
+<span class="dv">102</span>    <span class="dv">90</span>
+<span class="dv">103</span>    <span class="dv">80</span>
+<span class="dv">104</span>    <span class="dv">99</span>
+<span class="dv">105</span>    <span class="dv">40</span>
+Name: marks, dtype: int64</code></pre></div>
+<h1 id="source-code">Source code</h1>
+<ul>
+<li><p><a href="data_frame_from_records.py" class="uri">data_frame_from_records.py</a></p>
+<h1 id="python-home"><a href="index.html#Operations-on-DataFrame">Python Home</a></h1></li>
+</ul>
+</body>
+</html>

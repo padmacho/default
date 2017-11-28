@@ -52,21 +52,68 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#create-data-frame">Create data frame</a></li>
 <li><a href="#set-columns-and-index">Set columns and index</a></li>
 <li><a href="#selecting-column">Selecting column</a></li>
-<li><a href="#python-home"><a href="index.html#Operations-on-DataFrame">Python Home</a></a></li>
+<li><a href="#selecting-unique-elements-in-column">Selecting unique elements in column</a></li>
+<li><a href="#data-filtering">Data Filtering</a></li>
+<li><a href="#number-of-elements-in-a-column">Number of elements in a column</a></li>
+<li><a href="#source-code">Source code</a></li>
 </ul>
 </div>
 <h1 id="operations-on-dataframe">Operations on DataFrame</h1>
 <p>Common operations on Data Frame</p>
 <h1 id="create-data-frame">Create data frame</h1>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pandas <span class="im">as</span> pd
-students<span class="op">=</span>[(<span class="dv">1</span>,<span class="st">&#39;Dora&#39;</span>,<span class="dv">90</span>),(<span class="dv">2</span>,<span class="st">&#39;Hulk&#39;</span>,<span class="dv">80</span>),(<span class="dv">3</span>,<span class="st">&#39;Hanuma&#39;</span>,<span class="dv">99</span>),(<span class="dv">4</span>,<span class="st">&#39;Spiderman&#39;</span>,<span class="dv">40</span>)]
-df<span class="op">=</span>pd.DataFrame.from_records(students)</code></pre></div>
+<span class="co"># List of student tuples with id,name and marks</span>
+students <span class="op">=</span> [(<span class="dv">1</span>, <span class="st">&#39;Dora&#39;</span>, <span class="dv">90</span>), (<span class="dv">2</span>, <span class="st">&#39;Hulk&#39;</span>, <span class="dv">80</span>), (<span class="dv">3</span>, <span class="st">&#39;Hanuma&#39;</span>, <span class="dv">99</span>), (<span class="dv">4</span>, <span class="st">&#39;Spiderman&#39;</span>, <span class="dv">40</span>)]
+<span class="co"># Create a data frame from records</span>
+df <span class="op">=</span> pd.DataFrame.from_records(students)</code></pre></div>
 <p><img src="Students-Data-Frame.PNG" alt="Students-Data-Frame" /></p>
 <h1 id="set-columns-and-index">Set columns and index</h1>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">df.columns<span class="op">=</span>[<span class="st">&#39;id&#39;</span>,<span class="st">&#39;name&#39;</span>,<span class="st">&#39;marks&#39;</span>] <span class="co"># Set column names</span>
 df.set_index(<span class="st">&#39;id&#39;</span>,inplace<span class="op">=</span><span class="va">True</span>) <span class="co"># Set id column as index</span></code></pre></div>
 <p><img src="Students-Data-Frame-Index-Column-Names.PNG" alt="Students-Data-Frame-Index-Column-Names" /></p>
 <h1 id="selecting-column">Selecting column</h1>
-<h1 id="python-home"><a href="index.html#Operations-on-DataFrame">Python Home</a></h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Select name column</span>
+df[<span class="st">&#39;name&#39;</span>]
+<span class="co"># other way of selecting name column but don&#39;t use it</span>
+df.name</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">id</span>
+<span class="dv">1</span>      Dora
+<span class="dv">2</span>      Hulk
+<span class="dv">3</span>    Hanuma
+<span class="dv">4</span>      Hulk
+Name: name, dtype: <span class="bu">object</span></code></pre></div>
+<h1 id="selecting-unique-elements-in-column">Selecting unique elements in column</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Select unique elements in  name column</span>
+pd.unique(df[<span class="st">&#39;name&#39;</span>])</code></pre></div>
+<p>Notice <strong>Hulk</strong> appread only once in the list</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"> array([<span class="st">&#39;Dora&#39;</span>, <span class="st">&#39;Hulk&#39;</span>, <span class="st">&#39;Hanuma&#39;</span>], dtype<span class="op">=</span><span class="bu">object</span>)</code></pre></div>
+<h1 id="data-filtering">Data Filtering</h1>
+<p>Finding column that has name <strong>Hulk</strong></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Filter columns that has name as &#39;Hulk&#39;</span>
+df[<span class="st">&#39;name&#39;</span>] <span class="op">==</span> <span class="st">&#39;Hulk&#39;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">id</span>
+<span class="dv">1</span>    <span class="va">False</span>
+<span class="dv">2</span>     <span class="va">True</span>
+<span class="dv">3</span>    <span class="va">False</span>
+<span class="dv">4</span>     <span class="va">True</span>
+Name: name, dtype: <span class="bu">bool</span></code></pre></div>
+<h1 id="number-of-elements-in-a-column">Number of elements in a column</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">len</span>(df[<span class="st">&#39;name&#39;</span>])</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="dv">4</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># occurrence of each element in the column</span>
+df[<span class="st">&#39;name&#39;</span>].value_counts()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">Hulk      <span class="dv">2</span>
+Dora      <span class="dv">1</span>
+Hanuma    <span class="dv">1</span>
+Name: name, dtype: int64</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Occurrence of Hulk in the column</span>
+s <span class="op">=</span> df[<span class="st">&#39;name&#39;</span>].value_counts()
+s[<span class="st">&#39;Hulk&#39;</span>]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="dv">2</span></code></pre></div>
+<h1 id="source-code">Source code</h1>
+<ul>
+<li><p><a href="data_frame_from_records.py" class="uri">data_frame_from_records.py</a></p>
+<h1 id="python-home"><a href="index.html#Operations-on-DataFrame">Python Home</a></h1></li>
+</ul>
 </body>
 </html>
