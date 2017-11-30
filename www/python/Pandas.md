@@ -1,6 +1,6 @@
 # Pandas
 - It is a powerful Python data analysis toolkit
-- It provides fast, flexible, and expressive data structures designed to make working with **relationa** or **labeled** data both easy and intuitive
+- It provides fast, flexible, and expressive data structures designed to make working with **relational** or **labeled** data both easy and intuitive
 # Why to use Pandas
 - It has Intuitive data format
 - Easy data transformations

@@ -1,26 +1,4 @@
 # Series and DataFrames
-# Create a numpy array
-```Python
-import numpy as np
-my_array=np.random.rand(3)
-print(my_array)
-```
-```bash
-[ 0.87730866  0.17164441  0.93822828]
-```
-![output](ndarray-spyder-variable-explorer.PNG)
-Notice: my_array is of type **numpy.ndarray** and with three elements of Type of type **float64** and size 3
-
-# Read elements from numpy array
-Element of numpy array can be accessed using **index**
-```Python
->>> import numpy as np
->>> my_array=np.random.rand(3)
->>> print(my_array)
-[ 0.59382282  0.83846623  0.42227726]
->>> my_array[0]
-0.59382282106091899
-```
 # Create Pandas series object
 Pandas series object can be created from numpy ndarray
 ```Python

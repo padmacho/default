@@ -125,10 +125,14 @@ Python is a general-purpose programming language that is becoming more and more 
     - Exercises
 - Python for Data Scientists
     - [Pandas](Pandas.html)
-        - [Series and DataFrame](Series-and-DataFrame.html)
+        - [Series](Series.html)
+        - [DataFrame](Series-and-DataFrame.html)
         - [Inputs to DataFrame](Inputs-to-DataFrame.html)
         - [Operations on DataFrame](Operations-on-DataFrame.html)
+        - [loc vs iloc](loc-vs-iloc.html) 
+        - [Data cleansing](Data-cleansing.html)
     - Numpy
+        - [Numpy Introduction](Numpy-Introduction.html)
         - Statistics
         - 2D Arithmetic
         - Data Exploration

@@ -90,10 +90,7 @@ id
 104    100
 105     41
 ```
-# Sorting
-```Python
-
-```
 # Source code
-- [data_frame_from_records.py](data_frame_from_records.py)
-# [Python Home](index.html#Operations-on-DataFrame)
+- [loc-vs-iloc.py](loc-vs-iloc.py)
+
+# [Python Home](index.html#loc-vs-iloc)

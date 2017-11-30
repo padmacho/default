@@ -52,7 +52,10 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#sample-data-frame">Sample data Frame</a></li>
 <li><a href="#loc">loc</a></li>
 <li><a href="#iloc">iloc</a></li>
+<li><a href="#slicing-data-frames">Slicing data frames</a></li>
+<li><a href="#arithmetic-operations-on-data-frames">Arithmetic operations on data frames</a></li>
 <li><a href="#source-code">Source code</a></li>
+<li><a href="#python-home"><a href="index.html#loc-vs-iloc">Python Home</a></a></li>
 </ul>
 </div>
 <h1 id="loc-and-iloc-attributes">loc and iloc attributes</h1>
@@ -102,10 +105,25 @@ df.iloc[:, <span class="dv">1</span>]</code></pre></div>
 <span class="dv">104</span>    <span class="dv">99</span>
 <span class="dv">105</span>    <span class="dv">40</span>
 Name: marks, dtype: int64</code></pre></div>
+<h1 id="slicing-data-frames">Slicing data frames</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Get first two rows and two columns</span>
+df.iloc[<span class="dv">0</span>:<span class="dv">2</span>, <span class="dv">0</span>:<span class="dv">2</span>]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">     name  marks
+<span class="bu">id</span>              
+<span class="dv">102</span>  Dora     <span class="dv">90</span>
+<span class="dv">103</span>  Hulk     <span class="dv">80</span></code></pre></div>
+<h1 id="arithmetic-operations-on-data-frames">Arithmetic operations on data frames</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># add one grace mark to every student</span>
+df[<span class="st">&#39;marks&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;marks&#39;</span>] <span class="op">+</span> <span class="dv">1</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">id</span>
+<span class="dv">102</span>     <span class="dv">91</span>
+<span class="dv">103</span>     <span class="dv">81</span>
+<span class="dv">104</span>    <span class="dv">100</span>
+<span class="dv">105</span>     <span class="dv">41</span></code></pre></div>
 <h1 id="source-code">Source code</h1>
 <ul>
-<li><p><a href="data_frame_from_records.py" class="uri">data_frame_from_records.py</a></p>
-<h1 id="python-home"><a href="index.html#Operations-on-DataFrame">Python Home</a></h1></li>
+<li><a href="loc-vs-iloc.py" class="uri">loc-vs-iloc.py</a></li>
 </ul>
+<h1 id="python-home"><a href="index.html#loc-vs-iloc">Python Home</a></h1>
 </body>
 </html>

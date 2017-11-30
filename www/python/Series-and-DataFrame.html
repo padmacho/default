@@ -49,8 +49,6 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <div id="TOC">
 <ul>
 <li><a href="#series-and-dataframes">Series and DataFrames</a></li>
-<li><a href="#create-a-numpy-array">Create a numpy array</a></li>
-<li><a href="#read-elements-from-numpy-array">Read elements from numpy array</a></li>
 <li><a href="#create-pandas-series-object">Create Pandas series object</a></li>
 <li><a href="#properties-of-series-objects">Properties of series objects</a></li>
 <li><a href="#create-two-dimensional-arrays">Create two dimensional arrays</a></li>
@@ -59,21 +57,6 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 </div>
 <h1 id="series-and-dataframes">Series and DataFrames</h1>
-<h1 id="create-a-numpy-array">Create a numpy array</h1>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
-my_array<span class="op">=</span>np.random.rand(<span class="dv">3</span>)
-<span class="bu">print</span>(my_array)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">[</span> 0.87730866  0.17164441  0.93822828]</code></pre></div>
-<p><img src="ndarray-spyder-variable-explorer.PNG" alt="output" /><br />
-Notice: my_array is of type <strong>numpy.ndarray</strong> and with three elements of Type of type <strong>float64</strong> and size 3</p>
-<h1 id="read-elements-from-numpy-array">Read elements from numpy array</h1>
-<p>Element of numpy array can be accessed using <strong>index</strong></p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> numpy <span class="im">as</span> np
-<span class="op">&gt;&gt;&gt;</span> my_array<span class="op">=</span>np.random.rand(<span class="dv">3</span>)
-<span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(my_array)
-[ <span class="fl">0.59382282</span>  <span class="fl">0.83846623</span>  <span class="fl">0.42227726</span>]
-<span class="op">&gt;&gt;&gt;</span> my_array[<span class="dv">0</span>]
-<span class="fl">0.59382282106091899</span></code></pre></div>
 <h1 id="create-pandas-series-object">Create Pandas series object</h1>
 <p>Pandas series object can be created from numpy ndarray</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> numpy <span class="im">as</span> np
