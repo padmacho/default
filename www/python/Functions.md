@@ -61,4 +61,5 @@ True
 >>> sum is None         
 True                    
 ```
-### [index](index.html)
+
+# [Python Home](index.html#Functions)

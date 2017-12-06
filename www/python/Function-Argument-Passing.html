@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#function-arguments">Function Arguments</a></li>
+<li><a href="#simple-function-with-arguments">Simple Function with arguments</a><ul>
+<li><a href="#default-arguments-are-evaluated-only-once">Default Arguments are evaluated only once</a></li>
+<li><a href="#be-cautious-when-using-mutable-list-as-default-argument">Be cautious when using mutable list as default argument</a></li>
+</ul></li>
+<li><a href="#python-home"><a href="index.html#Function-Argument-Passing">Python Home</a></a></li>
+</ul>
+</div>
+<h1 id="function-arguments">Function Arguments</h1>
+<p>The formal function arguments specified when a function is defined with the def keyword are a comma separated list of the argument names. These arguments can be made optional by providing default values. There two types of arguments</p>
+<ul>
+<li>Positional (Mandatory)</li>
+<li>These need to be specified in order</li>
+<li>These should be first arguments</li>
+<li>Keyword (default argument) (non Mandatory)</li>
+<li>These can be specified in any order</li>
+</ul>
+<h1 id="simple-function-with-arguments">Simple Function with arguments</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> add(x, y<span class="op">=</span><span class="dv">0</span>, z<span class="op">=</span><span class="dv">0</span>):
+    <span class="co"># x is called positional argument</span>
+    <span class="co"># y, z are called keyword argument</span>
+    <span class="bu">print</span>(<span class="st">&quot;x=&quot;</span>, <span class="dv">10</span>, <span class="st">&quot;y=&quot;</span>, y, <span class="st">&quot;z=&quot;</span>, z)
+    <span class="cf">return</span> x <span class="op">+</span> y <span class="op">+</span> z
+<span class="co"># add()  # This will result error because of missing positional argument: &#39;x&#39;</span>
+add(<span class="dv">10</span>, <span class="dv">20</span>)  <span class="co"># x is 10, y is 20</span>
+add(<span class="dv">10</span>)  <span class="co"># x is 10</span>
+add(<span class="dv">10</span>, z<span class="op">=</span><span class="dv">10</span>)  <span class="co"># x is 10 and z is 10</span>
+<span class="co"># add(y=20)# This will result error  missing 1 required positional argument: &#39;x&#39;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">x=</span> <span class="ex">10</span> y= 20 z= 0
+<span class="va">x=</span> <span class="ex">10</span> y= 0 z= 0
+<span class="va">x=</span> <span class="ex">10</span> y= 0 z= 10</code></pre></div>
+<h2 id="default-arguments-are-evaluated-only-once">Default Arguments are evaluated only once</h2>
+<p>The default argument expressions are evaluated only once when the def statement is executed</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> time
+<span class="co">#The default argument expressions are evaluated only once when the def statement is executed</span>
+<span class="kw">def</span> show_time(arg<span class="op">=</span>time.ctime()):
+    <span class="bu">print</span>(arg)
+
+show_time()<span class="co"># prints current time</span>
+time.sleep(<span class="dv">5</span>)<span class="co"># sleep for 5 sec</span>
+show_time()<span class="co"># prints current time</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Fri</span> May 19 18:47:59 2017
+<span class="ex">Fri</span> May 19 18:47:59 2017</code></pre></div>
+<p><strong>Note</strong>: The above show_time function prints the time at which function definition is executed. That's the reason though we call show_time() twice it prints same value. Ignoring sleep time</p>
+<h2 id="be-cautious-when-using-mutable-list-as-default-argument">Be cautious when using mutable list as default argument</h2>
+<p>Potential Bug</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> add_spider(heros<span class="op">=</span>[]):
+    heros.append(<span class="st">&quot;spider&quot;</span>)
+    <span class="cf">return</span> heros
+
+<span class="bu">print</span>(add_spider())
+<span class="bu">print</span>(add_spider([<span class="st">&#39;mario&#39;</span>, <span class="st">&#39;dora&#39;</span>]))
+<span class="co"># This is a potential bug. instead of adding spider once in list we see it twice</span>
+<span class="bu">print</span>(add_spider())   </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">[<span class="st">&#39;spider&#39;</span>]
+[<span class="st">&#39;mario&#39;</span>, <span class="st">&#39;dora&#39;</span>, <span class="st">&#39;spider&#39;</span>]
+[<span class="st">&#39;spider&#39;</span>, <span class="st">&#39;spider&#39;</span>]</code></pre></div>
+<p>Always use immutable objects such as integers or strings for default values. Following this advice, we can solve this particular case by using the immutable None object as a sentinel</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> add_spider(heros<span class="op">=</span><span class="va">None</span>):
+    <span class="cf">if</span>(heros <span class="kw">is</span> <span class="va">None</span>):
+        heros <span class="op">=</span> []
+    heros.append(<span class="st">&quot;spider&quot;</span>)
+    <span class="cf">return</span> heros
+
+<span class="bu">print</span>(add_spider())
+<span class="bu">print</span>(add_spider([<span class="st">&#39;mario&#39;</span>, <span class="st">&#39;dora&#39;</span>]))
+<span class="bu">print</span>(add_spider())   </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">[<span class="st">&#39;spider&#39;</span>]
+[<span class="st">&#39;mario&#39;</span>, <span class="st">&#39;dora&#39;</span>, <span class="st">&#39;spider&#39;</span>]
+[<span class="st">&#39;spider&#39;</span>]</code></pre></div>
+<h1 id="python-home"><a href="index.html#Function-Argument-Passing">Python Home</a></h1>
+</body>
+</html>

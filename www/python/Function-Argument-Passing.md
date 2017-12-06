@@ -6,7 +6,7 @@ The formal function arguments specified when a function is defined with the def 
 - Keyword (default argument) (non Mandatory)
  - These can be specified in any order
 
-## Example
+#Simple Function with arguments
 ```python
 def add(x, y=0, z=0):
     # x is called positional argument
@@ -26,7 +26,6 @@ x= 10 y= 0 z= 10
 ```
 ## Default Arguments are evaluated only once
 The default argument expressions are evaluated only once when the def statement is executed
-## Example
 ```python
 import time
 #The default argument expressions are evaluated only once when the def statement is executed
@@ -43,7 +42,7 @@ Fri May 19 18:47:59 2017
 ```
 **Note**: The above show_time function prints the time at which function definition is executed. That's the reason though we call show_time() twice it prints same value. Ignoring sleep time
 ## Be cautious when using mutable  list as default argument
-### Potential Bug
+Potential Bug
 ```python
 def add_spider(heros=[]):
     heros.append("spider")
@@ -59,7 +58,6 @@ print(add_spider())
 ['mario', 'dora', 'spider']
 ['spider', 'spider']
 ```
-### Potential Fix
 Always use immutable objects such as integers or strings for default values. Following this advice, we can solve this particular case by using the immutable None object as a sentinel
 ```python
 def add_spider(heros=None):
@@ -77,4 +75,4 @@ print(add_spider())
 ['mario', 'dora', 'spider']
 ['spider']
 ```
-### [index](index.html)
+# [Python Home](index.html#Function-Argument-Passing)

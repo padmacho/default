@@ -67,9 +67,10 @@ Python is a general-purpose programming language that is becoming more and more 
     - Exercises
 - Objects
     - Introduction
-    - Argument Passing
+    - [Functions](Functions.html)
+    - [Function Argument Passing](Function-Argument-Passing.html)
     - Function Arguments in Detail
-    - Python's Type System
+    - [Type System](Type-System.html)
     - Variable Scoping
     - Everything Is an Object
     - Summary
@@ -129,8 +130,10 @@ Python is a general-purpose programming language that is becoming more and more 
         - [DataFrame](Series-and-DataFrame.html)
         - [Inputs to DataFrame](Inputs-to-DataFrame.html)
         - [Operations on DataFrame](Operations-on-DataFrame.html)
-        - [loc vs iloc](loc-vs-iloc.html) 
+        - [loc vs iloc](loc-vs-iloc.html)
         - [Data cleansing](Data-cleansing.html)
+        - [Pandas Grouping](Pandas-Grouping.html)
+        - [Pandas Best Practices](Pandas-Best-Practices.html)
     - Numpy
         - [Numpy Introduction](Numpy-Introduction.html)
         - Statistics

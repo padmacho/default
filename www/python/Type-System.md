@@ -1,7 +1,13 @@
 # Type System
-Python can be characterized as having a dynamic and strong type system. Dynamic typing means that the type of an object reference isn't resolved until the program is running and needn't be specified up front when the program is written.
+## Language Matrix
+Category |Static |Dynamic
+---|---|---
+Strong |C,C++,Java, | **Python**, Ruby
+Weak| None | JavaScript, Perl
+
+Python can be characterized as having a dynamic and strong type system. Dynamic typing means that the type of an object reference isn't resolved until the program is running and need not be specified up front when the program is written.
 ## Dynamic Type system
-In a dynamic type system objects types are only resolved at runtime
+In a dynamic type system objects types are only **resolved at runtime.**
 ```python
 def add(x, y):
     print(x + y)
@@ -40,4 +46,4 @@ print(x)
 abc
 1
 ```
-### [index](index.html)
+# [Python Home](index.html#Type-System)

@@ -58,6 +58,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#adding-a-column">Adding a column</a></li>
 <li><a href="#deleting-a-column">Deleting a column</a></li>
 <li><a href="#arithmetic-operations-on-columns">Arithmetic Operations on columns</a></li>
+<li><a href="#max-and-idmax">max and idmax</a></li>
 <li><a href="#source-code">Source code</a></li>
 <li><a href="#python-home"><a href="index.html#Operations-on-DataFrame">Python Home</a></a></li>
 </ul>
@@ -180,6 +181,19 @@ df1 <span class="op">=</span> df1.assign(area<span class="op">=</span>df1[<span 
 <span class="bu">id</span>       length  breadth  area
 rect1      <span class="dv">10</span>       <span class="dv">20</span>   <span class="dv">200</span>
 rect2      <span class="dv">15</span>       <span class="dv">20</span>   <span class="dv">300</span></code></pre></div>
+<h1 id="max-and-idmax">max and idmax</h1>
+<p>max- Returns maximum value in the column<br />
+idxman- Returns the index of element with maximum value</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Get maximum area</span>
+df1[<span class="st">&#39;area&#39;</span>].<span class="bu">max</span>()
+<span class="op">&gt;&gt;&gt;</span>
+<span class="dv">300</span>
+<span class="co"># Get row with maximum area</span>
+df1.loc[df1[<span class="st">&#39;area&#39;</span>].idxmax(), :]
+<span class="op">&gt;&gt;&gt;</span>
+length      <span class="dv">15</span>
+breadth     <span class="dv">20</span>
+area       <span class="dv">300</span></code></pre></div>
 <h1 id="source-code">Source code</h1>
 <ul>
 <li><a href="Operations-on-DataFrame.py" class="uri">Operations-on-DataFrame.py</a></li>
