@@ -50,8 +50,6 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li><a href="#type-system">Type System</a><ul>
 <li><a href="#language-matrix">Language Matrix</a></li>
-<li><a href="#dynamic-type-system">Dynamic Type system</a></li>
-<li><a href="#strong-type-system">Strong type system</a></li>
 <li><a href="#object-references-variables-has-no-types">Object references (variables) has no types</a></li>
 </ul></li>
 <li><a href="#python-home"><a href="index.html#Type-System">Python Home</a></a></li>
@@ -80,11 +78,16 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 </tr>
 </tbody>
 </table>
-<p>Python can be characterized as having a dynamic and strong type system. Dynamic typing means that the type of an object reference isn't resolved until the program is running and needn't be specified up front when the program is written.</p>
+<ul>
+<li><em>Dynamic typing</em> - Dynamically typed programming languages do type checking at <em>run-time</em></li>
+<li><em>Static Typing</em> - Statically typed programming languages do type checking (the process of verifying and enforcing the constraints of types) at <em>compile-time</em></li>
+<li><em>Strong Typing</em> - Common definition is that the language will not in general <strong>implicitly</strong> convert objects between types.</li>
+<li><p><em>Weak Typing</em> - The type of a value depends on how it is used, data types are defined at runtime or the context in which they are used.<br />
+Python can be characterized as having a dynamic and strong type system.</p>
 <h2 id="dynamic-type-system">Dynamic Type system</h2>
-<p>In a dynamic type system objects types are only resolved at runtime</p>
+<p>In a dynamic type system objects types are only <strong>resolved at runtime.</strong></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> add(x, y):
-    <span class="bu">print</span>(x <span class="op">+</span> y)
+<span class="bu">print</span>(x <span class="op">+</span> y)
 add(<span class="dv">1</span>, <span class="dv">2</span>) <span class="co"># add int</span>
 add(<span class="fl">10.1</span>, <span class="fl">11.2</span>) <span class="co"># add float</span>
 add(<span class="st">&quot;abc&quot;</span>, <span class="st">&quot;xyz&quot;</span>)<span class="co"># add string</span>
@@ -94,13 +97,14 @@ add([<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3<
 <span class="ex">abcxyz</span>
 [<span class="ex">1</span>, 2, 3, 4]</code></pre></div>
 <h2 id="strong-type-system">Strong type system</h2>
-<p>Common definition is that the language will not in general implicitly convert objects between types</p>
+<p>Common definition is that the language will not in general <strong>implicitly</strong> convert objects between types</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> add(x, y):
-    <span class="bu">print</span>(x <span class="op">+</span> y)
+<span class="bu">print</span>(x <span class="op">+</span> y)
 add(<span class="st">&quot;This is string&quot;</span>, <span class="dv">10</span>)  <span class="co"># This leads to error     </span></code></pre></div>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">print</span>(x + y)
 <span class="ex">TypeError</span>: must be str, not int</code></pre></div>
-<p><strong>Note</strong>: The exception being the conversion to bool used for if statements and while-loop predicates.</p>
+<p><strong>Note</strong>: The exception being the conversion to bool used for if statements and while-loop predicates.</p></li>
+</ul>
 <h2 id="object-references-variables-has-no-types">Object references (variables) has no types</h2>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">x <span class="op">=</span> <span class="st">&quot;abc&quot;</span>  <span class="co"># x is binded to string</span>
 <span class="bu">print</span>(x)

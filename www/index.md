@@ -6,6 +6,7 @@
 - Regular Expressions
 - Java Script
 - Angular JS
+- [IELTS](ielts/index.html)
 
 ## Interview Questions
 - [Java Script & Angular JS](js/faq.html)

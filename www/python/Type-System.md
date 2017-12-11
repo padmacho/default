@@ -5,7 +5,11 @@ Category |Static |Dynamic
 Strong |C,C++,Java, | **Python**, Ruby
 Weak| None | JavaScript, Perl
 
-Python can be characterized as having a dynamic and strong type system. Dynamic typing means that the type of an object reference isn't resolved until the program is running and need not be specified up front when the program is written.
+- *Dynamic typing* - Dynamically typed programming languages do type checking at *run-time*
+- *Static Typing* - Statically typed programming languages do type checking (the process of verifying and enforcing the constraints of types) at *compile-time*
+- *Strong Typing* - Common definition is that the language will not in general **implicitly** convert objects between types.
+- *Weak Typing* - The type of a value depends on how it is used, data types are defined at runtime or the context in which they are used.
+Python can be characterized as having a dynamic and strong type system.
 ## Dynamic Type system
 In a dynamic type system objects types are only **resolved at runtime.**
 ```python
@@ -23,7 +27,7 @@ abcxyz
 [1, 2, 3, 4]
 ```
 ## Strong type system
-Common definition is that the language will not in general implicitly convert objects between types
+Common definition is that the language will not in general **implicitly** convert objects between types
 ```python
 def add(x, y):
     print(x + y)
