@@ -1,4 +1,5 @@
 # Git Tutorial
+Learn git in more simply way. 
 ## Table of contents
 - [Quick Start (For impatient)](QuickStart.html)
 - Introduction to Git

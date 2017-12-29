@@ -17,3 +17,7 @@ If the app deployment is sucessful. You can see changes in www.eduami.org
 ```
 - Access the application http://localhost:8000/
 
+# Stop prevision versions of App
+gcloud app deploy --stop-previous-version
+# Promote traffic to current version
+gcloud config set app/promote_by_default false

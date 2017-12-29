@@ -48,32 +48,14 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <body>
 <div id="TOC">
 <ul>
-<li><a href="#default">default</a></li>
-<li><a href="#deploy-the-change-to-google-app-engine">Deploy the change to google app engine</a></li>
-<li><a href="#run-the-application-locally">Run the application locally</a></li>
-<li><a href="#stop-prevision-versions-of-app">Stop prevision versions of App</a></li>
-<li><a href="#promote-traffic-to-current-version">Promote traffic to current version</a></li>
+<li><a href="#disable-pc-speaker">Disable PC Speaker</a></li>
+<li><a href="#home"><a href="/index.html">Home</a></a></li>
 </ul>
 </div>
-<h1 id="default">default</h1>
-<p>Default repo contais website artifact</p>
-<h1 id="deploy-the-change-to-google-app-engine">Deploy the change to google app engine</h1>
-<pre><code>gcloud source repos clone default --project=eduami-150711</code></pre>
-<p>Above command will clone the repo that is backing up the app.<br />
-Go to cloned folder and run below command to deploy</p>
-<pre><code>gcloud app deploy</code></pre>
-<p>If the app deployment is sucessful. You can see changes in www.eduami.org</p>
-<h1 id="run-the-application-locally">Run the application locally</h1>
-<ul>
-<li>Clone the project <a href="https://github.com/padmacho/default.git" class="uri">https://github.com/padmacho/default.git</a></li>
-<li>Change to directory ./default/www</li>
-<li><p>Run the python webserve to serve html files</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">/default/www</span>$ <span class="ex">python</span> -m http.server</code></pre></div></li>
-<li><p>Access the application <a href="http://localhost:8000/" class="uri">http://localhost:8000/</a></p></li>
-</ul>
-<h1 id="stop-prevision-versions-of-app">Stop prevision versions of App</h1>
-<p>gcloud app deploy --stop-previous-version</p>
-<h1 id="promote-traffic-to-current-version">Promote traffic to current version</h1>
-<p>gcloud config set app/promote_by_default false</p>
+<h1 id="disable-pc-speaker">Disable PC Speaker</h1>
+<p>Follow below steps to disable PC speaker on Debian 9 Cinnamon desktop</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># rmmod pcspkr</span>
+<span class="co"># echo &quot;blacklist pcspkr&quot; &gt; /etc/modprobe.d/nobeep.conf</span></code></pre></div>
+<h1 id="home"><a href="/index.html">Home</a></h1>
 </body>
 </html>

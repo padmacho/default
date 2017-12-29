@@ -36,7 +36,7 @@ def create_html_from_md():
         if "index.md" in file_name or "Article.md" in file_name:
             call(["pandoc", file_name, "--from", "markdown_github", "--to", "html", "-s", "--highlight-style", "tango",
                   "--css", "/style.css", "-o", "." + file_name.split(".")[1] + ".html"])
-            update_anchor_elements_in_index_file(".\\" + file_name.split(".")[1] + ".html")
+            update_anchor_elements_in_index_file("./" + file_name.split(".")[1] + ".html")
         else:
             call(["pandoc", "--toc", file_name, "--from", "markdown_github", "--to", "html", "-s", "--highlight-style",
                   "tango", "--css", "/style.css", "-o", "." + file_name.split(".")[1] + ".html"])
