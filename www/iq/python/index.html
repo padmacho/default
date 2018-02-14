@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="pandoc" name="generator"/>
+<title></title>
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+<link href="/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h1 id="interview-questions">Interview Questions</h1>
+<p>This page covers Interview Questions that you might come across in python developer role</p>
+<h1 id="what-are-the-key-features-of-python">What are the key features of Python?</h1>
+<ul>
+<li>Interpreted Language
+<ul>
+<li>Unlike languages like C or C++ and its variants, Python does not need to be compiled before it is run.</li>
+</ul></li>
+<li>Dynamically typed
+<ul>
+<li><p>You don’t need to say the type of variable when you declare them.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">a <span class="op">=</span> <span class="dv">123</span>
+a <span class="op">=</span> <span class="st">'I am a string'</span>
+a <span class="op">=</span> <span class="fl">12.3</span></code></pre></div></li>
+</ul></li>
+<li>Object orientated
+<ul>
+<li>It allows the definition of classes along with composition and inheritance. It doesn't have access specifiers like public, private.</li>
+</ul></li>
+<li>Functions
+<ul>
+<li><p>Functions are first-class objects. This means that they can be assigned to variables, returned from other functions and passed into functions. <strong>Classes</strong> are also first class objects.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Assign function a variable</span>
+<span class="kw">def</span> fun1():
+<span class="bu">print</span>(<span class="st">"Hello"</span>)
+x <span class="op">=</span> fun1
+x()  <span class="co"># Call x as function</span>
+fun1()</code></pre></div></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Function return a return a function</span>
+<span class="kw">def</span> fun1():
+<span class="bu">print</span>(<span class="st">"Hello fun1"</span>)
+<span class="kw">def</span> fun2():
+<span class="cf">return</span> fun1
+fun2()() <span class="co"># call the returned function</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Function be passed as argument</span>
+<span class="kw">def</span> fun1():
+<span class="bu">print</span>(<span class="st">"Hello fun1"</span>)
+<span class="kw">def</span> fun2(f):
+f()
+fun2(fun1)  <span class="co"># Pass fun1 as argument to fun2</span></code></pre></div></li>
+</ul>
+<h1 id="what-is-difference-between-deep-copy-and-shallow-copy">What is difference between deep copy and shallow copy ?</h1>
+<ul>
+<li>Assignment statements in Python do not copy objects</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># List Bag1 one has fruits</span>
+bag1 <span class="op">=</span> [<span class="st">'apple'</span>, <span class="st">'banana'</span>]
+
+<span class="co"># Lets create a Bag2 which has the same fruits as Bag1</span>
+bag2 <span class="op">=</span> bag1  <span class="co"># Assignment statements in Python do not create a copy of object</span>
+
+<span class="bu">print</span>(<span class="st">'Bag1: '</span>, bag1)
+<span class="bu">print</span>(<span class="st">'Bag2: '</span>, bag2)
+
+<span class="co"># remove apple from bag1 which will effect bag2 as well</span>
+<span class="kw">del</span> bag1[<span class="dv">0</span>]
+
+<span class="co"># Notice apple is removed from both the bags instead from bag1</span>
+<span class="bu">print</span>(<span class="st">'Bag1: '</span>, bag1)
+<span class="bu">print</span>(<span class="st">'Bag2: '</span>, bag2)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Bag1</span>:  [<span class="st">'apple'</span>, <span class="st">'banana'</span>]
+<span class="ex">Bag2</span>:  [<span class="st">'apple'</span>, <span class="st">'banana'</span>]
+<span class="ex">Bag1</span>:  [<span class="st">'banana'</span>]
+<span class="ex">Bag2</span>:  [<span class="st">'banana'</span>]</code></pre></div>
+<ul>
+<li>Python defines a module which allows to deep copy or shallow copy mutable object using the inbuilt functions present in the module <strong>copy</strong></li>
+</ul>
+<h1 id="section"></h1>
+</body>
+</html>
