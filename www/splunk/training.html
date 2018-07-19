@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#splunk-training">Splunk Training</a></li>
+<li><a href="#splunk-has-following-capabilities">Splunk has following capabilities</a></li>
+<li><a href="#splunk-components">Splunk Components</a></li>
+<li><a href="#lab">Lab</a></li>
+<li><a href="#index">index</a></li>
+<li><a href="#spl-splunk-processing-language">SPL (Splunk Processing Language)</a></li>
+<li><a href="#data-types">Data types</a></li>
+<li><a href="#interact-with-splunk-three-ways">interact with Splunk three ways</a></li>
+<li><a href="#enable-splunk-at-start-up">Enable splunk at start up</a></li>
+<li><a href="#ports">Ports</a></li>
+<li><a href="#dashboard-location">Dashboard location</a></li>
+<li><a href="#spl">SPL</a><ul>
+<li><a href="#table">Table</a></li>
+</ul></li>
+<li><a href="#remove-duplicates">Remove duplicates</a></li>
+<li><a href="#finding-unique-clients">Finding unique clients</a></li>
+<li><a href="#group-by">Group By</a></li>
+<li><a href="#find-by-client-ip">Find by client ip</a></li>
+<li><a href="#eval">Eval</a></li>
+<li><a href="#remove-a-column-from-out-put">Remove a column from out put</a></li>
+<li><a href="#rename-alias-column">Rename Alias column</a></li>
+<li><a href="#aggregation">Aggregation</a></li>
+<li><a href="#eval-1">Eval</a></li>
+<li><a href="#multiple-aggregation">Multiple Aggregation</a></li>
+<li><a href="#chart">chart</a></li>
+<li><a href="#aggregate-result-by-time">Aggregate result by time</a></li>
+<li><a href="#field-extraction">Field extraction</a></li>
+<li><a href="#sed">sed</a></li>
+<li><a href="#event-types">event types</a></li>
+<li><a href="#tags">Tags</a></li>
+<li><a href="#save-search">Save search</a></li>
+<li><a href="#macro">Macro</a></li>
+<li><a href="#splunk-agent">Splunk agent</a></li>
+</ul>
+</div>
+<h1 id="splunk-training">Splunk Training</h1>
+<p>Can we use Splunk for BigData Analytic tools?</p>
+<ul>
+<li>Because of License cost it is discouraged<br />
+Splunk vs ELK?<br />
+Splunk has support for all the major log types (i.e) The logs that are received from different log systems</li>
+</ul>
+<h1 id="splunk-has-following-capabilities">Splunk has following capabilities</h1>
+<ul>
+<li>Dashboard</li>
+<li>Alerting</li>
+<li>Reporting</li>
+</ul>
+<p>One of the Key Feature of Splunk that unique from other products <strong>Operational Intelligence</strong><br />
+ELK is best competitor for splunk. -- Splunk supports many formats readily available.<br />
+Predictive Analysis is available in Splunk<br />
+----------------<br />
+Splunk has agents to JVMs in competition with Appydnamics /Dynatrace</p>
+<p>Routers -&gt; cloud- &gt; app-&gt; web</p>
+<p>Splunk doesn't have appliance. It has to be installed using installer</p>
+<hr />
+<p>Splunk Enterprise</p>
+<p>Splunk receives logs</p>
+<p>Majority of file formats doesn't have meta data of log file</p>
+<h1 id="splunk-components">Splunk Components</h1>
+<ul>
+<li>Data Input</li>
+<li>Source Type (Data inputs find the source type), if appropriate source type is found than appropriate parses are called</li>
+<li>Splunk store all the data in <strong>index</strong></li>
+</ul>
+<h1 id="lab">Lab</h1>
+<p>192.168.2.221<br />
+minimum log is 86 KB for splunk to identify source type as Apache webserver</p>
+<h1 id="index">index</h1>
+<ul>
+<li>When to create a new index</li>
+<li>Continuous monitoring</li>
+</ul>
+<h1 id="spl-splunk-processing-language">SPL (Splunk Processing Language)</h1>
+<p>Total number<br />
+index=web clientip=&quot;192.168.2.142&quot;| stats sum(bytes)</p>
+<h1 id="data-types">Data types</h1>
+<p>a - Alpha numeric<br />
+/# - Numeric</p>
+<h1 id="interact-with-splunk-three-ways">interact with Splunk three ways</h1>
+<ul>
+<li>WebUI</li>
+<li>cli (Scripts)</li>
+<li>API (Developers)</li>
+</ul>
+<p>Roles</p>
+<ul>
+<li>Splunk Admin</li>
+<li>Reporting (Splunk Analsys)</li>
+<li>Splunk Developers</li>
+<li>Splunk Apps</li>
+</ul>
+<p>All the configurations of splunk is stored on <strong>file</strong></p>
+<p>Python app server runs in python</p>
+<p>/opt/splunk/etc/system/default<br />
+/opt/splunk/etc/system/local - Contains customization<br />
+local is preferred first</p>
+<p>Index is folder in Back end<br />
+/opt/splunk/var/lib/splunk/web-all</p>
+<p>DB Contains<br />
+/opt/splunk/var/lib/splunk/web-all</p>
+<h1 id="enable-splunk-at-start-up">Enable splunk at start up</h1>
+<p>./splunk enable boot-start</p>
+<h1 id="ports">Ports</h1>
+<ul>
+<li>Splunk Engine/Indexer Runs on 8089 (Management)</li>
+<li>Splunk WebUI 8000</li>
+<li>Document Search engine use <strong>inverted search index algorithm</strong></li>
+<li>API and CLI uses 8089 port</li>
+<li><p>Python process or app server 8065</p></li>
+<li><p>Sys log can configured to write logs to central log server</p>
+<h1 id="splunk-agents">Splunk agents</h1>
+Agents can be used to forward logs. It is also known as universal forwarder (UF)<br />
+Forwarders are not available for all the platforms for example CISCO Routers, Juniper devices etc</li>
+<li>Data input can acts as pull ,to pull data from databases.</li>
+<li>Data input can be NoSQL,SQL,XL,CSV.</li>
+<li><p>DBConnect is app used to pull data</p>
+<h1 id="data-input">Data input</h1>
+<h1 id="source-types">Source types</h1></li>
+<li><p>Splunk automatically detects source types</p>
+<h1 id="buckets">Buckets</h1>
+<p>Index has buckets to control data retention policy etc</p>
+<h1 id="license">License</h1>
+<p>The charge based on through put . For example 1 GB per day means through put of 1 GB</p>
+<h1 id="create-custom-parser">create custom parser</h1></li>
+</ul>
+<h1 id="dashboard-location">Dashboard location</h1>
+<p>/opt/splunk/etc/users/admin/search/local/data/ui/views<br />
+HTML Dashboard<br />
+/opt/splunk/etc/users/admin/search/local/data/ui/html</p>
+<h1 id="spl">SPL</h1>
+<p>Search Processing Language</p>
+<p>Filter<br />
+index=web clientip=&quot;192.168.2.142&quot; |<br />
+Operations<br />
+stats</p>
+<p>index=web clientip=&quot;192.168.2.142&quot; | stats sum(bytes)</p>
+<p>index=web clientip=&quot;192.168.2.142&quot; OR clientip=&quot;192.168.2.161&quot; | stats count</p>
+<p>index=web status=404 AND ( clientip=&quot;192.168.2.176&quot; OR clientip=&quot;192.168.2.110&quot; )</p>
+<p><strong>by default space is and</strong></p>
+<p>index=web bytes&gt; 200</p>
+<p>Projection</p>
+<p>index=web bytes&gt;= 200 AND bytes&lt;=250 | table clientip</p>
+<p>index=web | table clientip status bytes</p>
+<h2 id="table">Table</h2>
+<p>index=web | table clientip, status, bytes</p>
+<h1 id="remove-duplicates">Remove duplicates</h1>
+<p>index=web| table clientip | dedup clientip</p>
+<h1 id="finding-unique-clients">Finding unique clients</h1>
+<p>index=web| table clientip | dedup clientip | stats count</p>
+<h1 id="group-by">Group By</h1>
+<p>index=web | stats sum(bytes) BY clientip</p>
+<p>index=web | stats count BY clientip</p>
+<p>index=web | stats count BY clientip | where count &gt;=100</p>
+<h1 id="find-by-client-ip">Find by client ip</h1>
+<p>index=web | stats count BY clientip | where count &gt;=100 | table clientip</p>
+<h1 id="eval">Eval</h1>
+<p>Create a new field<br />
+index=web |table clientip, method, status , bytes | eval remarks=if(status==200,&quot;OK&quot;,&quot;NOT OK&quot;)</p>
+<h1 id="remove-a-column-from-out-put">Remove a column from out put</h1>
+<ul>
+<li><p>**_internal** index is used for trouble shoot , it contains all the information about every event that happend on splunk server</p>
+<h1 id="fillnull">fillnull</h1>
+<p>fill all the colums<br />
+index=_internal | table status, method , bytes| fillnull value=NULL<br />
+Fills only specific column</p></li>
+</ul>
+<p>index=_internal | table status, method , bytes| fillnull value=NULL ,method</p>
+<h1 id="rename-alias-column">Rename Alias column</h1>
+<p>index=web |stats sum(bytes) AS SUM</p>
+<h1 id="aggregation">Aggregation</h1>
+<p>index=web | stats sum(bytes) AS SUM, avg(bytes) AS AVG, min(bytes) AS MIN, max(bytes) AS MAX by clientip</p>
+<h1 id="eval-1">Eval</h1>
+<p>index=web | eval bytes=bytes/1024 .&quot;KB&quot;</p>
+<ul>
+<li>Round Function<br />
+index=web | eval bytes=round(bytes/1024,2).&quot;KB&quot;| table bytes</li>
+<li><p>replace elements in column<br />
+index=&quot;web&quot; | table method| replace GET with DOWNLOAD in method</p>
+<h1 id="rename-field-names">Rename field names</h1>
+<p>index=&quot;web&quot; | table method, clientip| rename clientip AS src_ip<br />
+This is not equivalent to <strong>AS</strong></p>
+<h1 id="create-a-permanent-alias">Create a permanent Alias</h1></li>
+</ul>
+<h1 id="multiple-aggregation">Multiple Aggregation</h1>
+<p>index=web | stats sum(bytes) AS SUM BY clientip,file| where SUM &gt; 700</p>
+<h1 id="chart">chart</h1>
+<p>index=web | chart sum(bytes) AS SUM BY clientip,file</p>
+<h1 id="aggregate-result-by-time">Aggregate result by time</h1>
+<p>timechart<br />
+index=web | timechart count by clientip<br />
+Span<br />
+index=web | timechart span=1m count by clientip<br />
+index=web | timechart span=1s count by clientip</p>
+<h1 id="field-extraction">Field extraction</h1>
+<p>index=_internal| table referer | dedup referer | rex field=referer <a href="https://.*/" class="uri">https://.*/</a>(?<path>.*)</p>
+<h1 id="sed">sed</h1>
+<p>index=web| rex field=_raw mode=sed s/GET/DOWNLOAD/<br />
+As a complete string<br />
+index=login &quot;Failed password for&quot;<br />
+index=login Failed password for<br />
+event types and tags needs to be created. Before using them</p>
+<h1 id="event-types">event types</h1>
+<p>index=login eventtype=&quot;critical-event&quot;</p>
+<h1 id="tags">Tags</h1>
+<p>index=web tag=vm1</p>
+<h1 id="save-search">Save search</h1>
+<h1 id="macro">Macro</h1>
+<p>function fun-byte(arg1)<br />
+{<br />
+index=web clientip=&quot;$arg1$&quot; | stats sum(bytes)<br />
+}<br />
+fun-byte(arg1)</p>
+<ul>
+<li><p>Call Macro<br />
+<code>fun-byte(arg1)</code><br />
+<code>fun-byte(192.168.2.142)</code></p>
+<h1 id="csv-file-or-input-look-supports">CSV File or input look supports</h1>
+<p>| inputlookup db.csv | where remarks=&quot;ok&quot;<br />
+| inputlookup db.csv | where name=&quot;balaji&quot;<br />
+Use lookup under setting to input file</p>
+<h1 id="mv-filter">MV Filter</h1>
+<p>index=_internal| table uri| dedup uri| eval field=mvfilter(match(uri,&quot;messages&quot;))</p>
+<h1 id="head-and-tail">head and tail</h1>
+<p>index=_internal| table message| dedup message| head 100</p>
+<h1 id="sub-query">Sub Query</h1>
+<p>Search is basic command behind<br />
+search index=net<br />
+index=web [ search index=net virus | table host | dedup host | head 1 ] | stats sum(bytes)<br />
+event persecond<br />
+index=_internal sourcetype=splunkd | stats avg(eps)</p>
+<h1 id="spark-line">Spark line</h1>
+<p>index=_internal sourcetype=splunkd | stats sparkline(avg(eps))</p>
+<h1 id="splunk-apps">Splunk Apps</h1>
+<p>/opt/splunk/etc/apps/Splunk_TA_nix</p></li>
+</ul>
+<h1 id="splunk-agent">Splunk agent</h1>
+<p>Universal Forwarders<br />
+Agents run at</p>
+</body>
+</html>

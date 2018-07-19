@@ -11,6 +11,7 @@
 </head>
 <body>
 <h1 id="cloud-computing.">Cloud Computing.</h1>
+<h1 id="continuous-delivery"><a href="Continuous-Delivery.html" name="Continuous-Delivery">Continuous Delivery</a></h1>
 <h1 id="introduction-to-cloud-computing">Introduction to Cloud Computing</h1>
 <ul>
 <li>Service Orientation
@@ -24,19 +25,112 @@
 <li>Leverage- <strong>Don't Build</strong>
 <ul>
 <li>Offload Operational Burden</li>
-<li>Usally Cheaper</li>
+<li>Usually Cheaper</li>
 </ul></li>
 <li><strong>Always look at using the service first</strong></li>
 </ul></li>
 </ul>
 <h1 id="cloud-native-application-design">Cloud Native Application Design</h1>
 <ul>
-<li><p>Agility</p>
+<li>Agility
 <ul>
 <li>Deploy in minutes vs weeks</li>
-<li></li>
+<li>Support next-generation development paradigms</li>
 </ul></li>
-<li>12 Factor principles</li>
+<li>Elasticity
+<ul>
+<li>Scale capacity based on demand</li>
+<li>Accommodate variable seasonality for workloads (e.g. daily, weekly)</li>
+</ul></li>
+<li>Resiliency
+<ul>
+<li>Fault tolerant, "always on" Services</li>
+<li>Fast response and recovery times</li>
+</ul></li>
+<li>Flexible Pricing
+<ul>
+<li>'Pay-as-you-go': Only pay for those service consumed.</li>
+<li>Charges can accrue per minute, per hour, per moth, etc..</li>
+</ul></li>
+<li>Location Independence
+<ul>
+<li>Workloads are not dependent on running in a fixed location</li>
+<li>Workloads can migrate seamlessly between environments</li>
+</ul></li>
+<li>Automation
+<ul>
+<li>End to end service Automation (e.g provisioning, scaling, decommission)</li>
+<li>Menu of fully self-service options available for consumption</li>
+</ul></li>
+<li>Multi Tenancy
+<ul>
+<li>Infrastructure resources are shared across multiple customers</li>
+<li>Efficient utilization of physical hardware</li>
+</ul></li>
+</ul>
+<h1 id="cloud-native-application-design---responsibilities">Cloud Native Application Design - Responsibilities</h1>
+<ul>
+<li>Benefits of cloud are not free</li>
+<li>Agility , elasticity, resiliency must be <strong>engineered into applications</strong></li>
+<li>The Could Native Maturity Model provides a guide:
+<ul>
+<li>Applications are <strong>not</strong> formally scored, it is merely a guide</li>
+<li>Minimum bar to entry up to a micro service based architecture model</li>
+<li>Some applications will never need to meet Level 3</li>
+</ul></li>
+</ul>
+<h1 id="cloud-maturity-model-cmm">Cloud Maturity Model (CMM)</h1>
+<table style="width:11%;">
+<colgroup>
+<col width="5%"/>
+<col width="5%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Level</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3 (Cloud Native)</td>
+<td>- Micro service architecture and principals - API first Design</td>
+</tr>
+<tr class="even">
+<td>2 (Cloud Resilient)</td>
+<td>- Design for failure , - Apps are unaffected by dependent service failure, - Metrics and monitoring baked in , - Cloud agnositc implementation</td>
+</tr>
+<tr class="odd">
+<td>1 (Cloud Friendly)</td>
+<td>- Twelve Factor applications, - Horizontal scalability, - Leverage Platform HA</td>
+</tr>
+<tr class="even">
+<td>0 (Cloud Ready)</td>
+<td>- No file system (NAS/SAN), use API based storage, e.g. S3. , - Self contained applications, - Platform managed ports and addressing,- Consume off platform services using platform semantics</td>
+</tr>
+</tbody>
+</table>
+<h1 id="factor-principles">12 Factor principles</h1>
+<ul>
+<li><strong>Code base</strong>. One code base tracked in revision control, many deploys.</li>
+<li><strong>Dependencies</strong> - Explicitly declare and isolate dependencies</li>
+<li><strong>Configuration</strong> - Store configuration in the environment</li>
+<li><strong>Backing Services</strong> - Treat backing services as attached resources.</li>
+<li><strong>Build, release, run</strong> - Strictly separate build and run stages</li>
+<li><strong>Process</strong> - Execute the app as one or more stateless processes</li>
+<li><strong>Port binding</strong> - Export services via port binding</li>
+<li><strong>Concurrency</strong>- Scale out via the process Model</li>
+<li><strong>Disposability</strong> - Maximize robustness with fast startup and graceful shutdown</li>
+<li><strong>Dev/Prod parity</strong> - Keep development, staging and production as similar as possible</li>
+<li><strong>Logs</strong> - Treat logs as event streams</li>
+<li><strong>Admin processes</strong> - Run admin/management tasks as one-off processes</li>
+</ul>
+<h1 id="overview">Overview</h1>
+<ul>
+<li>Cloud is powerful but not magic. You need to design and code to get the benefits of cloud.</li>
+<li>12 Factors</li>
+<li>Cloud platform services , speeds up development</li>
+<li><p>Remember not to leave services running as this will cost for every minute</p></li>
 <li>API</li>
 <li><p>Micro Services</p></li>
 </ul>

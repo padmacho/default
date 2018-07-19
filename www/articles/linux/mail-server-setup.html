@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#mail-server-for-development">Mail server for development</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#installation-of-postfix-mail-server">Installation of PostFix mail server</a></li>
+<li><a href="#create-two-users">Create two users</a></li>
+</ul>
+</div>
+<h1 id="mail-server-for-development">Mail server for development</h1>
+<p>It is common to use mail server to email notification when we are developing application. Lets setup a simple mail server in <strong>Linux</strong> and send / receive emails.</p>
+<h1 id="prerequisites">Prerequisites</h1>
+<ul>
+<li>RedHat Linux server - Any linux operating system can be used, this article is tested with Red Hat Enterprise Linux Server release 7.0 (Maipo)</li>
+<li>PostFix mail Server</li>
+</ul>
+<h1 id="installation-of-postfix-mail-server">Installation of PostFix mail server</h1>
+<ul>
+<li><p>Lets find whether mail server is installed or not</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">[<span class="ex">root@localhost</span> ~]# rpm -q postfix
+<span class="ex">postfix-2.10.1-6.el7.x86_64</span></code></pre></div>
+The above command shows that mail server is installed</li>
+<li><p>Check wheter mail server is running are not</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">root@localhost</span> ~]# systemctl status postfix
+<span class="ex">postfix.service</span> - Postfix Mail Transport Agent
+   <span class="ex">Loaded</span>: loaded (/usr/lib/systemd/system/postfix.service<span class="kw">;</span> <span class="ex">enabled</span>)
+   <span class="ex">Active</span>: active (running) <span class="ex">since</span> Fri 2018-03-16 00:46:16 EDT<span class="kw">;</span> <span class="ex">5min</span> ago</code></pre></div>
+<p>Mail server is installed and running</p></li>
+</ul>
+<h1 id="create-two-users">Create two users</h1>
+<ul>
+<li><p>Lets create two users named <strong>tom</strong> and <strong>jerry</strong> . Send an email from tom to jerry</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">[<span class="ex">root@localhost</span> ~]# useradd tom
+[<span class="ex">root@localhost</span> ~]# useradd jerry</code></pre></div>
+<h1 id="send-mail">Send Mail</h1>
+Lets send mail from tom to jerry. You can use <strong>mail</strong> client program to send mail</li>
+<li><p>Switch to user tom from root</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">[<span class="ex">root@localhost</span> ~]# su - tom
+<span class="ex">Last</span> failed login: Tue Mar 13 12:46:04 EDT 2018 from airavath on ssh:notty
+<span class="ex">There</span> were 2 failed login attempts since the last successful login.</code></pre></div></li>
+<li><p>Send mail from tom</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">[<span class="ex">tom@localhost</span> ~]$ mail jerry@localhost.localdomain
+<span class="ex">Subject</span>: Hello Jerry                               
+<span class="ex">Hi</span> Jerry,                                          
+<span class="ex">How</span> are you. Hope things are well from your end.   
+<span class="ex">Thank</span> you,                                         
+<span class="ex">Tom</span>                                                
+<span class="ex">EOT</span>                                                </code></pre></div>
+<p>Press <strong>Ctrl+D</strong> to send mail after typing</p>
+<h1 id="read-mail">Read Mail</h1>
+Read mail using <strong>mail</strong> client program.</li>
+<li><p>Switch to Jerry user from root</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">[<span class="ex">root@localhost</span> ~]# su - jerry
+[<span class="ex">jerry@localhost</span> ~]$</code></pre></div></li>
+<li><p>Read email</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">[<span class="ex">jerry@localhost</span> ~]$ mail                                              
+<span class="ex">Heirloom</span> Mail version 12.5 7/5/10.  Type ? for help.                   
+<span class="ex">/var/spool/mail</span>/jerry: <span class="ex">1</span> message 1 new                               
+<span class="op">&gt;</span><span class="ex">N</span>  1 tom@localhost.locald  Fri Mar 16 00:57  22/699   Hello Jerry   
+<span class="kw">&amp;</span> <span class="ex">1</span>                                                                    
+<span class="ex">Message</span>  1:                                                            
+<span class="ex">From</span> tom@localhost.localdomain  Fri Mar 16 00:57:43 2018               
+<span class="ex">Return-Path</span>: <span class="op">&lt;</span>tom@localhost.localdomain<span class="op">&gt;</span>                               
+<span class="ex">X-Original-To</span>: jerry@localhost.localdomain                             
+<span class="ex">Delivered-To</span>: jerry@localhost.localdomain                              
+<span class="ex">Date</span>: Fri, 16 Mar 2018 00:57:43 -0400                                  
+<span class="ex">To</span>: jerry@localhost.localdomain                                        
+<span class="ex">Subject</span>: Hello Jerry                                                   
+<span class="ex">User-Agent</span>: Heirloom mailx 12.5 7/5/10                                 
+<span class="ex">Content-Type</span>: text/plain<span class="kw">;</span> <span class="va">charset=</span>us-ascii                             
+<span class="ex">From</span>: tom@localhost.localdomain                                        
+<span class="ex">Status</span>: R                                                              
+
+<span class="ex">Hi</span> Jerry,                                                              
+<span class="ex">How</span> are you. Hope things are well from your end.                       
+<span class="ex">Thank</span> you,                                                             
+<span class="ex">Tom</span>                                                                   
+<span class="kw">&amp;</span>                                                               </code></pre></div>
+<p>Press <strong>q</strong> to quit the mail program.</p>
+</body>
+</html>
